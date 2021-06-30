@@ -8,44 +8,17 @@ import {
     Textarea,
     Heading,
 } from "@chakra-ui/react";
+import { EmailIcon, CheckIcon, WarningIcon } from "@chakra-ui/icons";
 import { Form, Formik, useField } from "formik";
-import * as yup from "yup";
 
-const contactSchema = yup.object().shape({
-    name: yup.string().required("Uveďte Vaše jméno").label("Jméno"),
-    tel: yup
-        .string()
-        .matches(/\d/g, "Tel. číslo musí obsahovat pouze číslice")
-        .min(9, "Tel.číslo má alespoň 9 číslic")
-        .label("Tel. číslo"),
-    email: yup.string().when("tel", {
-        is: (tel) => !tel,
-        then: yup
-            .string()
-            .email("Neplatný formát emailu (john@email.com)")
-            .required("Uveďte, prosím, alespoň email"),
-        otherwise: yup.string().email("Neplatný formát emailu (john@email.com)"),
-    }),
-    subject: yup
-        .string()
-        .required("Uveďte předmět zprávy")
-        .max(100, "Nemůže být delší jak 100 znaků")
-        .label("Předmět"),
-    body: yup
-        .string()
-        .required("Tělo zprávy nesmí být prázdné")
-        .min(30, "Musí obsahovat alespoň 30 znaků")
-        .max(2000, "Nemůže být delší jak 2000 znaků")
-        .label("Tělo zprávy"),
-    createdOn: yup.date().default(function () {
-        return new Date();
-    }),
-});
 
-const MyFormField = ({ placeholder, label, isTextarea, ...props }) => {
+import contactSchema from "./validationSchema";
+import onSubmit from "./onSubmit";
+
+const MyFormField = ({ placeholder, label, isTextarea, isRequired, ...props }) => {
     const [field, meta] = useField(props);
     return (
-        <FormControl isInvalid={meta.error && meta.touched} mb={2}>
+        <FormControl isInvalid={meta.error && meta.touched} mb={2} isRequired={isRequired}>
             <FormLabel htmlFor={field.name}>{label}</FormLabel>
             {isTextarea ? (
                 <Textarea
@@ -62,7 +35,6 @@ const MyFormField = ({ placeholder, label, isTextarea, ...props }) => {
                     placeholder={placeholder || ""}
                     {...field}
                     {...props}
-                    
                 />
             )}
             <FormErrorMessage>{meta.error}</FormErrorMessage>
@@ -83,11 +55,8 @@ const ContactForm = (props) => {
                     body: "",
                 }}
                 validationSchema={contactSchema}
-                onSubmit={(values) => {
-                    setTimeout(() => {
-                        console.log(JSON.stringify(values, null, 2));
-                    }, 500);
-                }}
+                onSubmit={onSubmit}
+                initialStatus="initial"
             >
                 {(props) => (
                     <Form>
@@ -95,11 +64,7 @@ const ContactForm = (props) => {
                             name="name"
                             label="Jméno"
                             placeholder="Kateřina Veselá"
-                        />
-                        <MyFormField
-                            name="email"
-                            label="Email"
-                            placeholder="k.vesela@email.com"
+                            isRequired
                         />
                         <MyFormField
                             name="tel"
@@ -107,23 +72,33 @@ const ContactForm = (props) => {
                             placeholder="777 123 456"
                         />
                         <MyFormField
+                            name="email"
+                            label="Email"
+                            placeholder="k.vesela@email.com"
+                        />
+                        <MyFormField
                             name="subject"
                             label="Předmět zprávy"
                             placeholder="Instalace kotle"
+                            isRequired
                         />
                         <MyFormField
                             name="body"
                             label="Zpráva"
                             placeholder="Dobrý den, potřebovala bych nově nainstalovat kotel, protože ten starý nám právě odešel a nejsem si úplně jistá..."
                             isTextarea
+                            isRequired
                         />
                         <Button
                             mt={4}
                             isLoading={props.isSubmitting}
+                            disabled={props.status !== "initial"}
+                            loadingText="Odesílám..."
+                            leftIcon={props.status === "success" ? <CheckIcon color="green.400" /> : props.status === "error" ? <WarningIcon color="red.400" /> : <EmailIcon />}
                             type="submit"
-                            variant="primary"
+                            _disabled={{}}
                         >
-                            Odeslat
+                            {props.status === "success" ? "Odesláno" : props.status === "error" ? "Naskytla se chyba" : "Odeslat email"}
                         </Button>
                     </Form>
                 )}

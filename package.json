@@ -28,6 +28,7 @@
     "framer-motion": "^4.1.17",
     "install": "^0.13.0",
     "next": "^11.0.1",
+    "nodemailer": "^6.6.2",
     "npm": "^7.18.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",

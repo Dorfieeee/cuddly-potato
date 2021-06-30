@@ -1,5 +1,5 @@
 // theme.js
-import { extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 // Global style overrides
 import styles from "./styles";
 import theme from "./theme";
@@ -18,4 +18,6 @@ const overrides = {
     }
 };
 
-export default extendTheme(overrides);
+const extendedTheme = extendTheme(overrides);
+
+export default extendedTheme;
