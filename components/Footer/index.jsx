@@ -11,10 +11,7 @@ import {
     Box,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhoneAlt, faAt } from "@fortawesome/free-solid-svg-icons";
-
-const AwesomeIcon = (icon) => <FontAwesomeIcon icon={icon} />;
+import { FaPhoneAlt, FaAt } from "react-icons/fa";
 
 const Wrapper = ({ children, ...props }) => (
     <Box {...props}>
@@ -23,7 +20,7 @@ const Wrapper = ({ children, ...props }) => (
 );
 
 const Column = ({ children, title, ...props }) => (
-    <VStack alignItems="" flexBasis="25ch" m={3} {...props} >
+    <VStack alignItems="" flexBasis="25ch" m={3} {...props}>
         <Heading as="h3" size="md" mb={3}>
             {title}
         </Heading>
@@ -38,11 +35,13 @@ const Footer = ({ children, ...props }) => {
         <Box as="footer" {...props} className="themeDarkColors">
             <Wrapper>
                 <Grid
-                    gridTemplateColumns={{base: "minmax(25ch, 1fr)", md: "repeat(2, minmax(25ch, 1fr))", lg: "repeat(4, minmax(25ch, 1fr))"}}
+                    gridTemplateColumns={{
+                        base: "minmax(25ch, 1fr)",
+                        md: "repeat(2, minmax(25ch, 1fr))",
+                        lg: "repeat(4, minmax(25ch, 1fr))",
+                    }}
                     py={8}
                 >
-
-
                     <Column title="Kontakty">
                         <Text as="address">
                             Váš Instalatér
@@ -62,15 +61,13 @@ const Footer = ({ children, ...props }) => {
                             <br />
                             <List>
                                 <ListItem>
-                                    <ListIcon
-                                        as={() => AwesomeIcon(faPhoneAlt)}
-                                    />
+                                    <ListIcon as={FaPhoneAlt} />
                                     <Link href="tel:+420777123456" pl={2}>
                                         777 123 456
                                     </Link>
                                 </ListItem>
                                 <ListItem>
-                                    <ListIcon as={() => AwesomeIcon(faAt)} />
+                                    <ListIcon as={FaAt} />
                                     <Link
                                         href="mailto:example@gmail.com"
                                         pl={2}
@@ -83,7 +80,11 @@ const Footer = ({ children, ...props }) => {
                     </Column>
 
                     <Column title="Mapa" maxW="350px">
-                        <Image src="/img/footer-map.png" width="300px" height="300px"/>
+                        <Image
+                            src="/img/footer-map.png"
+                            width="300px"
+                            height="300px"
+                        />
                     </Column>
 
                     <Column as="nav" title="Služby">

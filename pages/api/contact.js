@@ -46,7 +46,7 @@ function createEmailBody(values) {
         from: SENDER_ADDRESS,
         to: RECEIVER_ADDRESS,
         subject: subject + " | " + "Zpráva od " + name,
-        text: body + " | Sent from: " + email || tel,
+        text: body + " | Zpráva od: " + email || tel,
         html: html,
     };
 }

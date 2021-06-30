@@ -1,6 +1,5 @@
-import { Box, HStack, Center, IconButton } from "@chakra-ui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { Box, HStack, Center, IconButton, Icon } from "@chakra-ui/react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 import MobileMenu from "./components/MobileMenu";
@@ -26,11 +25,12 @@ const ToggleButton = ({ toggle, isOpen, ...rest }) => {
             aria-label="Open navigation menu"
             variant={"primary"}
             border={"none"}
+            size="lg"
             icon={
                 isOpen ? (
-                    <FontAwesomeIcon size="2x" icon={faTimes} />
+                    <FaTimes />
                 ) : (
-                    <FontAwesomeIcon size="2x" icon={faBars} />
+                    <FaBars />
                 )
             }
             onClick={toggle}
@@ -93,7 +93,7 @@ const Navbar = ({
             >
                 {/* When user resize screen while mobile menu is opened, the menu button remains visible until closed */}
                 <ToggleButton
-                    display={{ lg: !isOpen && "none" }}
+                    display={{ base: "flex", lg: isOpen ? "flex" : "none" }}
                     isOpen={isOpen}
                     toggle={toggleMobileMenu}
                 />
