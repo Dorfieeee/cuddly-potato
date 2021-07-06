@@ -9,7 +9,7 @@ export default {
     },
     ico: {
         value: "27643263",
-        link: "https://www.rzp.cz/cgi-bin/aps_cacheWEB.sh?VSS_SERV=ZVWSBJVYP&OKRES=&CASTOBCE=&OBEC=&ULICE=&CDOM=&COR=&COZ=&ICO=43361676&OBCHJM=&OBCHJMATD=0&ROLES=P&JMENO=&PRIJMENI=&NAROZENI=&ROLE=&VYPIS=1&type=&PODLE=subjekt&IDICO=f01a2465fb7c2dd6331b&HISTORIE=0",
+        link: "https://www.google.com/search?q=I%C4%8CO+27643263",
     },
     persons: {
         main: {

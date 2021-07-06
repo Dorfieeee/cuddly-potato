@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link, useColorMode } from "@chakra-ui/react";
+import NextLink from "next/link"
 
 const MotionLink = motion(Link);
 
@@ -20,23 +21,25 @@ const variants = {
     }
   };
 
-const NavLink = ({ children, ...rest }) => {
+const NavLink = ({ children, href, toggle, ...rest }) => {
     const {colorMode} = useColorMode();
 
     return (
-        <MotionLink
-            variants={variants}
-            fontWeight={600}
-            py={4}
-            px={5}     
-            borderBottom={"1px solid"}
-            w={"100%"}
-            textAlign={"left"}
-            _hover={{ textDecoration: "none", bg: colorMode === "light" ? "gray.400" : "gray.600" }}
-            {...rest}
-        >
-            {children}
-        </MotionLink>
+        <NextLink href={href} passHref {...rest}>
+          <MotionLink
+              variants={variants}
+              fontWeight={600}
+              py={4}
+              px={5}     
+              borderBottom={"1px solid"}
+              w={"100%"}
+              textAlign={"left"}
+              onClick={toggle}
+              _hover={{ textDecoration: "none", bg: colorMode === "light" ? "gray.400" : "gray.600" }}
+          >
+              {children}
+          </MotionLink>
+        </NextLink>
     );
 };
 

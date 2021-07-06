@@ -4,13 +4,13 @@ import { FaPhoneVolume } from "react-icons/fa"
 
 const MotionButton = motion(Button);
 
-const PhoneNumberButton = ({children, ...props}) => {
+const PhoneNumberButton = ({children, tel, ...props}) => {
     return (
         <MotionButton
             as={"a"}
             size="lg"
             leftIcon={<FaPhoneVolume />}
-            href={"tel:+420777123456"}
+            href={`tel:${tel.replace(/\s/g, "")}`}
             variant={"primary"}
             // animate={{ boxShadow: "0px 0px 10px 0px #1a182b" }}
             // initial={{ boxShadow: "0px 0px 5px 0px #1a182b" }}
@@ -21,7 +21,7 @@ const PhoneNumberButton = ({children, ...props}) => {
             }}
             {...props}
         >
-            {"777 123 456"}
+            {tel}
         </MotionButton>
     );
 };

@@ -9,8 +9,8 @@ const Grid = ({ children, props }) => {
             }}
             templateRows={{ base: "auto", md: "repeat(2, auto)" }}
             minH="75vh"
-            alignItems="center"
-            justifyItems="center"
+            alignItems="start"
+            justifyItems="start"
             {...props}
         >
             {children}

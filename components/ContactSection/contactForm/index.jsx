@@ -24,8 +24,8 @@ const MyFormField = ({ placeholder, label, isTextarea, isRequired, ...props }) =
                 <Textarea
                     id={field.name}
                     placeholder={placeholder || ""}
-                    size="md"
                     resize="vertical"
+                    rows={3}
                     {...field}
                     {...props}
                 />
@@ -45,7 +45,7 @@ const MyFormField = ({ placeholder, label, isTextarea, isRequired, ...props }) =
 const ContactForm = (props) => {
     return (
         <Box {...props}>
-            <Heading>Napište mi</Heading>
+            <Heading mb={3}>Napište mi</Heading>
             <Formik
                 initialValues={{
                     name: "",

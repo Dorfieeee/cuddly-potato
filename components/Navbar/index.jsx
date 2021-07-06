@@ -1,51 +1,12 @@
-import { Box, HStack, Center, IconButton, Icon } from "@chakra-ui/react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { Box, HStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import MobileMenu from "./components/MobileMenu";
 import DesktopMenu from "./components/DesktopMenu";
 import PhoneNumberButton from "./components/PhoneNumberButton";
-import Logo from "../svg/insatalter-logo-horizontal"
-
-const ThemeToggleButton = ({ colorMode, toggleColorMode, ...rest }) => {
-    return (
-        <IconButton
-            aria-label="Toggle theme"
-            border="none"
-            variant={"primary"}
-            onClick={toggleColorMode}
-            icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-        />
-    );
-};
-
-const ToggleButton = ({ toggle, isOpen, ...rest }) => {
-    return (
-        <IconButton
-            aria-label="Open navigation menu"
-            variant={"primary"}
-            border={"none"}
-            size="lg"
-            icon={
-                isOpen ? (
-                    <FaTimes />
-                ) : (
-                    <FaBars />
-                )
-            }
-            onClick={toggle}
-            {...rest}
-        />
-    );
-};
-
-const NavLogo = ({ fill, ...rest }) => {
-    return (
-        <Center h="2.5rem" w="200px" {...rest}>
-            <Logo fill={fill} maxW="100%" maxH="100%" />
-        </Center>
-    );
-};
+import kontakty from "../../public/content/kontakty";
+import NavLogo from "./components/NavLogo";
+import NavToggleButton from "./components/NavToggleButton";
+import ThemeToggleButton from "./components/ThemeToggleButton";
 
 const sidebar = {
     open: (height = 1000) => ({
@@ -74,7 +35,7 @@ const NavBox = motion(Box);
 
 const Navbar = ({
     isOpen,
-    toggleMobileMenu,
+    toggle,
     colorMode,
     toggleColorMode,
     ...rest
@@ -89,13 +50,14 @@ const Navbar = ({
                 boxShadow="dark-lg"
                 zIndex={2}
                 position="relative"
+                bg={colorMode === "light" ? "primary" : "secondary"}
                 {...rest}
             >
                 {/* When user resize screen while mobile menu is opened, the menu button remains visible until closed */}
-                <ToggleButton
+                <NavToggleButton
                     display={{ base: "flex", lg: isOpen ? "flex" : "none" }}
                     isOpen={isOpen}
-                    toggle={toggleMobileMenu}
+                    toggle={toggle}
                 />
                 <NavLogo
                     display={{ base: "none", md: "flex" }}
@@ -111,7 +73,7 @@ const Navbar = ({
                         colorMode={colorMode}
                         toggleColorMode={toggleColorMode}
                     />
-                    <PhoneNumberButton />
+                    <PhoneNumberButton tel={kontakty.tel}/>
                 </HStack>
             </HStack>
 
@@ -127,7 +89,7 @@ const Navbar = ({
                 initial={false}
                 variants={sidebar}
             >
-                <MobileMenu h={"calc(100vh - 5rem)"} />
+                <MobileMenu h={"calc(100vh - 5rem)"} toggle={toggle} />
             </NavBox>
         </>
     );

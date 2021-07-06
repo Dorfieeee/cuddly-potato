@@ -1,6 +1,7 @@
 import { VStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import NavLink from "./NavLink";
+import links from "../../../public/content/links";
 
 const MenuWrapper = motion(VStack);
 
@@ -13,19 +14,22 @@ const variants = {
     },
 };
 
-const MobileMenu = (props) => {
+const MobileMenu = ({toggle, ...rest}) => {
     return (
         <MenuWrapper
             overflowY={"auto"}
             spacing={0}
             variants={variants}
-            {...props}
+            {...rest}
         >
-            <NavLink href={"#"}>Sluzby</NavLink>
-            <NavLink href={"#"}>O mne</NavLink>
-            <NavLink href={"#"}>Kde pusobim</NavLink>
-            <NavLink href={"#"}>Kontakty</NavLink>
-            <NavLink href={"#"}>Havarijni sluzba</NavLink>
+            {Array.from(Object.entries(links.navbar)).map((link, i) => {
+                const { name, href } = link[1];
+                return (
+                    <NavLink key={i} href={href} toggle={toggle}>
+                        {name}
+                    </NavLink>
+                );
+            })}
         </MenuWrapper>
     );
 };

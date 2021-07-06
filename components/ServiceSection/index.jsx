@@ -3,7 +3,7 @@ import Card from "./Card";
 import CardTitle from "./CardTitle";
 import CardContent from "./CardContent";
 import { Heading, Box, GridItem } from "@chakra-ui/react";
-import content from "../../public/content/homepage/sluzby"
+import content from "../../public/content/homepage/sluzby";
 
 const ServiceSection = ({ children, ...props }) => {
     return (
@@ -16,7 +16,7 @@ const ServiceSection = ({ children, ...props }) => {
                     return (
                         <GridItem
                             as="article"
-                            id={item.name}
+                            id={item.name.toLocaleLowerCase()}
                             colStart={{
                                 base: 2,
                                 md: (i + 1) % 2 == 0 ? 4 : 2,
@@ -24,13 +24,8 @@ const ServiceSection = ({ children, ...props }) => {
                             key={i}
                         >
                             <Card key={i}>
-                                <CardTitle
-                                    title={item.name}
-                                    Image={item.img}
-                                />
-                                <CardContent>
-                                    {item.body}
-                                </CardContent>
+                                <CardTitle title={item.name} Image={item.img} />
+                                <CardContent>{item.body}</CardContent>
                             </Card>
                         </GridItem>
                     );
