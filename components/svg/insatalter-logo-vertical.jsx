@@ -5,7 +5,6 @@ const ChakraSVG = chakra("svg");
 const Logo = ({ fill, ...rest }) => {
     return (
         <ChakraSVG
-            id="navbarLogo"
             version="1.1"
             viewBox="0 0 250 166.82"
             sx={{

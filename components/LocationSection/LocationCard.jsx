@@ -1,12 +1,18 @@
 import Image from "next/image";
-import { LinkBox, Center, useTheme, useColorMode, LinkOverlay } from "@chakra-ui/react";
-import NextLink from "next/link"
+import {
+    LinkBox,
+    Center,
+    useTheme,
+    useColorMode,
+    LinkOverlay,
+} from "@chakra-ui/react";
+import NextLink from "next/link";
 import { hexToRGBA } from "../../theme/utils";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
 const LocationCard = ({ children, src, alt, ...props }) => {
     const theme = useTheme();
-    const {colorMode} = useColorMode();
+    const { colorMode } = useColorMode();
 
     return (
         <LinkBox
@@ -27,7 +33,12 @@ const LocationCard = ({ children, src, alt, ...props }) => {
                 "& .content": {
                     transition:
                         "background 1.5s ease, color .75s ease, text-shadow .75s ease",
-                    bg: hexToRGBA(colorMode === "light" ? theme.colors.primary : theme.colors.secondary, 0.7),
+                    bg: hexToRGBA(
+                        colorMode === "light"
+                            ? theme.colors.primary
+                            : theme.colors.secondary,
+                        0.7
+                    ),
                     textShadow: "5px 0px 25px" + "primary",
                 },
                 "&:hover .content": {
@@ -53,11 +64,7 @@ const LocationCard = ({ children, src, alt, ...props }) => {
                 fontSize="2rem"
                 fontWeight="bold"
             >
-                <NextLink href={`\mista\#${children.toLowerCase()}`} passHref>
-                    <LinkOverlay as="a">
-                        {children}
-                    </LinkOverlay>
-                </NextLink>
+                {children}
             </Center>
         </LinkBox>
     );
@@ -65,7 +72,7 @@ const LocationCard = ({ children, src, alt, ...props }) => {
 
 LocationCard.propTypes = {
     src: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired
-}
+    alt: PropTypes.string.isRequired,
+};
 
 export default LocationCard;

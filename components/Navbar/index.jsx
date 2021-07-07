@@ -60,12 +60,15 @@ const Navbar = ({
                     toggle={toggle}
                 />
                 <NavLogo
-                    display={{ base: "none", md: "flex" }}
+                    display="flex"
+                    flexShrink="2"
+                    flexGrow="1"
+                    minW="45px"
                     fill={colorMode === "light" ? "secondary" : "primary"}
                 />
 
                 {/* Navigation visible on large screens */}
-                {!isOpen && <DesktopMenu />}
+                {!isOpen && <DesktopMenu flexGrow="1"/>}
 
                 {/* Right side of navbar */}
                 <HStack spacing={"3"}>

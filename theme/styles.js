@@ -26,6 +26,7 @@ export default {
             ".themeReversedColors": {
                 background: secondary,
                 color: primary,
+                fill: primary,
                 borderColor: primary,
             },
             ".themeDarkColors": {
