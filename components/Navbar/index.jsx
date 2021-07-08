@@ -61,9 +61,11 @@ const Navbar = ({
                 />
                 <NavLogo
                     display="flex"
+                    justifyContent={{ base: "center", lg: "start" }}
                     flexShrink="2"
                     flexGrow="1"
-                    minW="45px"
+                    minW="2em"
+                    margin="0 2em"
                     fill={colorMode === "light" ? "secondary" : "primary"}
                 />
 

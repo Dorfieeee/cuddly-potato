@@ -5,20 +5,16 @@ import {
     VStack,
     Text,
     Box,
-    useColorMode,
     Center,
     Button,
 } from "@chakra-ui/react";
-import Logo from "../components/svg/insatalter-logo-vertical";
 import PlumbersSVG from "../public/svg/plumbers";
-import {ArrowForwardIcon} from "@chakra-ui/icons"
-import NextLink from "next/link"
+import { ArrowForwardIcon } from "@chakra-ui/icons";
+import NextLink from "next/link";
 
 const Paragraph = ({ children }) => <Text maxW="450px">{children}</Text>;
 
 function About({ children, ...rest }) {
-    const { colorMode } = useColorMode();
-
     return (
         <PageLayout title="O nás" {...rest}>
             <Box py={[10, 16]}>
@@ -36,21 +32,9 @@ function About({ children, ...rest }) {
                     >
                         - na které se můžete spolehnout
                     </Heading>
-                    <Center
-                        position={{ base: "relative" }}
-                        left="50%"
-                        transform="translateX(-50%)"
-                        mt={{ base: 3, lg: 10 }}
-                        w="33%"
-                        maxW="250px"
-                    >
-                        <Logo
-                            fill={
-                                colorMode === "light" ? "secondary" : "primary"
-                            }
-                        />
+                    <Center m="3rem auto" maxW="768px">
+                        <PlumbersSVG w="100%" h="100%" />
                     </Center>
-                    <PlumbersSVG w="100%" h="100%" mt={14} />
                 </Header>
                 <VStack
                     as="main"
@@ -85,7 +69,13 @@ function About({ children, ...rest }) {
                         profesionální přístup.
                     </Paragraph>
                     <NextLink href="/" passHref>
-                        <Button as="a" variant="primary" rightIcon={<ArrowForwardIcon />}>Kontaktujte nás</Button>
+                        <Button
+                            as="a"
+                            variant="primary"
+                            rightIcon={<ArrowForwardIcon />}
+                        >
+                            Kontaktujte nás
+                        </Button>
                     </NextLink>
                 </VStack>
             </Box>

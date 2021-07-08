@@ -4,6 +4,7 @@ import CardTitle from "./CardTitle";
 import CardContent from "./CardContent";
 import { Heading, Box, GridItem } from "@chakra-ui/react";
 import content from "../../public/content/homepage/sluzby";
+import links from "../../public/content/links";
 
 const ServiceSection = ({ children, ...props }) => {
     return (
@@ -24,7 +25,7 @@ const ServiceSection = ({ children, ...props }) => {
                             key={i}
                         >
                             <Card key={i}>
-                                <CardTitle title={item.name} Image={item.img} />
+                                <CardTitle title={item.name} href={links.sluzby[item.hrefName].href} Image={item.img} />
                                 <CardContent>{item.body}</CardContent>
                             </Card>
                         </GridItem>

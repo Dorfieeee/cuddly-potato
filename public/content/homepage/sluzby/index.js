@@ -5,6 +5,7 @@ export default {
     sluzby: [
         {
             name: "Voda",
+            hrefName: "voda",
             body: [
                 "Realizujeme montáž, rekonstrukci a opravu vodoinstalace s jejím dodáním",
                 "S radostí namontujeme či vyměníme Vaši vanu, záchod, sprchový kout...",
@@ -18,6 +19,7 @@ export default {
         },
         {
             name: "Topení",
+            hrefName: "topeni",
             body: [
                 "Realizujeme dodávku a montáž ústředního vytápění",
                 "Provádíme montáž kotlů, radiátorů, armatur...",
@@ -29,6 +31,7 @@ export default {
         },
         {
             name: "Plyn",
+            hrefName: "plyn",
             body: [
                 "Realizujeme dodávku a montáž plynoinstalace",
                 "Provádíme montáž plynových kotlů, sporáků a rozvodů...",
@@ -40,6 +43,7 @@ export default {
         },
         {
             name: "Kanalizace",
+            hrefName: "kanalizace",
             body: [
                 "Realizujeme montáže rozvodů kanalizačního potrubí...",
                 "kanalizace venkovní a dešťová",

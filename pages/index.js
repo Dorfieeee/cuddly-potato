@@ -15,7 +15,7 @@ import {
 import LocationSection from "../components/LocationSection";
 import ContactSection from "../components/ContactSection";
 
-const headerImgLoader = (size) => `url("/img/header-bg/${size}.jpg")`;
+const headerImgLoader = (size, color) => `linear-gradient(to right, ${color || "#fff0"} 45%, #fff0), url("/img/header-bg/plumber-${size}.jpg")`;
 import content from "../public/content/homepage/header";
 
 export default function Home() {
@@ -56,12 +56,16 @@ export default function Home() {
                             },
                             bgImg: {
                                 base: () => headerImgLoader("base"),
-                                md: () => headerImgLoader("base"),
-                                lg: () => headerImgLoader("lg"),
+                                md: () => headerImgLoader("md"),
+                                lg: () => headerImgLoader("lg", `var(--chakra-colors-${themeColors.bg})`),
                             },
+                            bgColor: themeColors.bg,
                             backgroundRepeat: "no-repeat",
                             backgroundSize: "cover",
-                            backgroundPositionX: "center",
+                            backgroundPositionX: {
+                                base: "right",
+                                lg: "center",
+                            },
                             backgroundPositionY: "top",
                         },
                     }}
@@ -69,19 +73,11 @@ export default function Home() {
                     <Flex
                         mt={{ lg: "-1rem" }}
                         py={{ base: "5rem", md: "7rem" }}
-                        ml={{ lg: "5%" }}
+                        ml={{ lg: "10%" }}
                         flexDirection="column"
                         minW={{ lg: "40rem" }}
                         minH={{ lg: "calc(100vh - 4rem)" }}
                         w={{ lg: "40%" }}
-                        bg={{
-                            lg:
-                                colorMode === "light"
-                                    ? "primaryAlpha.9"
-                                    : "secondaryAlpha.9",
-                        }}
-                        boxShadow={{ lg: "0 8px 32px 0 rgb(0, 0, 0)" }}
-                        backdropFilter="blur(4px)"
                         borderColor={themeColors.borderColor}
                         color={themeColors.color}
                     >

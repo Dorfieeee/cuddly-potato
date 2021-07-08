@@ -2,23 +2,23 @@ export default {
     sluzby: {
         voda: {
             name: "Voda",
-            href: "/sluzby/voda"
+            href: "/sluzby#voda"
         },
         topeni: {
             name: "Topení",
-            href: "/sluzby/topeni"
+            href: "/sluzby#topeni"
         },
         plyn: {
             name: "Plyn",
-            href: "/sluzby/plyn"
+            href: "/sluzby#plyn"
         },
         kanalizace: {
             name: "Kanalizace",
-            href: "/sluzby/kanalizace"
+            href: "/sluzby#kanalizace"
         },
         havarie: {
             name: "Havarijní servis",
-            href: "/sluzby/havarijni-servis"
+            href: "/havarijni-servis"
         },
     },
     navbar: {
@@ -32,7 +32,7 @@ export default {
         },
         mista: {
             name: "Kde působíme",
-            href: "/mista"
+            href: "/kde-pusobime"
         },
         reference: {
             name: "Reference",
@@ -44,7 +44,7 @@ export default {
         },
         havarie: {
             name: "Havarijní servis",
-            href: "/sluzby/havarijni-servis"
+            href: "/havarijni-servis"
         },
     },
 }
