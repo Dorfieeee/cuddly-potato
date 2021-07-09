@@ -6,6 +6,10 @@ export default {
         street: "Street",
         city: "City",
         code: "AB1 23",
+        geo: {
+            lat: 49.394496117194144,
+            lng: 16.626649721835193,
+        },
     },
     ico: {
         value: "27643263",

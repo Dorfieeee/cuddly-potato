@@ -1,24 +1,29 @@
 import { Button } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { FaPhoneVolume } from "react-icons/fa"
+import { FaPhoneVolume } from "react-icons/fa";
 
 const MotionButton = motion(Button);
 
-const PhoneNumberButton = ({children, tel, ...props}) => {
+const ring = {
+    rotateZ: [0, 8, -8, 8, -8, 0],
+    transition: {
+        duration: 1,
+        repeat: Infinity,
+        repeatDelay: 10,
+        times: [0, 0.2, 0.4, 0.6, 0.8, 1],
+        delay: 5,
+    },
+};
+
+const PhoneNumberButton = ({ children, tel, ...props }) => {
     return (
         <MotionButton
             as={"a"}
             size="lg"
-            leftIcon={<FaPhoneVolume />}
+            leftIcon={<FaPhoneVolume size={20} />}
             href={`tel:${tel.replace(/\s/g, "")}`}
             variant={"primary"}
-            // animate={{ boxShadow: "0px 0px 10px 0px #1a182b" }}
-            // initial={{ boxShadow: "0px 0px 5px 0px #1a182b" }}
-            transition={{
-                duration: 1,
-                repeat: Infinity,
-                repeatType: "reverse",
-            }}
+            animate={{}}
             {...props}
         >
             {tel}

@@ -1,6 +1,5 @@
 import { mode } from "@chakra-ui/theme-tools";
 import theme from "./theme";
-import { hexToRGBA } from "./utils";
 
 export default {
     global: (props) => {

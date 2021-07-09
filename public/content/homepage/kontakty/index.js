@@ -10,7 +10,7 @@ import kontakty from "../../kontakty";
 const { address, tel, email } = kontakty;
 
 export default {
-    id: "Kontakty",
+    id: "kontakty",
     title: "Jak se můžeme spojit",
     kontakty: {
         title: "Moje vizitka",

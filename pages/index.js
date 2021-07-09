@@ -1,6 +1,5 @@
-import Head from "next/head";
-import Layout from "../components/Layout";
-import Header from "../components/Header"
+import PageLayout from "../components/PageLayout";
+import Header from "../components/Header";
 import ServiceSection from "../components/ServiceSection";
 import PageDivider from "../components/dividers/PageDivider";
 import {
@@ -10,16 +9,28 @@ import {
     VStack,
     Flex,
     useColorMode,
-    Box
+    Box,
 } from "@chakra-ui/react";
 import LocationSection from "../components/LocationSection";
 import ContactSection from "../components/ContactSection";
-
-const headerImgLoader = (size, color) => `linear-gradient(to right, ${color || "#fff0"} 45%, #fff0), url("/img/header-bg/plumber-${size}.jpg")`;
 import content from "../public/content/homepage/header";
 
+const headerImgLoader = (size, color) =>
+    `linear-gradient(to right, ${
+        color || "#fff0"
+    } 45%, #fff0), url("/img/header-bg/plumber-${size}.jpg")`;
+
+const scrollSmoothlyTo = (e, selector) => {
+    e.preventDefault();
+    window.scrollTo({
+        left: 0,
+        top: document.querySelector(selector).getBoundingClientRect().top,
+        behavior: "smooth",
+    });
+};
+
 export default function Home() {
-    const {colorMode} = useColorMode();
+    const { colorMode } = useColorMode();
 
     const themeColors = {
         bg: colorMode === "light" ? "primary" : "secondary",
@@ -27,21 +38,12 @@ export default function Home() {
         borderColor: colorMode === "light" ? "secondary" : "primary",
     };
 
-    const scrollSmoothlyTo = (e, selector) => {
-        e.preventDefault();
-        window.scrollTo({
-            left: 0,
-            top: document.querySelector(selector).getBoundingClientRect().top,
-            behavior: "smooth",
-        });
-    };
-
     return (
         <>
-            <Head>
-                <title>Voda•Topeni•Plyn | Instalater</title>
-            </Head>
-            <Layout>
+            <PageLayout
+                title="Instalatér v okolí Blanska | Voda•Topení•Plyn"
+                description={`Hledáte spolehlivého instalatéra v okolí Blanska? Naše firma provádí kompletní práce v oboru voda, topení a plyn. 30+ let zkušeností a 1000+ provedených projektů.`}
+            >
                 <Header
                     _before={{
                         base: {
@@ -57,7 +59,11 @@ export default function Home() {
                             bgImg: {
                                 base: () => headerImgLoader("base"),
                                 md: () => headerImgLoader("md"),
-                                lg: () => headerImgLoader("lg", `var(--chakra-colors-${themeColors.bg})`),
+                                lg: () =>
+                                    headerImgLoader(
+                                        "lg",
+                                        `var(--chakra-colors-${themeColors.bg})`
+                                    ),
                             },
                             bgColor: themeColors.bg,
                             backgroundRepeat: "no-repeat",
@@ -131,7 +137,10 @@ export default function Home() {
                             >
                                 <Button
                                     as="a"
-                                    href="#"
+                                    href="#kontakty"
+                                    onClick={(e) =>
+                                        scrollSmoothlyTo(e, "#kontakty")
+                                    }
                                     fontSize="large"
                                     h={["2.5rem", "3rem"]}
                                     w={"12rem"}
@@ -169,7 +178,7 @@ export default function Home() {
                 />
                 <LocationSection />
                 <ContactSection />
-            </Layout>
+            </PageLayout>
         </>
     );
 }

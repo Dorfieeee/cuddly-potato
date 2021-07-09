@@ -18,6 +18,7 @@ const DesktopMenu = (props) => {
     return (
         <HStack
             display={{ base: "none", lg: "flex" }}
+            justifyContent="center"
             spacing={{ base: 3, xl: 6 }}
             flexShrink={0}
             {...props}

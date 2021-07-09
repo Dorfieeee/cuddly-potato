@@ -12,27 +12,27 @@ const NavLogo = ({ fill, ...rest }) => {
     });
 
     return (
-        <NextLink passHref href="/">
-            <Box {...rest}>
-                <Link>
-                        {isSmallLogo ? (
-                            <SmallLogo
-                                fill={fill}
-                                maxW="100%"
-                                maxH="100%"
-                                w="2em"
-                                h="2em"
-                            />
-                        ) : (
-                            <LargeLogo
-                                fill={fill}
-                                maxW="100%"
-                                maxH="100%"
-                                h="2em"
-                            />
-                        )}
+        <NextLink href="/">
+                <Link href="/" aria-label="Domu" display="block" {...rest}>
+                    {isSmallLogo ? (
+                        <SmallLogo
+                            fill={fill}
+                            maxW="100%"
+                            maxH="100%"
+                            w="2em"
+                            h="2em"
+                            aria-label="Logo - Rosendorf"
+                        />
+                    ) : (
+                        <LargeLogo
+                            fill={fill}
+                            maxW="100%"
+                            maxH="100%"
+                            h="2em"
+                            aria-label="Logo - Rosendorf"
+                        />
+                    )}
                 </Link>
-            </Box>
         </NextLink>
     );
 };
