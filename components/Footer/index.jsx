@@ -9,9 +9,11 @@ import {
     ListItem,
     ListIcon,
     Box,
+    Image
 } from "@chakra-ui/react";
-import Image from "next/image";
 import { FaPhoneAlt, FaAt } from "react-icons/fa";
+import kontakty from "../../public/content/kontakty";
+import links from "../../public/content/links";
 
 const Wrapper = ({ children, ...props }) => (
     <Box {...props}>
@@ -44,63 +46,63 @@ const Footer = ({ children, ...props }) => {
                 >
                     <Column title="Kontakty">
                         <Text as="address">
-                            Váš Instalatér
-                            {/* <br />
-                            Spešov 33
+                            {kontakty.brandName}
                             <br />
-                            Rájec-Jestřebí
+                            {kontakty.address.street}
                             <br />
-                            679 02
-                            <br /> */}
+                            {kontakty.address.city}
                             <br />
-                            Street
-                            <br />
-                            City
-                            <br />
-                            AB1 23
+                            {kontakty.address.code}
                             <br />
                             <List>
                                 <ListItem>
                                     <ListIcon as={FaPhoneAlt} />
-                                    <Link href="tel:+420777123456" pl={2}>
-                                        777 123 456
+                                    <Link href={`tel:${kontakty.tel.replace(/\s+/g, "")}`} pl={2}>
+                                        {kontakty.tel}
                                     </Link>
                                 </ListItem>
                                 <ListItem>
                                     <ListIcon as={FaAt} />
                                     <Link
-                                        href="mailto:example@gmail.com"
+                                        href={`mailto:${kontakty.email}`}
                                         pl={2}
                                     >
-                                        example@gmail.com
+                                        {kontakty.email}
                                     </Link>
                                 </ListItem>
                             </List>
                         </Text>
                     </Column>
 
-                    <Column title="Mapa" maxW="350px">
-                        <Image
-                            src="/img/footer-map.png"
-                            width="300px"
-                            height="300px"
-                        />
+                    <Column title="Recenze" maxW="350px">
+                        <Box>
+                            <Link
+                                href="https://www.firmy.cz/detail/13323681-rosendorf-voda-topeni-plyn-spesov.html#hodnoceni"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <Image
+                                    src="https://www.firmy.cz/img-stars/dark-13323681.svg"
+                                    alt="Rosendorf Voda - Topení - Plyn na Firmy.cz"
+                                />
+                            </Link>
+                        </Box>
                     </Column>
 
                     <Column as="nav" title="Služby">
-                        <Link href="#">Voda</Link>
-                        <Link href="#">Topení</Link>
-                        <Link href="#">Plyn</Link>
-                        <Link href="#">Kanalizace</Link>
-                        <Link href="#">Havarijní servis</Link>
+                        <Link href={links.sluzby.voda.href}>{links.sluzby.voda.name}</Link>
+                        <Link href={links.sluzby.topeni.href}>{links.sluzby.topeni.name}</Link>
+                        <Link href={links.sluzby.plyn.href}>{links.sluzby.plyn.name}</Link>
+                        <Link href={links.sluzby.kanalizace.href}>{links.sluzby.kanalizace.name}</Link>
+                        <Link href={links.sluzby.havarie.href}>{links.sluzby.havarie.name}</Link>
                     </Column>
 
                     <Column as="nav" title="Odkazy">
-                        <Link href="#">Služby</Link>
-                        <Link href="#">O mně</Link>
-                        <Link href="#">Kde působím</Link>
-                        <Link href="#">Kontakty</Link>
-                        <Link href="#">Havarijní servis</Link>
+                        <Link href={links.navbar.onas.href}>{links.navbar.onas.name}</Link>
+                        <Link href={links.navbar.sluzby.href}>{links.navbar.sluzby.name}</Link>
+                        <Link href={links.navbar.mista.href}>{links.navbar.mista.name}</Link>
+                        <Link href={links.navbar.reference.href}>{links.navbar.reference.name}</Link>
+                        <Link href={links.navbar.kontakty.href}>{links.navbar.kontakty.name}</Link>
                         <Link href="#">Privacy Policy</Link>
                         <Link href="#">Cookie Policy</Link>
                         <Link href="#">GDPR</Link>
@@ -111,7 +113,7 @@ const Footer = ({ children, ...props }) => {
             <Wrapper borderTop="2px solid">
                 <Flex justifyContent="space-between" py={2} flexWrap={"wrap"}>
                     <Text as="span" flex="1 1 300px" textAlign="center">
-                        Copyright © 2021-{year} Váš Instalatér
+                        Copyright © 2021-{year} {kontakty.brandName}
                     </Text>
                     <Text as="span" flex="1 1 300px" textAlign="center">
                         Web-design {"&"} SEO {"| "}

@@ -45,7 +45,7 @@ const MyFormField = ({ placeholder, label, isTextarea, isRequired, ...props }) =
 const ContactForm = (props) => {
     return (
         <Box {...props}>
-            <Heading mb={3}>Napište mi</Heading>
+            <Heading mb={3}>Napište nám</Heading>
             <Formik
                 initialValues={{
                     name: "",

@@ -1,12 +1,12 @@
 export default {
     brandName: "Rosendorf",
     brandSlogan: "Voda-Topení-Plyn",
-    title: "Vaši Instalatéri",
-    phone: "777 123 456",
-    email: "example@example.com",
+    title: "Vaši Instalatéři",
+    phone: "777 100 103",
+    email: "rosendorf.instalater@gmail.com",
     text: [
-        "Zabyvame se vodarskou, topenarskou a plynarskou cinnosti.",
-        "Pracujeme na projektech od drobnych montazi a oprav az po kompletni realizaci rozvodu.",
-        "Mame vice jak 30 let zkusenosti v oboru."
+        "Zabýváme se vodařskou, topenářskou a plynařskou činností.",
+        "Pracujeme na projektech od drobných montáží a oprav po kompletní realizace rozvodů.",
+        "Máme za sebou více jak 3O let zkušeností v oboru"
     ]
 }

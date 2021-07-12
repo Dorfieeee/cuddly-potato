@@ -26,7 +26,7 @@ const LocationSection = () => {
     return (
         <Box as="section" id="lokality" minH="45vh" px="5%" mb={5}>
             <Heading textAlign="center" py="5">
-                Kde všude působím
+                Kde všude působíme
             </Heading>
             <Flex
                 flexDirection={{ base: "column", xl: "row" }}

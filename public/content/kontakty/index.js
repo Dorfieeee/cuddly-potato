@@ -1,11 +1,11 @@
 export default {
-    brandName: "BrandName",
-    tel: "777 123 456",
-    email: "example@example.com",
+    brandName: "Rosendorf",
+    tel: "777 100 103",
+    email: "rosendorf.instalater@gmail.com",
     address: {
-        street: "Street",
-        city: "City",
-        code: "AB1 23",
+        street: "Spešov 33",
+        city: "Spešov",
+        code: "679 02",
         geo: {
             lat: 49.394496117194144,
             lng: 16.626649721835193,
@@ -17,8 +17,8 @@ export default {
     },
     persons: {
         main: {
-            fname: "John",
-            lname: "Longerdoe",
+            fname: "Josef",
+            lname: "Rosendorf",
         },
     },
 };
