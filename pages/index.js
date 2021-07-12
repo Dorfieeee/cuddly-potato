@@ -42,7 +42,7 @@ export default function Home() {
         <>
             <PageLayout
                 title="Instalatér v okolí Blanska | Voda•Topení•Plyn"
-                description={`Hledáte spolehlivého instalatéra v okolí Blanska? Naše firma provádí kompletní práce v oboru voda, topení a plyn. 30+ let zkušeností a 1000+ provedených projektů.`}
+                description={`Hledáte spolehlivého instalatéra v okolí Blanska? Naše firma provádí kompletní práce v oboru instalatérství a topenářství. 30+ let zkušeností a 1000+ provedených projektů.`}
             >
                 <Header
                     _before={{
