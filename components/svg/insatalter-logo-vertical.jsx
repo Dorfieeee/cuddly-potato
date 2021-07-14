@@ -5,6 +5,7 @@ const ChakraSVG = chakra("svg");
 const Logo = ({ fill, ...rest }) => {
     return (
         <ChakraSVG
+            xmlns="http://www.w3.org/2000/svg"
             version="1.1"
             viewBox="0 0 250 166.82"
             sx={{
