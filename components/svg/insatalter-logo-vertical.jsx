@@ -7,6 +7,8 @@ const Logo = ({ fill, ...rest }) => {
         <ChakraSVG
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
+            width="250px"
+            height="167px"
             viewBox="0 0 250 166.82"
             sx={{
                 "& > g": {

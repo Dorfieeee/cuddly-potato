@@ -9,8 +9,6 @@ import {
     Box,
     useColorMode,
 } from "@chakra-ui/react";
-import PlumbersSVG from "../components/svg/plumbers";
-import PlumberRepair from "../components/svg/plumber-repair";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import links from "../public/content/links";
@@ -18,7 +16,6 @@ import MainHeading from "../components/headings/MainHeading";
 import RightSideSvg from "../components/svg/repairman/right";
 import LeftSideSvg from "../components/svg/repairman/left";
 import FloorSvg from "../components/svg/repairman/floor";
-import PipesSvg from "../components/svg/repairman/pipes";
 
 const Paragraph = ({ children }) => <Text maxW="450px">{children}</Text>;
 
@@ -144,6 +141,7 @@ function About({ children, ...rest }) {
                                     variant="primary"
                                     rightIcon={<ArrowForwardIcon />}
                                     zIndex="docked"
+                                    size="lg"
                                 >
                                     Kontaktujte nás
                                 </Button>
