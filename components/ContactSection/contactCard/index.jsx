@@ -55,9 +55,9 @@ const ContactCard = ({ content, ...rest }) => {
                             {telefon.value}
                         </Link>
                     </ListItem>
-                    <ListItem>
+                    <ListItem display="flex" flexWrap="nowrap">
                         <MyListIcon as={email.icon} label="Email" />
-                        <Link href={"mailto:" + email.value}>
+                        <Link href={"mailto:" + email.value} wordBreak="break-word">
                             {email.value}
                         </Link>
                     </ListItem>

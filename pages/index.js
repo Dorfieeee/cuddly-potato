@@ -147,7 +147,7 @@ export default function Home() {
                                     variant="primary"
                                     mb={{ base: "3", md: "0" }}
                                 >
-                                    Poptat sluzby nyni
+                                    Poptat služby nyní
                                 </Button>
                                 <Button
                                     as="a"
@@ -160,7 +160,7 @@ export default function Home() {
                                     w={"12rem"}
                                     variant="primary"
                                 >
-                                    Dozvedet se vice
+                                    Dozvědět se více
                                 </Button>
                             </Flex>
                         </Box>

@@ -9,11 +9,13 @@ import {
     ListItem,
     ListIcon,
     Box,
-    Image
+    Image,
 } from "@chakra-ui/react";
 import { FaPhoneAlt, FaAt } from "react-icons/fa";
 import kontakty from "../../public/content/kontakty";
 import links from "../../public/content/links";
+import GoogleLogo from "../svg/google-logo-long";
+import SOSLogo from "../svg/starOfService-logo-long";
 
 const Wrapper = ({ children, ...props }) => (
     <Box {...props}>
@@ -57,7 +59,13 @@ const Footer = ({ children, ...props }) => {
                             <List>
                                 <ListItem>
                                     <ListIcon as={FaPhoneAlt} />
-                                    <Link href={`tel:${kontakty.tel.replace(/\s+/g, "")}`} pl={2}>
+                                    <Link
+                                        href={`tel:${kontakty.tel.replace(
+                                            /\s+/g,
+                                            ""
+                                        )}`}
+                                        pl={2}
+                                    >
                                         {kontakty.tel}
                                     </Link>
                                 </ListItem>
@@ -74,12 +82,13 @@ const Footer = ({ children, ...props }) => {
                         </Text>
                     </Column>
 
-                    <Column title="Recenze" maxW="350px">
+                    <Column title="Síť portálů" maxW="350px" spacing={5}>
                         <Box>
                             <Link
                                 href="https://www.firmy.cz/detail/13323681-rosendorf-voda-topeni-plyn-spesov.html#hodnoceni"
                                 target="_blank"
                                 rel="noopener"
+                                isExternal
                             >
                                 <Image
                                     src="https://www.firmy.cz/img-stars/dark-13323681.svg"
@@ -87,22 +96,58 @@ const Footer = ({ children, ...props }) => {
                                 />
                             </Link>
                         </Box>
+                        <Link
+                            href="https://g.page/r/CR1MNZM0YC9UEBA"
+                            target="_blank"
+                            rel="noopener"
+                            isExternal
+                        >
+                            <GoogleLogo />
+                        </Link>
+                        <Link
+                            href="https://www.starofservice.cz/profesional/instalaterstvi/spesov/440109853"
+                            target="_blank"
+                            rel="noopener"
+                            isExternal
+                        >
+                            <SOSLogo />
+                        </Link>
                     </Column>
 
                     <Column as="nav" title="Služby">
-                        <Link href={links.sluzby.voda.href}>{links.sluzby.voda.name}</Link>
-                        <Link href={links.sluzby.topeni.href}>{links.sluzby.topeni.name}</Link>
-                        <Link href={links.sluzby.plyn.href}>{links.sluzby.plyn.name}</Link>
-                        <Link href={links.sluzby.kanalizace.href}>{links.sluzby.kanalizace.name}</Link>
-                        <Link href={links.sluzby.havarie.href}>{links.sluzby.havarie.name}</Link>
+                        <Link href={links.sluzby.voda.href}>
+                            {links.sluzby.voda.name}
+                        </Link>
+                        <Link href={links.sluzby.topeni.href}>
+                            {links.sluzby.topeni.name}
+                        </Link>
+                        <Link href={links.sluzby.plyn.href}>
+                            {links.sluzby.plyn.name}
+                        </Link>
+                        <Link href={links.sluzby.kanalizace.href}>
+                            {links.sluzby.kanalizace.name}
+                        </Link>
+                        <Link href={links.sluzby.havarie.href}>
+                            {links.sluzby.havarie.name}
+                        </Link>
                     </Column>
 
                     <Column as="nav" title="Odkazy">
-                        <Link href={links.navbar.onas.href}>{links.navbar.onas.name}</Link>
-                        <Link href={links.navbar.sluzby.href}>{links.navbar.sluzby.name}</Link>
-                        <Link href={links.navbar.mista.href}>{links.navbar.mista.name}</Link>
-                        <Link href={links.navbar.reference.href}>{links.navbar.reference.name}</Link>
-                        <Link href={links.navbar.kontakty.href}>{links.navbar.kontakty.name}</Link>
+                        <Link href={links.navbar.onas.href}>
+                            {links.navbar.onas.name}
+                        </Link>
+                        <Link href={links.navbar.sluzby.href}>
+                            {links.navbar.sluzby.name}
+                        </Link>
+                        <Link href={links.navbar.mista.href}>
+                            {links.navbar.mista.name}
+                        </Link>
+                        <Link href={links.navbar.reference.href}>
+                            {links.navbar.reference.name}
+                        </Link>
+                        <Link href={links.navbar.kontakty.href}>
+                            {links.navbar.kontakty.name}
+                        </Link>
                         <Link href="#">Privacy Policy</Link>
                         <Link href="#">Cookie Policy</Link>
                         <Link href="#">GDPR</Link>

@@ -12,8 +12,8 @@ export default {
         },
     },
     ico: {
-        value: "27643263",
-        link: "https://www.google.com/search?q=I%C4%8CO+27643263",
+        value: "43361676",
+        link: "http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_res.cgi?ico=43361676&jazyk=cz&xml=1",
     },
     persons: {
         main: {
