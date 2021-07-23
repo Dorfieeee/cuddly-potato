@@ -1,8 +1,28 @@
-import { HStack, Center, Heading } from "@chakra-ui/react";
-import { motion, useCycle } from "framer-motion";
+import { HStack, VStack, Center, Heading, Button } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import NextLink from "next/link";
 
 const MotionCenter = motion(Center);
+
+const ImageWrapper = ({ children, ...props }) => (
+    <MotionCenter
+        as="a"
+        w="75px"
+        h="75px"
+        mb={3}
+        animate={{}}
+        whileHover={{
+            scale: 1.2,
+            transition: { duration: 0.3 },
+        }}
+        whileTap={{
+            scale: 0.8,
+        }}
+        {...props}
+    >
+        {children}
+    </MotionCenter>
+);
 
 const pulse = {
     scale: [1, 1.1, 1.03, 1.12, 1, 1],
@@ -15,29 +35,26 @@ const pulse = {
     },
 };
 
-const CardTitle = ({ Image, title, href, children, ...rest }) => {
+const CardTitle = ({ title, href, children, vertical, ...rest }) => {
+    const Container = ({ children, ...props }) =>
+        vertical ? (
+            <VStack {...props}>{children}</VStack>
+        ) : (
+            <HStack {...props}>{children}</HStack>
+        );
+
     return (
-        <HStack spacing={8} w="100%" {...rest}>
-            <NextLink href={href} passHref>
-                <MotionCenter
-                    as="a"
-                    w="75px"
-                    h="75px"
-                    mb={3}
-                    animate={{}}
-                    whileHover={{
-                        scale: 1.2,
-                        transition: { duration: 0.3 },
-                    }}
-                    whileTap={{
-                        scale: 0.8,
-                    }}
-                >
-                    <Image />
-                </MotionCenter>
-            </NextLink>
+        <Container w="100%" {...rest}>
+            {href ? (
+                <NextLink href={href} passHref>
+                    <ImageWrapper >{children}</ImageWrapper>
+                </NextLink>
+            ) : (
+                <ImageWrapper as="button">{children}</ImageWrapper>
+            )}
+
             <Heading>{title}</Heading>
-        </HStack>
+        </Container>
     );
 };
 

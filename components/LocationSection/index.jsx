@@ -1,5 +1,5 @@
 import { Flex, Heading, Box, useBreakpointValue } from "@chakra-ui/react";
-import LocationCard from "./LocationCard";
+import ImageCard from "./ImageCard";
 
 const locations = [
     { name: "Blansko", title: "Blanensko" },
@@ -39,9 +39,22 @@ const LocationSection = () => {
                     const alt = addPrefix(name),
                         src = imgLoader(name);
                     return (
-                        <LocationCard key={name} src={src} alt={alt}>
-                            {title}
-                        </LocationCard>
+                        <ImageCard
+                            key={name}
+                            text={title}
+                            src={src}
+                            alt={alt}
+                            clipPath="circle(65% at center center)"
+                            minW={{ base: "250px" }}
+                            minH={{ base: "100px", md: "150px" }}
+                            maxW={{
+                                base: "100%",
+                                md: "75%",
+                                lg: "66%",
+                                xl: "33%",
+                            }}
+                            flexGrow="1"
+                        />
                     );
                 })}
             </Flex>

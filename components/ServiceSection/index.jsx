@@ -25,7 +25,13 @@ const ServiceSection = ({ children, ...props }) => {
                             key={i}
                         >
                             <Card key={i}>
-                                <CardTitle title={item.name} href={links.sluzby[item.hrefName].href} Image={item.img} />
+                                <CardTitle
+                                    title={item.name}
+                                    href={links.sluzby[item.hrefName].href}
+                                    spacing={8}
+                                >
+                                    {item.img}
+                                </CardTitle>
                                 <CardContent>{item.body}</CardContent>
                             </Card>
                         </GridItem>

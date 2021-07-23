@@ -80,7 +80,7 @@ function About({ children, ...rest }) {
                             boxShadow: "dark-lg",
                         }}
                         sx={{
-                            "& > :not(:first-child):before": {
+                            "& > :not(:first-of-type):before": {
                                 content: "''",
                                 pos: "relative",
                                 h: "1px",

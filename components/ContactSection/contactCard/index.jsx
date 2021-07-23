@@ -34,7 +34,7 @@ const ContactCard = ({ content, ...rest }) => {
                 {title}
             </Heading>
             <chakra.hr my={3} borderTop="1px solid" />
-            <SimpleGrid spacing={10} columns={{ base: 1, md: 2 }}>
+            <SimpleGrid spacing={10} columns={{ base: 1, md: 2 }} gridTemplateColumns={{base: "minmax(0, 1fr)", md: "minmax(0, 1fr) max-content"}}>
                 <Center>
                     <Logo maxW="250px" />
                 </Center>

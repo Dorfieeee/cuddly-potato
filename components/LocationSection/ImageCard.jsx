@@ -4,25 +4,20 @@ import {
     Center,
     useTheme,
     useColorMode,
-    LinkOverlay,
 } from "@chakra-ui/react";
-import NextLink from "next/link";
 import { hexToRGBA } from "../../theme/utils";
 import PropTypes from "prop-types";
 
-const LocationCard = ({ children, src, alt, ...props }) => {
+const ImageCard = ({ text, src, alt, ...props }) => {
     const theme = useTheme();
     const { colorMode } = useColorMode();
 
     return (
         <LinkBox
             position="relative"
-            w="100%"
-            minW={{ base: "250px" }}
-            minH={{ base: "100px", md: "150px" }}
-            flexGrow="1"
-            clipPath="circle(65% at center center)"
-            maxW={{ base: "100%", md: "75%", lg: "66%", xl: "33%" }}
+            w="100%"     
+            h="100%"
+            fontSize="2rem"
             sx={{
                 "& img": {
                     transition: "transform 3s ease",
@@ -61,18 +56,17 @@ const LocationCard = ({ children, src, alt, ...props }) => {
                 position="absolute"
                 w="100%"
                 h="100%"
-                fontSize="2rem"
                 fontWeight="bold"
             >
-                {children}
+                {text}
             </Center>
         </LinkBox>
     );
 };
 
-LocationCard.propTypes = {
+ImageCard.propTypes = {
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
 };
 
-export default LocationCard;
+export default ImageCard;

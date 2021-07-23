@@ -32,14 +32,7 @@ export default {
                 background: "secondary",
                 color: "primary",
                 borderColor: "primary",
-            }
-            // Service section is always dark
-            // ".svg-circle-border": {
-            //     fill: secondary,
-            // },
-            // ".svg-white-part": {
-            //     fill: secondary
-            // },
+            },
         };
     },
 };

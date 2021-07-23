@@ -2,16 +2,16 @@ import PageLayout from "../components/PageLayout";
 import Header from "../components/Header";
 import {Heading} from "@chakra-ui/react"
 
-function Reference() {
+function UkazkyPrace() {
     return (
-        <PageLayout title="Reference">
+        <PageLayout title="Ukázky práce">
             <Header>
                 <Heading as="h1">
-                    Reference
+                    Ukázky práce
                 </Heading>
             </Header>
         </PageLayout>
     );
 }
 
-export default Reference;
+export default UkazkyPrace;

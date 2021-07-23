@@ -35,14 +35,30 @@ const Column = ({ children, title, ...props }) => (
 const Footer = ({ children, ...props }) => {
     const year = new Date().getFullYear();
 
+    const linkTemplate = (link, i) => {
+        const { name, href } = link[1];
+        return (
+            <Link key={i} href={href}>
+                {name}
+            </Link>
+        );
+    };
+
+    const getOdkazyLinks = () =>
+        Array.from(Object.entries(links.navbar))
+            .concat(Array.from(Object.entries(links.policies)))
+            .map(linkTemplate);
+
+    const getSluzbyLinks = () =>
+        Array.from(Object.entries(links.sluzby)).map(linkTemplate);
+
     return (
         <Box as="footer" {...props} className="themeDarkColors">
-            <Wrapper>
+            <Wrapper maxW="1240px" m="0 auto">
                 <Grid
                     gridTemplateColumns={{
-                        base: "minmax(25ch, 1fr)",
-                        md: "repeat(2, minmax(25ch, 1fr))",
-                        lg: "repeat(4, minmax(25ch, 1fr))",
+                        base: "repeat(2, minmax(125px, 1fr))",
+                        lg: "minmax(35ch, 350px) repeat(3, minmax(25ch, 350px))",
                     }}
                     py={8}
                 >
@@ -115,42 +131,11 @@ const Footer = ({ children, ...props }) => {
                     </Column>
 
                     <Column as="nav" title="Služby">
-                        <Link href={links.sluzby.voda.href}>
-                            {links.sluzby.voda.name}
-                        </Link>
-                        <Link href={links.sluzby.topeni.href}>
-                            {links.sluzby.topeni.name}
-                        </Link>
-                        <Link href={links.sluzby.plyn.href}>
-                            {links.sluzby.plyn.name}
-                        </Link>
-                        <Link href={links.sluzby.kanalizace.href}>
-                            {links.sluzby.kanalizace.name}
-                        </Link>
-                        <Link href={links.sluzby.havarie.href}>
-                            {links.sluzby.havarie.name}
-                        </Link>
+                        {getSluzbyLinks()}
                     </Column>
 
                     <Column as="nav" title="Odkazy">
-                        <Link href={links.navbar.onas.href}>
-                            {links.navbar.onas.name}
-                        </Link>
-                        <Link href={links.navbar.sluzby.href}>
-                            {links.navbar.sluzby.name}
-                        </Link>
-                        <Link href={links.navbar.mista.href}>
-                            {links.navbar.mista.name}
-                        </Link>
-                        <Link href={links.navbar.reference.href}>
-                            {links.navbar.reference.name}
-                        </Link>
-                        <Link href={links.navbar.kontakty.href}>
-                            {links.navbar.kontakty.name}
-                        </Link>
-                        <Link href="#">Privacy Policy</Link>
-                        <Link href="#">Cookie Policy</Link>
-                        <Link href="#">GDPR</Link>
+                        {getOdkazyLinks()}
                     </Column>
                 </Grid>
             </Wrapper>

@@ -1,4 +1,6 @@
 import images from "./svg";
+const {Water, Heating, Gas, Drainage} = images
+
 
 export default {
     title: "V čem se specializujeme",
@@ -15,7 +17,7 @@ export default {
                 "moduly pro závěsné WC ",
                 "pisoáry",
             ],
-            img: images.Water,
+            img: <Water />,
         },
         {
             name: "Topení",
@@ -27,7 +29,7 @@ export default {
                 "kotelny, výměníkové stanice",
                 "podlahové vytápění",
             ],
-            img: images.Heating,
+            img: <Heating />,
         },
         {
             name: "Plyn",
@@ -39,7 +41,7 @@ export default {
                 "plynofikace obcí",
                 "revize"
             ],
-            img: images.Gas,
+            img: <Gas />,
         },
         {
             name: "Kanalizace",
@@ -52,7 +54,7 @@ export default {
                 "čištění kanalizace ",
                 "výkopové práce ",
             ],
-            img: images.Drainage,
+            img: <Drainage />,
         },
     ],
 };

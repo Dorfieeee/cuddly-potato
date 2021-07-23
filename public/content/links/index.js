@@ -18,7 +18,7 @@ export default {
         },
         havarie: {
             name: "Havarijní servis",
-            href: "/havarijni-servis"
+            href: "/sluzby#havarijni-servis"
         },
     },
     navbar: {
@@ -35,16 +35,18 @@ export default {
             href: "/kde-pusobime"
         },
         reference: {
-            name: "Reference",
-            href: "/reference"
+            name: "Ukázky práce",
+            href: "/ukazky-prace"
         },
         kontakty: {
             name: "Kontakty",
             href: "/kontakty"
         },
-        havarie: {
-            name: "Havarijní servis",
-            href: "/havarijni-servis"
-        },
     },
+    policies: {
+        privacy: {
+            name: "Ochrana údajů",
+            href: "/ochrana-udaju"
+        },
+    }
 }
