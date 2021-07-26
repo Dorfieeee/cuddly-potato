@@ -23,6 +23,7 @@ function Kontakty({ apiKey }) {
                 justify="center"
                 alignItems={{ base: "center", xl: "start" }}
                 flexDirection={{ base: "column", xl: "row" }}
+                px="5%"
             >
                 <ContactCard
                     shadow="xl"

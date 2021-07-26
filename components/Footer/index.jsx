@@ -141,7 +141,7 @@ const Footer = ({ children, ...props }) => {
             </Wrapper>
 
             <Wrapper  borderTop="2px solid">
-                <Flex maxW="1240px" m="0 auto" justifyContent="space-between" py={2} flexWrap={"wrap"}>
+                <Flex maxW="768px" m="0 auto" justifyContent="space-between" py={2} flexWrap={"wrap"}>
                     <Text as="span" flex="1 1 300px" textAlign="center">
                         Copyright © 2021-{year} {kontakty.brandName}
                     </Text>

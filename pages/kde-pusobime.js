@@ -1,55 +1,86 @@
 import PageLayout from "../components/PageLayout";
 import Header from "../components/Header";
-import { Heading, List, ListItem } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
+import MainHeading from "../components/headings/MainHeading";
+import GoogleMap from "../components/GoogleMap";
+import { Marker, Circle } from "@react-google-maps/api";
+import kontakty from "../public/content/kontakty";
+import brandLogo from "../components/svg/instalater-logo-house-path";
+import AutoComplete from "../components/AutoComplete";
 
-function KdePusobime({ locations }) {
+function KdePusobime({ locations, mapsApiKey }) {
+    const options = locations.map(loc => loc.name);
+
     return (
         <PageLayout
             title="Kde působíme | Vodoinstalace, topení a plyn Blansko"
-            description="Zajištujeme vodoinstalaci, topenářské a plynářské práce v Blansko, Boskovice, Brno, Kuřim, Adamov, Rájec-Jestřebí, Letovice, Tišnov a jejich okolí."
+            description="Zajištujeme vodoinstalaci, topenářské a plynářské práce v Blansko, Boskovice, Brno, Kuřim, Adamov, Rájec-Jestřebí, Letovice, Tišnov a v jejich okolí."
         >
             <Header>
-                <Heading as="h1">Kde působíme</Heading>
+                <MainHeading>Kde působíme</MainHeading>
             </Header>
-            <List>
-                {locations ? (
-                    locations.map((loc, i) => (
-                        <ListItem key={i}>{loc.name}</ListItem>
-                    ))
-                ) : (
-                    <ListItem>Nothing</ListItem>
-                )}
-            </List>
+            {/* AutoComplete Search */}
+            <Box px="5%" my={5} mx={"auto"} maxW="container.sm">
+                <Heading as="h2" size="md" textAlign="center">Jste na seznamu?</Heading>
+                <AutoComplete options={options}/>
+            </Box>
+            {/* Google Map */}
+            <Box w="100%" h={{ base: "500px", lg: "600px" }}>
+                <GoogleMap
+                    center={kontakty.address.geo}
+                    styles={{ width: "100%", height: "100%" }}
+                    zoom={10}
+                    options={{ disableDefaultUI: true }}
+                    apiKey={mapsApiKey}
+                >
+                    <Marker
+                        icon={{
+                            path: brandLogo,
+                            fillColor: "#fff",
+                            fillOpacity: 0.9,
+                            scale: 0.3,
+                            strokeColor: "#1A182B",
+                            strokeWeight: 2,
+                        }}
+                        position={kontakty.address.geo}
+                    />
+                    <Circle
+                        center={kontakty.address.geo}
+                        radius={30 * 1000}
+                        options={{
+                            strokeColor: "#1A182B",
+                            strokeOpacity: 0.8,
+                            strokeWeight: 2,
+                            fillColor: "#1A182B",
+                            fillOpacity: 0.35,
+                            clickable: false,
+                            draggable: false,
+                            editable: false,
+                            visible: true,
+                            radius: 30 * 1000,
+                            zIndex: 1,
+                        }}
+                    />
+                </GoogleMap>
+            </Box>
+
         </PageLayout>
     );
 }
 
-// export async function getStaticProps(ctx) {
-//     const Geonames = (await import("geonames.js")).default;
+export async function getStaticProps(ctx) {
+    let response = null,
+        data = null;
 
-//     const geonames = Geonames({
-//         username: "Dorfieeee",
-//         lan: "cz",
-//         encoding: "JSON",
-//     });
+    response = await fetch(process.env.HOST + "/api/locations");
+    data = await response.json();
 
-//     const spesovGCS = {
-//         lat: 49.397133173294606,
-//         lng: 16.615978039220384,
-//     };
-
-//     const response = await geonames.findNearby({
-//         ...spesovGCS,
-//         radius: 25,
-//         featureClass: "P",
-//         maxRows: 10,
-//     });
-
-//     return {
-//         props: {
-//             locations: response.geonames,
-//         },
-//     };
-// }
+    return {
+        props: {
+            locations: data.locations,
+            mapsApiKey: process.env.GOOGLE_API_KEY,
+        },
+    };
+}
 
 export default KdePusobime;
