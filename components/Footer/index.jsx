@@ -140,17 +140,16 @@ const Footer = ({ children, ...props }) => {
                 </Grid>
             </Wrapper>
 
-            <Wrapper borderTop="2px solid">
-                <Flex justifyContent="space-between" py={2} flexWrap={"wrap"}>
+            <Wrapper  borderTop="2px solid">
+                <Flex maxW="1240px" m="0 auto" justifyContent="space-between" py={2} flexWrap={"wrap"}>
                     <Text as="span" flex="1 1 300px" textAlign="center">
                         Copyright © 2021-{year} {kontakty.brandName}
                     </Text>
                     <Text as="span" flex="1 1 300px" textAlign="center">
                         Web-design {"&"} SEO {"| "}
-                        <Link href="#" isExternal>
+                        <Link href="https://uk.linkedin.com/in/david-rosendorf-4aa459185" isExternal>
                             Rosendorf.dev
                         </Link>
-                        {" |"}
                     </Text>
                 </Flex>
             </Wrapper>

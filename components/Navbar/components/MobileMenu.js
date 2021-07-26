@@ -5,6 +5,7 @@ import links from "../../../public/content/links";
 
 const MenuWrapper = motion(VStack);
 
+
 const variants = {
     open: {
         transition: { staggerChildren: 0.07, delayChildren: 0.2 },

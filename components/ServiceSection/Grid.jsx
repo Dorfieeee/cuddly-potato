@@ -5,7 +5,7 @@ const Grid = ({ children, props }) => {
         <ChakraGrid
             templateColumns={{
                 base: "auto minmax(200px, 75ch) auto",
-                md: "1fr minmax(200px, 100ch) minmax(1rem, 0.5fr) minmax(200px, 100ch) 1fr",
+                md: "1fr minmax(200px, max-content) minmax(1rem, 0.5fr) minmax(200px, max-content) 1fr",
             }}
             templateRows={{ base: "auto", md: "repeat(2, auto)" }}
             minH="75vh"

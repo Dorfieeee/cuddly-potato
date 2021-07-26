@@ -10,7 +10,7 @@ import {
     useColorMode,
     Heading,
     Button,
-    Center
+    Center,
 } from "@chakra-ui/react";
 import MainHeading from "../components/headings/MainHeading";
 import CardTitle from "../components/ServiceSection/CardTitle";
@@ -21,6 +21,19 @@ import Heating from "../public/content/homepage/sluzby/svg/Heating";
 import Drainage from "../public/content/homepage/sluzby/svg/Drainage";
 import ImageCard from "../components/LocationSection/ImageCard";
 import links from "../public/content/links";
+
+const StyledHeading = ({ title, ...props }) => (
+    <Heading
+        as="h3"
+        my={10}
+        textAlign="center"
+        p={5}
+        
+        {...props}
+    >
+        {title}
+    </Heading>
+);
 
 const StyledGridItem = ({ src, alt, text, ...rest }) => (
     <GridItem h={{ base: "125px", md: "250px" }} textAlign="center" {...rest}>
@@ -37,9 +50,7 @@ const StyledGridItem = ({ src, alt, text, ...rest }) => (
 const ImageGrid = ({ title, children }) => {
     return (
         <>
-            <Heading as="h3" my={10} textAlign="center">
-                {title}
-            </Heading>
+            <StyledHeading title={title} />
             <Grid
                 gridTemplateColumns={{
                     base: "1fr 1fr",
@@ -63,19 +74,13 @@ function Sluzby() {
                 <MainHeading>Specializace</MainHeading>
             </Header>
             <Box as="main" px="5%" maxW="container.xl" m="0 auto">
-                <Text
-                    p={5}
-                    mb={5}
-                    maxW="container.sm"
-                    margin="0 auto"
-                    textAlign="center"
+                <SimpleGrid
+                    columns={{ base: 2, lg: 4 }}
+                    my={5}
+                    py={5}
+                    borderRadius="5px 75px"
+        border="6px double"
                 >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Etiam lacinia nisl libero, et interdum sapien placerat ut.
-                    Suspendisse cursus dolor ut velit pretium facilisis. Donec
-                    ut maximus nunc. In in eros magna.
-                </Text>
-                <SimpleGrid columns={{ base: 2, lg: 4 }} mb={10}>
                     <Card justifyContent="center" alignItems="center">
                         <CardTitle title="Voda" vertical>
                             <Water circle={themeReversed} />
@@ -103,6 +108,18 @@ function Sluzby() {
                         </CardTitle>
                     </Card>
                 </SimpleGrid>
+                <Text
+                    p={5}
+                    mb={5}
+                    maxW="container.sm"
+                    margin="0 auto"
+                    textAlign="center"
+                >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam lacinia nisl libero, et interdum sapien placerat ut.
+                    Suspendisse cursus dolor ut velit pretium facilisis. Donec
+                    ut maximus nunc. In in eros magna.
+                </Text>
                 <ImageGrid title="Provedeme...">
                     <StyledGridItem
                         text="Podlahové topení"
@@ -214,18 +231,19 @@ function Sluzby() {
                         alt="Malířské práce"
                     />
                 </ImageGrid>
-                <Center w="100%" my={5}>
-                <Button
-                    as="a"
-                    href={links.navbar.kontakty.href}
-                    fontSize="large"
-                    h={["2.5rem", "3rem"]}
-                    w={"12rem"}
-                    variant="primary"
-                    m="0 auto"
-                >
-                    Poptat služby nyní
-                </Button>
+                <Center w="100%" my={5} p={5} borderTop="6px double">
+                    <Button
+                        as="a"
+                        href={links.navbar.kontakty.href}
+                        fontSize="large"
+                        h={["2.5rem", "3rem"]}
+                        w={"12rem"}
+                        variant="primary"
+                        m="0 auto"
+                        
+                    >
+                        Poptat služby
+                    </Button>
                 </Center>
             </Box>
         </PageLayout>

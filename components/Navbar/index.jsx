@@ -66,6 +66,7 @@ const Navbar = ({
                     minW="2em"
                     margin="0 2em"
                     fill={colorMode === "light" ? "secondary" : "primary"}
+                    onClick={isOpen && toggle}
                 />
 
                 {/* Navigation visible on large screens */}
