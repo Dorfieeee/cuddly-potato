@@ -16,6 +16,7 @@ import brandLogo from "../components/svg/instalater-logo-house-path";
 import AutoComplete from "../components/AutoComplete";
 
 function KdePusobime({ locations, mapsApiKey }) {
+    console.log(locations);
     const options = locations.map((loc) => loc.name);
 
     return (
@@ -115,20 +116,19 @@ export async function getStaticProps(ctx) {
             },
         };
     }
-
     const Geonames = (await import("geonames.js")).default;
-
+    
     const geonames = Geonames({
         username: "Dorfieeee",
         lan: "cz",
         encoding: "JSON",
     });
-
+    
     const spesovGCS = {
         lat: 49.397133173294606,
         lng: 16.615978039220384,
     };
-
+    
     data = await geonames.findNearby({
         ...spesovGCS,
         radius: 25,
@@ -136,9 +136,11 @@ export async function getStaticProps(ctx) {
         maxRows: 999,
     });
 
+    console.log(data);
+
     return {
         props: {
-            locations: data,
+            locations: data.geonames,
             mapsApiKey: process.env.GOOGLE_API_KEY,
         },
     };
