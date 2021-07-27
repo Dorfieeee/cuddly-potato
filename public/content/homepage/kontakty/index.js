@@ -11,7 +11,7 @@ const { address, tel, email } = kontakty;
 
 export default {
     id: "kontakty",
-    title: "Jak se můžeme spojit",
+    title: "Jakým způsobem se můžeme spojit",
     kontakty: {
         title: "Moje vizitka",
         person: {

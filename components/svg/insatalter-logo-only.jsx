@@ -7,6 +7,7 @@ const Logo = ({ fill, ...rest }) => {
         <ChakraSVG
             version="1.1"
             viewBox="0 0 90 90"
+            aria-label="Rosendorf logo"
             sx={{
                 "& > g": {
                     fill: fill || "secondary",

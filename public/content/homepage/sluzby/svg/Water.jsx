@@ -9,6 +9,7 @@ const Water = ({ circle, fill, ...props }) => {
             width="83.519"
             height="83.519"
             viewBox="0 0 83.519 83.519"
+            aria-label="Voda - ikona"
             sx={{
                 "& .svg-circle-border": {
                     fill: circle || "primary",

@@ -7,6 +7,7 @@ function Icon() {
       width="200"
       height="400"
       viewBox="0 0 739.56 1416.2"
+      aria-label="Repairmen"
     >
       <g transform="translate(-336.24 -200)">
         <path

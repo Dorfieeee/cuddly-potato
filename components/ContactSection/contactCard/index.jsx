@@ -15,7 +15,7 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 import Logo from "../../svg/insatalter-logo-vertical";
 
 const MyListIcon = ({ as, label }) => (
-    <Tooltip aria-label={"A tooltip"} label={label}>
+    <Tooltip aria-label={label} label={label} >
         <span>
             <ListIcon as={as} mr={8} />
         </span>

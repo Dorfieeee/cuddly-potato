@@ -23,14 +23,7 @@ import ImageCard from "../components/LocationSection/ImageCard";
 import links from "../public/content/links";
 
 const StyledHeading = ({ title, ...props }) => (
-    <Heading
-        as="h3"
-        my={10}
-        textAlign="center"
-        p={5}
-        
-        {...props}
-    >
+    <Heading as="h3" my={10} textAlign="center" p={5} {...props}>
         {title}
     </Heading>
 );
@@ -69,7 +62,10 @@ function Sluzby() {
     const themeReversed = colorMode === "light" ? "secondary" : "primary";
 
     return (
-        <PageLayout title="Služby">
+        <PageLayout
+            title="Služby | Voda, topení, plyn a kanalizace"
+            description="Výpis v čem se instalatéři Rosendorf specializují se seznamem nejvíce provaděných prací a doprovodných služeb"
+        >
             <Header>
                 <MainHeading>Specializace</MainHeading>
             </Header>
@@ -79,7 +75,7 @@ function Sluzby() {
                     my={5}
                     py={5}
                     borderRadius="5px 75px"
-        border="6px double"
+                    border="6px double"
                 >
                     <Card justifyContent="center" alignItems="center">
                         <CardTitle title="Voda" vertical>
@@ -240,7 +236,6 @@ function Sluzby() {
                         w={"12rem"}
                         variant="primary"
                         m="0 auto"
-                        
                     >
                         Poptat služby
                     </Button>

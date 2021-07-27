@@ -8,6 +8,7 @@ const Drainage = ({ circle, fill, ...props }) => (
         width="83.52"
         height="83.52"
         viewBox="0 0 83.52 83.52"
+        aria-label="Kanalizace - ikona"
         sx={{
             "& .svg-circle-border": {
                 fill: circle || "primary",

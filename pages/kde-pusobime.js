@@ -58,10 +58,10 @@ function KdePusobime({ locations, mapsApiKey }) {
             </Header>
             {/* AutoComplete Search */}
             <Box px="5%" my={5} mx={"auto"} maxW="container.sm">
-                <Heading as="h2" size="md" textAlign="center">
-                    Jste na seznamu?
+                <Heading as="h2" my={1} size="md" textAlign="center">
+                    Zjistěte, zda-li jsme Vám dostupní
                 </Heading>
-                <AutoComplete options={options} addMarker={addMarker} />
+                <AutoComplete options={options} placeholder="Název obce" addMarker={addMarker} />
             </Box>
             {/* Google Map */}
             <Box w="100%" h={{ base: "500px", lg: "600px" }}>

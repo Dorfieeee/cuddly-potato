@@ -10,6 +10,7 @@ const Logo = ({ fill, ...rest }) => {
             width="250px"
             height="167px"
             viewBox="0 0 250 166.82"
+            aria-label="Rosendorf logo"
             sx={{
                 "& > g": {
                     fill: fill || "secondary",

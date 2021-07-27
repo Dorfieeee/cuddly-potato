@@ -9,6 +9,7 @@ function Pipes(props) {
       width="623.6"
       height="194.1"
       viewBox="0 0 623.6 194.1"
+      aria-label="Pipes"
       {...props}
     >
       <g transform="translate(-1554 -1252.8)">

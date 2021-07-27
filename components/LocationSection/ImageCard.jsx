@@ -1,10 +1,5 @@
 import Image from "next/image";
-import {
-    LinkBox,
-    Center,
-    useTheme,
-    useColorMode,
-} from "@chakra-ui/react";
+import { Box, Center, useTheme, useColorMode } from "@chakra-ui/react";
 import { hexToRGBA } from "../../theme/utils";
 import PropTypes from "prop-types";
 
@@ -13,16 +8,20 @@ const ImageCard = ({ text, src, alt, ...props }) => {
     const { colorMode } = useColorMode();
 
     return (
-        <LinkBox
+        <Box
             position="relative"
-            w="100%"     
+            w="100%"
             h="100%"
             fontSize="2rem"
+            tabIndex={0}
+            _focus={{
+                outline: "5px groove",
+            }}
             sx={{
                 "& img": {
                     transition: "transform 3s ease",
                 },
-                "&:hover img": {
+                "&:hover img, &:focus img": {
                     transform: "scale(1.2)",
                 },
                 "& .content": {
@@ -36,7 +35,7 @@ const ImageCard = ({ text, src, alt, ...props }) => {
                     ),
                     textShadow: "5px 0px 25px" + "primary",
                 },
-                "&:hover .content": {
+                "&:hover .content, &:focus .content": {
                     bg: "transparent",
                     color: "primary",
                     textShadow: "5px 0px 5px" + theme.colors.secondary,
@@ -60,7 +59,7 @@ const ImageCard = ({ text, src, alt, ...props }) => {
             >
                 {text}
             </Center>
-        </LinkBox>
+        </Box>
     );
 };
 

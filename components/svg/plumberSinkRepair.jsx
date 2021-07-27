@@ -1,14 +1,23 @@
-import React from "react";
+import {chakra} from "@chakra-ui/react"
 
-function PlumberSinkRepair() {
+const ChakraSVG = chakra("svg");
+
+function PlumberSinkRepair({colorMode, ...props}) {
   return (
-    <svg
+    <ChakraSVG
       xmlns="http://www.w3.org/2000/svg"
-      width="2666.667"
-      height="2666.667"
+      width="500"
+      height="500"
       version="1.1"
       viewBox="0 0 2666.667 2666.667"
-      xmlSpace="preserve"
+      xmlSpace="preserve"      
+      aria-label="Plumber repairing sink"
+      sx={{
+        "& .background": {
+          fill: colorMode ? colorMode === "light" ? "primary" : "secondary" : "#fff"
+        }
+      }}
+      {...props}
     >
       <g transform="matrix(1.33333 0 0 -1.33333 0 2666.667)">
         <g
@@ -17,7 +26,7 @@ function PlumberSinkRepair() {
           stroke="none"
           transform="scale(.1)"
         >
-          <path fill="#fff" d="M0 0h20000v20000H0z"></path>
+          <path className="background" d="M0 0h20000v20000H0z"></path>
           <path
             fill="#e5e5e5"
             d="M4542.13 5139.2s-2706.44 3319.7-854.42 6081.5c1258.86 1877.2 2586.7 1437.2 3940.43 997.2 813.85-264.5 1637.06-529 2460.26-290 2192.5 636.5 3889.9 2758.3 6117.8 1025.5 2227.9-1732.7 0-7780.3 0-7780.3l-11664.07-33.9"
@@ -415,7 +424,7 @@ function PlumberSinkRepair() {
           <path fill="#385d66" d="M15890.7 5173.1v403.2h186.1z"></path>
         </g>
       </g>
-    </svg>
+    </ChakraSVG>
   );
 }
 

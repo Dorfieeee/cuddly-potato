@@ -5,7 +5,7 @@ import MainHeading from "../components/headings/MainHeading";
 
 function OchranaUdaju() {
     return (
-        <PageLayout title="Zásady ochrany osobních údajů">
+        <PageLayout title="&#9878; Zásady ochrany osobních údajů &#127850;" description="Soupis &#9878; Zásady ochrany osobních údajů - GDPR, &#127850; Cookies a jak s nimi nakládáme.">
             <Header>
                 <MainHeading>Zásady ochrany osobních údajů</MainHeading>
             </Header>

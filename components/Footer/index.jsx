@@ -10,6 +10,8 @@ import {
     ListIcon,
     Box,
     Image,
+    LinkOverlay,
+    LinkBox,
 } from "@chakra-ui/react";
 import { FaPhoneAlt, FaAt } from "react-icons/fa";
 import kontakty from "../../public/content/kontakty";
@@ -99,19 +101,19 @@ const Footer = ({ children, ...props }) => {
                     </Column>
 
                     <Column title="Síť portálů" maxW="350px" spacing={5}>
-                        <Box>
-                            <Link
-                                href="https://www.firmy.cz/detail/13323681-rosendorf-voda-topeni-plyn-spesov.html#hodnoceni"
-                                target="_blank"
-                                rel="noopener"
-                                isExternal
-                            >
-                                <Image
-                                    src="https://www.firmy.cz/img-stars/dark-13323681.svg"
-                                    alt="Rosendorf Voda - Topení - Plyn na Firmy.cz"
-                                />
-                            </Link>
-                        </Box>
+                        <Link
+                            href="https://www.firmy.cz/detail/13323681-rosendorf-voda-topeni-plyn-spesov.html#hodnoceni"
+                            target="_blank"
+                            rel="noopener"
+                            isExternal
+                        >
+                            <Image
+                                src="https://www.firmy.cz/img-stars/dark-13323681.svg"
+                                alt="Rosendorf Voda - Topení - Plyn na Firmy.cz"
+                                width="172px"
+                                height="16px"
+                            />
+                        </Link>
                         <Link
                             href="https://g.page/r/CR1MNZM0YC9UEBA"
                             target="_blank"
@@ -140,14 +142,23 @@ const Footer = ({ children, ...props }) => {
                 </Grid>
             </Wrapper>
 
-            <Wrapper  borderTop="2px solid">
-                <Flex maxW="768px" m="0 auto" justifyContent="space-between" py={2} flexWrap={"wrap"}>
+            <Wrapper borderTop="2px solid">
+                <Flex
+                    maxW="768px"
+                    m="0 auto"
+                    justifyContent="space-between"
+                    py={2}
+                    flexWrap={"wrap"}
+                >
                     <Text as="span" flex="1 1 300px" textAlign="center">
                         Copyright © 2021-{year} {kontakty.brandName}
                     </Text>
                     <Text as="span" flex="1 1 300px" textAlign="center">
                         Web-design {"&"} SEO {"| "}
-                        <Link href="https://uk.linkedin.com/in/david-rosendorf-4aa459185" isExternal>
+                        <Link
+                            href="https://uk.linkedin.com/in/david-rosendorf-4aa459185"
+                            isExternal
+                        >
                             Rosendorf.dev
                         </Link>
                     </Text>

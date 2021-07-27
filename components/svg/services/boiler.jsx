@@ -7,7 +7,8 @@ function Icon() {
       width="200"
       height="200"
       version="1.2"
-      viewBox="0 0 150 150"
+      viewBox="0 0 150 150"      
+      aria-label="Boiler"
     >
       <defs>
         <clipPath id="clip1">

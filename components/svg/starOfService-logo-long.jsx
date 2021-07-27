@@ -7,7 +7,8 @@ const starOfServiceLogoLong = ({ fill, rest }) => {
         <ChakraSVG
             viewBox="0 0 175 32"
             width="132px"
-            height="24px"
+            height="24px"            
+            aria-label="StarOfService logo"
             sx={{
                 "& > g": {
                     fill: fill || "hsl(219, 93%, 63%)",

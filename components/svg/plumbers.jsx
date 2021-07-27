@@ -8,6 +8,7 @@ const plumbers = (props) => {
             width="2606px"
             height="1556.5px"
             viewBox="0 0 2606 1556.5"
+            aria-label="Plumbers"
             {...props}
         >
             <g fill="#e2e2e2">

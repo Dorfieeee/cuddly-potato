@@ -5,6 +5,7 @@ const GoogleLogoShort = (props) => {
             width="24"
             height="24"
             xmlns="http://www.w3.org/2000/svg"
+            aria-label="Google logo"
         >
             <g transform="matrix(1, 0, 0, 1, 27.009001, -39.238998)">
                 <path

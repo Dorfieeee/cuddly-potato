@@ -9,6 +9,7 @@ function Floor(props) {
             width="2568.1"
             height="324.6"
             viewBox="0 0 2568.1 324.6"
+            aria-label="Floor"
             {...props}
         >
             <path

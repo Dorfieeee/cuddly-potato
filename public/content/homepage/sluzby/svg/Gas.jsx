@@ -8,6 +8,7 @@ const Gas = ({circle, fill, ...props}) => (
         width="83.519"
         height="83.519"
         viewBox="0 0 83.519 83.519"
+        aria-label="Plyn - ikona"
         sx={{
             "& .svg-circle-border": {
                 fill: circle || "primary",

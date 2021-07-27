@@ -5,6 +5,7 @@ const GoogleLogoLong = (props) => {
             viewBox="0 0 272 92"
             width="71"
             height="24"
+            aria-label="Google logo"
         >
             <path
                 fill="#EA4335"

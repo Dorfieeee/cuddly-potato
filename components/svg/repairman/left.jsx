@@ -9,6 +9,7 @@ function Left(props) {
             width="1337.4"
             height="1518.6"
             viewBox="0 0 1337.4 1518.6"
+            aria-label="Left part of composition"
             {...props}
         >
             <path

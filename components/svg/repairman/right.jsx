@@ -9,6 +9,7 @@ function Right(props) {
             width="976.9"
             height="1464.9"
             viewBox="0 0 976.9 1464.9"
+            aria-label="Right part of composition"
             {...props}
         >
             <g transform="translate(-1666 -324)">

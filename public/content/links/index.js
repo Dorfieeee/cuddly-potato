@@ -2,19 +2,19 @@ export default {
     sluzby: {
         voda: {
             name: "Voda",
-            href: "/sluzby#voda"
+            href: "/sluzby"
         },
         topeni: {
             name: "Topení",
-            href: "/sluzby#topeni"
+            href: "/sluzby"
         },
         plyn: {
             name: "Plyn",
-            href: "/sluzby#plyn"
+            href: "/sluzby"
         },
         kanalizace: {
             name: "Kanalizace",
-            href: "/sluzby#kanalizace"
+            href: "/sluzby"
         },
         havarie: {
             name: "Havarijní servis",

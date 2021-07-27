@@ -35,12 +35,12 @@ const ClearButton = ({ onClick }) => (
     </Tooltip>
 );
 
-function AutoComplete({ options = [], limit = 10, addMarker }) {
+function AutoComplete({ options = [], limit = 10, addMarker, placeholder }) {
     const { colorMode } = useColorMode();
     const [searchValue, setSearchValue] = useState("");
     const [searchResult, setSearchResult] = useState(null);
     const [opened, setOpened] = useState(false);
-    const [activeItem, setActiveItem] = useState(null);
+    const [activeItem, setActiveItem] = useState(-1);
     let autocompleteList = useRef(null);
 
     const filterOptions = (initialChars) => {
@@ -70,16 +70,17 @@ function AutoComplete({ options = [], limit = 10, addMarker }) {
         if (!selectedValue) return;
         // set value to selection
         setSearchValue(selectedValue);
-        addMarker(selectedValue)
+        addMarker(selectedValue);
         // close search list
         setOpened(false);
-        setActiveItem(null);
+        setActiveItem(-1);
     };
 
     const handleClearButtonClick = (e) => {
         setSearchValue("");
         setOpened(false);
-        setActiveItem(null);
+        setActiveItem(-1);
+        setSearchResult(null);
     };
 
     const handleOnChange = (e) => {
@@ -99,14 +100,14 @@ function AutoComplete({ options = [], limit = 10, addMarker }) {
     };
 
     const handleOnKeyUp = (e) => {
-        if (!opened) return;
+        //if (!opened) return;
         const getActiveItemValue = () => {
-            if (activeItem === null) return null;
+            if (activeItem === -1) return "";
             const list = autocompleteList.current.children;
             let item = Array.from(list).filter((item) =>
                 item.classList.contains("active")
             );
-            if (item.length === 0) return null;
+            if (item.length === 0) return "";
             item = item[0];
             item.classList.remove("active");
             return item?.firstElementChild.value;
@@ -131,7 +132,7 @@ function AutoComplete({ options = [], limit = 10, addMarker }) {
             }
 
             setActiveItem(next);
-            setSearchValue(searchResult[next])
+            setSearchValue(searchResult[next]);
         };
         switch (e.keyCode) {
             // ARROW DOWN
@@ -144,10 +145,10 @@ function AutoComplete({ options = [], limit = 10, addMarker }) {
                 break;
             // ENTER
             case 13:
-                const itemValue = getActiveItemValue();
+                const itemValue = getActiveItemValue() || searchValue;
                 addMarker(itemValue);
-                setSearchValue(itemValue);
-                setActiveItem(null);
+                setSearchValue("");
+                setActiveItem(-1);
                 setOpened(false);
                 break;
             default:
@@ -159,7 +160,7 @@ function AutoComplete({ options = [], limit = 10, addMarker }) {
         e.preventDefault();
         addMarker(searchValue);
         setSearchValue("");
-        setActiveItem(null);
+        setActiveItem(-1);
         setOpened(false);
     };
 
@@ -230,6 +231,7 @@ function AutoComplete({ options = [], limit = 10, addMarker }) {
                     value={searchValue}
                     onChange={handleOnChange}
                     onKeyUp={handleOnKeyUp}
+                    placeholder={placeholder}
                     borderWidth="medium"
                     borderColor={
                         colorMode === "light" ? "secondary" : "primary"
