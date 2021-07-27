@@ -35,7 +35,7 @@ const ClearButton = ({ onClick }) => (
     </Tooltip>
 );
 
-function AutoComplete({ options = [], limit = 10 }) {
+function AutoComplete({ options = [], limit = 10, addMarker }) {
     const { colorMode } = useColorMode();
     const [searchValue, setSearchValue] = useState("");
     const [searchResult, setSearchResult] = useState(null);
@@ -65,11 +65,12 @@ function AutoComplete({ options = [], limit = 10 }) {
         if (!opened && searchResult) setOpened(true);
     };
 
-    const handleOnSelect = (e) => {
+    const handleOnItemClick = (e) => {
         const selectedValue = e.target.children[0].value;
         if (!selectedValue) return;
         // set value to selection
         setSearchValue(selectedValue);
+        addMarker(selectedValue)
         // close search list
         setOpened(false);
         setActiveItem(null);
@@ -130,6 +131,7 @@ function AutoComplete({ options = [], limit = 10 }) {
             }
 
             setActiveItem(next);
+            setSearchValue(searchResult[next])
         };
         switch (e.keyCode) {
             // ARROW DOWN
@@ -142,9 +144,11 @@ function AutoComplete({ options = [], limit = 10 }) {
                 break;
             // ENTER
             case 13:
-                setSearchValue(getActiveItemValue);
-                setOpened(false);
+                const itemValue = getActiveItemValue();
+                addMarker(itemValue);
+                setSearchValue(itemValue);
                 setActiveItem(null);
+                setOpened(false);
                 break;
             default:
                 break;
@@ -153,6 +157,10 @@ function AutoComplete({ options = [], limit = 10 }) {
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
+        addMarker(searchValue);
+        setSearchValue("");
+        setActiveItem(null);
+        setOpened(false);
     };
 
     const showAutocompleteList = () => {
@@ -162,7 +170,7 @@ function AutoComplete({ options = [], limit = 10 }) {
             <Item
                 key={res + i}
                 value={res}
-                onClick={handleOnSelect}
+                onClick={handleOnItemClick}
                 tabIndex={-1}
                 _hover={{
                     bg: colorMode === "light" ? "gray.200" : "blue.800",

@@ -14,10 +14,40 @@ import { Marker, Circle } from "@react-google-maps/api";
 import kontakty from "../public/content/kontakty";
 import brandLogo from "../components/svg/instalater-logo-house-path";
 import AutoComplete from "../components/AutoComplete";
+import { useState } from "react";
 
 function KdePusobime({ locations, mapsApiKey }) {
-    console.log(locations);
+    const [cities, setCities] = useState([]);
     const options = locations.map((loc) => loc.name);
+
+    const addMarker = (cityName) => {
+        let filtered = locations.filter((loc) => loc.name === cityName);
+        if (!filtered.length) return;
+        const { geonameId: id, name, lat, lng } = filtered[0];
+        if (cities.find((city) => city.id === id)) return;
+        const city = {
+            id: id,
+            name: name,
+            lat: Number(lat),
+            lng: Number(lng),
+        };
+        setCities((curr) => curr.concat(city));
+    };
+
+    const showUserMarkers = () => {
+        if (!cities.length) return <></>;
+        console.log(cities);
+
+        return cities.map((m) => (
+            <Marker
+                key={m.lat + m.lng}
+                position={{
+                    lat: m.lat,
+                    lng: m.lng,
+                }}
+            />
+        ));
+    };
 
     return (
         <PageLayout
@@ -32,7 +62,7 @@ function KdePusobime({ locations, mapsApiKey }) {
                 <Heading as="h2" size="md" textAlign="center">
                     Jste na seznamu?
                 </Heading>
-                <AutoComplete options={options} />
+                <AutoComplete options={options} addMarker={addMarker} />
             </Box>
             {/* Google Map */}
             <Box w="100%" h={{ base: "500px", lg: "600px" }}>
@@ -56,7 +86,7 @@ function KdePusobime({ locations, mapsApiKey }) {
                     />
                     <Circle
                         center={kontakty.address.geo}
-                        radius={30 * 1000}
+                        radius={25 * 1000}
                         options={{
                             strokeColor: "#1A182B",
                             strokeOpacity: 0.8,
@@ -67,10 +97,11 @@ function KdePusobime({ locations, mapsApiKey }) {
                             draggable: false,
                             editable: false,
                             visible: true,
-                            radius: 30 * 1000,
+                            radius: 25 * 1000,
                             zIndex: 1,
                         }}
                     />
+                    {showUserMarkers()}
                 </GoogleMap>
             </Box>
             <VisuallyHidden>
@@ -117,18 +148,18 @@ export async function getStaticProps(ctx) {
         };
     }
     const Geonames = (await import("geonames.js")).default;
-    
+
     const geonames = Geonames({
         username: "Dorfieeee",
         lan: "cz",
         encoding: "JSON",
     });
-    
+
     const spesovGCS = {
         lat: 49.397133173294606,
         lng: 16.615978039220384,
     };
-    
+
     data = await geonames.findNearby({
         ...spesovGCS,
         radius: 25,
