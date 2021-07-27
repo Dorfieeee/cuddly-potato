@@ -1,6 +1,13 @@
 import PageLayout from "../components/PageLayout";
 import Header from "../components/Header";
-import { Box, Heading } from "@chakra-ui/react";
+import {
+    Box,
+    Heading,
+    List,
+    ListItem,
+    Text,
+    VisuallyHidden,
+} from "@chakra-ui/react";
 import MainHeading from "../components/headings/MainHeading";
 import GoogleMap from "../components/GoogleMap";
 import { Marker, Circle } from "@react-google-maps/api";
@@ -9,7 +16,7 @@ import brandLogo from "../components/svg/instalater-logo-house-path";
 import AutoComplete from "../components/AutoComplete";
 
 function KdePusobime({ locations, mapsApiKey }) {
-    const options = locations.map(loc => loc.name);
+    const options = locations.map((loc) => loc.name);
 
     return (
         <PageLayout
@@ -21,8 +28,10 @@ function KdePusobime({ locations, mapsApiKey }) {
             </Header>
             {/* AutoComplete Search */}
             <Box px="5%" my={5} mx={"auto"} maxW="container.sm">
-                <Heading as="h2" size="md" textAlign="center">Jste na seznamu?</Heading>
-                <AutoComplete options={options}/>
+                <Heading as="h2" size="md" textAlign="center">
+                    Jste na seznamu?
+                </Heading>
+                <AutoComplete options={options} />
             </Box>
             {/* Google Map */}
             <Box w="100%" h={{ base: "500px", lg: "600px" }}>
@@ -63,21 +72,73 @@ function KdePusobime({ locations, mapsApiKey }) {
                     />
                 </GoogleMap>
             </Box>
-
+            <VisuallyHidden>
+                <Heading as="h3" size="md">
+                    Podrobný výpis
+                </Heading>
+                <List>
+                    {options &&
+                        options.map((v, i) => <ListItem key={i}>{v}</ListItem>)}
+                </List>
+            </VisuallyHidden>
+            <Text
+                maxW="container.sm"
+                my={5}
+                mx="auto"
+                px="5%"
+                textAlign="center"
+            >
+                Pokud nejste na seznamu naší dostupnosti, tak nám i přesto o
+                sobě dejte vědět. Tento seznam je pouze orientační a zvolili
+                jsme jej na základě vzdálenosti od našeho centra podnikání.
+                Pokud-li najdeme vaši poptávku zajímavou, za kterou má cenu
+                vycestovat do vzdálenějších míst, určitě se domluvíme.
+                <br />
+                &#128522;
+            </Text>
         </PageLayout>
     );
 }
 
 export async function getStaticProps(ctx) {
-    let response = null,
-        data = null;
+    let data = null;
 
-    response = await fetch(process.env.HOST + "/api/locations");
-    data = await response.json();
+    if (process.env.NODE_ENV === "development") {
+        let response = null;
+        response = await fetch(process.env.HOST + "/api/locations");
+        data = await response.json();
+
+        return {
+            props: {
+                locations: data.locations,
+                mapsApiKey: process.env.GOOGLE_API_KEY,
+            },
+        };
+    }
+
+    const Geonames = (await import("geonames.js")).default;
+
+    const geonames = Geonames({
+        username: "Dorfieeee",
+        lan: "cz",
+        encoding: "JSON",
+    });
+
+    const spesovGCS = {
+        lat: 49.397133173294606,
+        lng: 16.615978039220384,
+    };
+
+    data = await geonames.findNearby({
+        ...spesovGCS,
+        radius: 25,
+        featureClass: "P",
+        maxRows: 999,
+    });
 
     return {
         props: {
-            locations: data.locations,
+            locations: data,
             mapsApiKey: process.env.GOOGLE_API_KEY,
         },
     };
