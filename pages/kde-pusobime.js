@@ -36,7 +36,6 @@ function KdePusobime({ locations, mapsApiKey }) {
 
     const showUserMarkers = () => {
         if (!cities.length) return <></>;
-        console.log(cities);
 
         return cities.map((m) => (
             <Marker
@@ -166,8 +165,6 @@ export async function getStaticProps(ctx) {
         featureClass: "P",
         maxRows: 999,
     });
-
-    console.log(data);
 
     return {
         props: {
