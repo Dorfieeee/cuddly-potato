@@ -1,20 +1,21 @@
-import PageLayout from "../src/components/PageLayout";
-import Header from "../src/components/Header";
-import PageDivider from "../src/components/PageDivider";
 import {
     Button,
     Heading,
     Text,
     VStack,
     Flex,
-    useColorMode,
     Box,
 } from "@chakra-ui/react";
+
+import PageLayout from "../src/components/PageLayout";
+import Header from "../src/components/Header";
+import PageDivider from "../src/components/PageDivider";
 import LocationSection from "../src/pages/index/LocationSection";
 import ContactSection from "../src/pages/index/ContactSection";
 import ServiceSection from "../src/pages/index/ServiceSection";
 
 import content from "../src/content/homepage/header";
+import useThemeReversedColors from "../src/hooks/useThemeReversedColors";
 
 const headerImgLoader = (size, color) =>
     `linear-gradient(to right, ${
@@ -31,13 +32,7 @@ const scrollSmoothlyTo = (e, selector) => {
 };
 
 export default function Home() {
-    const { colorMode } = useColorMode();
-
-    const themeColors = {
-        bg: colorMode === "light" ? "primary" : "secondary",
-        color: colorMode === "light" ? "secondary" : "primary",
-        borderColor: colorMode === "light" ? "secondary" : "primary",
-    };
+    const [primaryOpposite, secondaryOpposite, colorMode] = useThemeReversedColors()
 
     return (
         <>
@@ -63,10 +58,10 @@ export default function Home() {
                                 lg: () =>
                                     headerImgLoader(
                                         "lg",
-                                        `var(--chakra-colors-${themeColors.bg})`
+                                        `var(--chakra-colors-${secondaryOpposite})`
                                     ),
                             },
-                            bgColor: themeColors.bg,
+                            bgColor: secondaryOpposite,
                             backgroundRepeat: "no-repeat",
                             backgroundSize: "cover",
                             backgroundPositionX: {
@@ -85,8 +80,8 @@ export default function Home() {
                         minW={{ lg: "40rem" }}
                         minH={{ lg: "calc(100vh - 4rem)" }}
                         w={{ lg: "40%" }}
-                        borderColor={themeColors.borderColor}
-                        color={themeColors.color}
+                        borderColor={primaryOpposite}
+                        color={primaryOpposite}
                     >
                         <Heading
                             as={"h1"}
@@ -119,7 +114,7 @@ export default function Home() {
                         </Heading>
 
                         <Box
-                            bg={{ base: themeColors.bg, lg: "none" }}
+                            bg={{ base: secondaryOpposite, lg: "none" }}
                             fontWeight="600"
                             textAlign="center"
                             paddingX="15%"

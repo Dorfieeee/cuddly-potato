@@ -4,10 +4,10 @@ import {
     SimpleGrid,
     Text,
     Box,
-    useColorMode,
     Heading,
     Button,
     Center,
+    chakra,
 } from "@chakra-ui/react";
 
 import PageLayout from "../src/components/PageLayout";
@@ -16,6 +16,7 @@ import MainHeading from "../src/components/MainHeading";
 import CardImageTitle from "../src/components/CardImageTitle";
 import Card from "../src/components/Card";
 import ImageCard from "../src/components/ImageCard";
+import useThemeReversedColors from "../src/hooks/useThemeReversedColors";
 
 import Water from "../src/svg/Water";
 import Gas from "../src/svg/Gas";
@@ -23,6 +24,13 @@ import Heating from "../src/svg/Heating";
 import Drainage from "../src/svg/Drainage";
 
 import links from "../src/content/links";
+
+const LineBreak = chakra("br");
+const Span = chakra("span");
+
+const StyledWord = ({ children }) => (
+    <Span _before={{ content: '"•"', mr: 1 }}>{children}</Span>
+);
 
 const StyledHeading = ({ title, ...props }) => (
     <Heading as="h3" my={10} textAlign="center" p={5} {...props}>
@@ -60,8 +68,7 @@ const ImageGrid = ({ title, children }) => {
 };
 
 function Sluzby() {
-    const { colorMode } = useColorMode();
-    const themeReversed = colorMode === "light" ? "secondary" : "primary";
+    const [primaryOpposite] = useThemeReversedColors();
 
     return (
         <PageLayout
@@ -81,27 +88,27 @@ function Sluzby() {
                 >
                     <Card justifyContent="center" alignItems="center">
                         <CardImageTitle title="Voda" vertical>
-                            <Water circle={themeReversed} />
+                            <Water circle={primaryOpposite} />
                         </CardImageTitle>
                     </Card>
                     <Card justifyContent="center" alignItems="center">
                         <CardImageTitle title="Topení" vertical>
                             <Heating
-                                circle={themeReversed}
-                                fill={themeReversed}
+                                circle={primaryOpposite}
+                                fill={primaryOpposite}
                             />
                         </CardImageTitle>
                     </Card>
                     <Card justifyContent="center" alignItems="center">
                         <CardImageTitle title="Plyn" vertical>
-                            <Gas circle={themeReversed} />
+                            <Gas circle={primaryOpposite} />
                         </CardImageTitle>
                     </Card>
                     <Card justifyContent="center" alignItems="center">
                         <CardImageTitle title="Kanalizace" vertical>
                             <Drainage
-                                circle={themeReversed}
-                                fill={themeReversed}
+                                circle={primaryOpposite}
+                                fill={primaryOpposite}
                             />
                         </CardImageTitle>
                     </Card>
@@ -113,10 +120,17 @@ function Sluzby() {
                     margin="0 auto"
                     textAlign="center"
                 >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Etiam lacinia nisl libero, et interdum sapien placerat ut.
-                    Suspendisse cursus dolor ut velit pretium facilisis. Donec
-                    ut maximus nunc. In in eros magna.
+                    Rozumíme, když si hned nedokážete představit, co vše se pod
+                    pojmy Voda <StyledWord>Topení</StyledWord>{" "}
+                    <StyledWord>Plyn</StyledWord>{" "}
+                    <StyledWord>Kanalizace</StyledWord> skrývá, tudíž jsme si
+                    pro vás připravili malou prezentaci námi nejčastěji
+                    vykonávaných prací.
+                    <LineBreak mb={3} />
+                    Zároveň i zmiňujeme, které další práce, mimo náš obor a
+                    dovednosti, pro vás dokážeme zařídit. Po tolika letech v
+                    oboru známe spoustu místních řemeslníků a firem, se kterými
+                    jsme v kontaktu a rádi je i doporučíme.
                 </Text>
                 <ImageGrid title="Provedeme...">
                     <StyledGridItem

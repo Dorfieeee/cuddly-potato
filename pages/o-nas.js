@@ -19,11 +19,12 @@ import LeftSideSvg from "../src/svg/repairman/left";
 import FloorSvg from "../src/svg/repairman/floor";
 
 import links from "../src/content/links";
+import useThemeReversedColors from "../src/hooks/useThemeReversedColors";
 
 const Paragraph = ({ children }) => <Text maxW="450px">{children}</Text>;
 
 function About({ children, ...rest }) {
-    const { colorMode } = useColorMode();
+    const [primaryOpposite, , colorMode] = useThemeReversedColors();
 
     return (
         <PageLayout
@@ -81,8 +82,7 @@ function About({ children, ...rest }) {
                         bgSize: "contain",
                         bgRepeat: "no-repeat",
                         borderRadius: "50%",
-                        borderColor:
-                            colorMode === "light" ? "secondary" : "primary",
+                        borderColor: primaryOpposite,
                         borderWidth: "3px",
                         boxShadow: "dark-lg",
                     }}
@@ -93,7 +93,7 @@ function About({ children, ...rest }) {
                             h: "1px",
                             my: "75px",
                             w: "66%",
-                            bg: colorMode === "light" ? "secondary" : "primary",
+                            bg: primaryOpposite,
                             display: "block",
                             mx: "auto",
                         },

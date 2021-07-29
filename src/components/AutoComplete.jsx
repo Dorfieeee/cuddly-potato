@@ -5,7 +5,6 @@ import {
     Box,
     IconButton,
     InputGroup,
-    useColorMode,
     InputRightElement,
     Tooltip,
     InputLeftElement,
@@ -13,6 +12,7 @@ import {
 import { CheckCircleIcon, WarningIcon } from "@chakra-ui/icons";
 import { VscChromeClose } from "react-icons/vsc";
 import { useRef, useState } from "react";
+import useThemeReversedColors from "../hooks/useThemeReversedColors";
 
 const Item = ({ value, onClick, ...rest }) => (
     <ListItem px={4} py={1} onClick={onClick} {...rest}>
@@ -36,7 +36,8 @@ const ClearButton = ({ onClick }) => (
 );
 
 function AutoComplete({ options = [], limit = 10, addMarker, placeholder }) {
-    const { colorMode } = useColorMode();
+    const [primaryOpposite, secondaryOpposite, colorMode] =
+        useThemeReversedColors();
     const [searchValue, setSearchValue] = useState("");
     const [searchResult, setSearchResult] = useState(null);
     const [opened, setOpened] = useState(false);
@@ -189,13 +190,13 @@ function AutoComplete({ options = [], limit = 10, addMarker, placeholder }) {
                 w="100%"
                 left="0"
                 zIndex="dropdown"
-                bg={colorMode === "dark" ? "secondary" : "primary"}
+                bg={secondaryOpposite}
                 borderBottomLeftRadius="md"
                 borderBottomRightRadius="md"
                 borderLeftWidth="medium"
                 borderRightWidth="medium"
                 borderBottomWidth="medium"
-                borderColor={colorMode === "light" ? "secondary" : "primary"}
+                borderColor={primaryOpposite}
                 tabIndex={-1}
                 ref={autocompleteList}
                 sx={{
@@ -233,9 +234,7 @@ function AutoComplete({ options = [], limit = 10, addMarker, placeholder }) {
                     onKeyUp={handleOnKeyUp}
                     placeholder={placeholder}
                     borderWidth="medium"
-                    borderColor={
-                        colorMode === "light" ? "secondary" : "primary"
-                    }
+                    borderColor={primaryOpposite}
                     borderBottomWidth={opened && "thin"}
                     borderBottomRadius={opened && "0"}
                 />

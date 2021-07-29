@@ -23,6 +23,8 @@ function KdePusobime({ locations, mapsApiKey }) {
     const options = locations.map((loc) => loc.name);
 
     const addMarker = (cityName) => {
+        // this function adds another marker
+        // it returns if duplicate was found
         let filtered = locations.filter((loc) => loc.name === cityName);
         if (!filtered.length) return;
         const { geonameId: id, name, lat, lng } = filtered[0];
@@ -66,7 +68,7 @@ function KdePusobime({ locations, mapsApiKey }) {
                 <AutoComplete options={options} placeholder="Název obce" addMarker={addMarker} />
             </Box>
             {/* Google Map */}
-            <Box w="100%" h={{ base: "500px", lg: "600px" }}>
+            <Box w="100%" h={{ base: "500px", lg: "600px" }} >
                 <GoogleMap
                     center={kontakty.address.geo}
                     styles={{ width: "100%", height: "100%" }}
