@@ -1,8 +1,5 @@
-import PageLayout from "../components/PageLayout";
-import Header from "../components/Header";
 import {
     Grid,
-    Image,
     GridItem,
     SimpleGrid,
     Text,
@@ -12,15 +9,20 @@ import {
     Button,
     Center,
 } from "@chakra-ui/react";
-import MainHeading from "../components/headings/MainHeading";
-import CardTitle from "../components/ServiceSection/CardTitle";
-import Card from "../components/ServiceSection/Card";
-import Water from "../public/content/homepage/sluzby/svg/Water";
-import Gas from "../public/content/homepage/sluzby/svg/Gas";
-import Heating from "../public/content/homepage/sluzby/svg/Heating";
-import Drainage from "../public/content/homepage/sluzby/svg/Drainage";
-import ImageCard from "../components/LocationSection/ImageCard";
-import links from "../public/content/links";
+
+import PageLayout from "../src/components/PageLayout";
+import Header from "../src/components/Header";
+import MainHeading from "../src/components/MainHeading";
+import CardImageTitle from "../src/components/CardImageTitle";
+import Card from "../src/components/Card";
+import ImageCard from "../src/components/ImageCard";
+
+import Water from "../src/svg/Water";
+import Gas from "../src/svg/Gas";
+import Heating from "../src/svg/Heating";
+import Drainage from "../src/svg/Drainage";
+
+import links from "../src/content/links";
 
 const StyledHeading = ({ title, ...props }) => (
     <Heading as="h3" my={10} textAlign="center" p={5} {...props}>
@@ -78,30 +80,30 @@ function Sluzby() {
                     border="6px double"
                 >
                     <Card justifyContent="center" alignItems="center">
-                        <CardTitle title="Voda" vertical>
+                        <CardImageTitle title="Voda" vertical>
                             <Water circle={themeReversed} />
-                        </CardTitle>
+                        </CardImageTitle>
                     </Card>
                     <Card justifyContent="center" alignItems="center">
-                        <CardTitle title="Topení" vertical>
+                        <CardImageTitle title="Topení" vertical>
                             <Heating
                                 circle={themeReversed}
                                 fill={themeReversed}
                             />
-                        </CardTitle>
+                        </CardImageTitle>
                     </Card>
                     <Card justifyContent="center" alignItems="center">
-                        <CardTitle title="Plyn" vertical>
+                        <CardImageTitle title="Plyn" vertical>
                             <Gas circle={themeReversed} />
-                        </CardTitle>
+                        </CardImageTitle>
                     </Card>
                     <Card justifyContent="center" alignItems="center">
-                        <CardTitle title="Kanalizace" vertical>
+                        <CardImageTitle title="Kanalizace" vertical>
                             <Drainage
                                 circle={themeReversed}
                                 fill={themeReversed}
                             />
-                        </CardTitle>
+                        </CardImageTitle>
                     </Card>
                 </SimpleGrid>
                 <Text
@@ -230,7 +232,7 @@ function Sluzby() {
                 <Center w="100%" my={5} p={5} borderTop="6px double">
                     <Button
                         as="a"
-                        href={links.navbar.kontakty.href}
+                        href={links.pages.kontakty.href}
                         fontSize="large"
                         h={["2.5rem", "3rem"]}
                         w={"12rem"}

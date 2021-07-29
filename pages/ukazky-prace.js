@@ -1,8 +1,10 @@
-import PageLayout from "../components/PageLayout";
-import Header from "../components/Header";
 import { Box, Center, Heading, useColorMode } from "@chakra-ui/react";
-import MainHeading from "../components/headings/MainHeading";
-import PlumberSinkRepair from "../components/svg/plumberSinkRepair"
+
+import PageLayout from "../src/components/PageLayout";
+import Header from "../src/components/Header";
+import MainHeading from "../src/components/MainHeading";
+
+import PlumberSinkRepair from "../src/svg/plumberSinkRepair"
 
 function UkazkyPrace() {
     const {colorMode} = useColorMode()

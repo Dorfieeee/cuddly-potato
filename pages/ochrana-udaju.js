@@ -1,7 +1,8 @@
-import PageLayout from "../components/PageLayout";
-import Header from "../components/Header";
 import { Box, Link, Text, Heading, List, ListItem, OrderedList } from "@chakra-ui/react";
-import MainHeading from "../components/headings/MainHeading";
+
+import PageLayout from "../src/components/PageLayout";
+import Header from "../src/components/Header";
+import MainHeading from "../src/components/MainHeading";
 
 function OchranaUdaju() {
     return (

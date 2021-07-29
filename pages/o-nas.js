@@ -1,5 +1,3 @@
-import PageLayout from "../components/PageLayout";
-import Header from "../components/Header";
 import {
     Heading,
     VStack,
@@ -11,11 +9,16 @@ import {
 } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
-import links from "../public/content/links";
-import MainHeading from "../components/headings/MainHeading";
-import RightSideSvg from "../components/svg/repairman/right";
-import LeftSideSvg from "../components/svg/repairman/left";
-import FloorSvg from "../components/svg/repairman/floor";
+
+import PageLayout from "../src/components/PageLayout";
+import Header from "../src/components/Header";
+import MainHeading from "../src/components/MainHeading";
+
+import RightSideSvg from "../src/svg/repairman/right";
+import LeftSideSvg from "../src/svg/repairman/left";
+import FloorSvg from "../src/svg/repairman/floor";
+
+import links from "../src/content/links";
 
 const Paragraph = ({ children }) => <Text maxW="450px">{children}</Text>;
 
@@ -132,7 +135,7 @@ function About({ children, ...rest }) {
                         </Paragraph>
                     </VStack>
                     <VStack>
-                        <NextLink href={links.navbar.kontakty.href} passHref>
+                        <NextLink href={links.pages.kontakty.href} passHref>
                             <Button
                                 as="a"
                                 variant="primary"

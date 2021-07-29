@@ -1,14 +1,17 @@
 import { Flex, Box } from "@chakra-ui/react";
-import PageLayout from "../components/PageLayout";
-import Header from "../components/Header";
-import MainHeading from "../components/headings/MainHeading";
-import ContactCard from "../components/ContactSection/contactCard";
-import ContactForm from "../components/ContactSection/contactForm";
-import content from "../public/content/homepage/kontakty";
-import GoogleMap from "../components/GoogleMap";
-import kontakty from "../public/content/kontakty";
 import { Marker } from "@react-google-maps/api";
-import brandLogo from "../components/svg/instalater-logo-house-path";
+
+import PageLayout from "../src/components/PageLayout";
+import Header from "../src/components/Header";
+import MainHeading from "../src/components/MainHeading";
+import ContactCard from "../src/components/ContactCard";
+import ContactForm from "../src/components/ContactForm";
+import GoogleMap from "../src/components/GoogleMap";
+
+import brandLogo from "../src/svg/instalater-logo-house-path";
+
+import kontakty from "../src/content/kontakty";
+import content from "../src/content/homepage/kontakty";
 
 function Kontakty({ apiKey }) {
     return (

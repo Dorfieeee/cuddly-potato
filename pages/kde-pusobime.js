@@ -1,5 +1,5 @@
-import PageLayout from "../components/PageLayout";
-import Header from "../components/Header";
+import { useState } from "react";
+import { Marker, Circle } from "@react-google-maps/api";
 import {
     Box,
     Heading,
@@ -8,13 +8,15 @@ import {
     Text,
     VisuallyHidden,
 } from "@chakra-ui/react";
-import MainHeading from "../components/headings/MainHeading";
-import GoogleMap from "../components/GoogleMap";
-import { Marker, Circle } from "@react-google-maps/api";
-import kontakty from "../public/content/kontakty";
-import brandLogo from "../components/svg/instalater-logo-house-path";
-import AutoComplete from "../components/AutoComplete";
-import { useState } from "react";
+
+import PageLayout from "../src/components/PageLayout";
+import Header from "../src/components/Header";
+import MainHeading from "../src/components/MainHeading";
+import GoogleMap from "../src/components/GoogleMap";
+import brandLogo from "../src/svg/instalater-logo-house-path";
+import AutoComplete from "../src/components/AutoComplete";
+
+import kontakty from "../src/content/kontakty";
 
 function KdePusobime({ locations, mapsApiKey }) {
     const [cities, setCities] = useState([]);

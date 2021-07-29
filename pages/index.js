@@ -1,7 +1,6 @@
-import PageLayout from "../components/PageLayout";
-import Header from "../components/Header";
-import ServiceSection from "../components/ServiceSection";
-import PageDivider from "../components/dividers/PageDivider";
+import PageLayout from "../src/components/PageLayout";
+import Header from "../src/components/Header";
+import PageDivider from "../src/components/PageDivider";
 import {
     Button,
     Heading,
@@ -11,9 +10,11 @@ import {
     useColorMode,
     Box,
 } from "@chakra-ui/react";
-import LocationSection from "../components/LocationSection";
-import ContactSection from "../components/ContactSection";
-import content from "../public/content/homepage/header";
+import LocationSection from "../src/pages/index/LocationSection";
+import ContactSection from "../src/pages/index/ContactSection";
+import ServiceSection from "../src/pages/index/ServiceSection";
+
+import content from "../src/content/homepage/header";
 
 const headerImgLoader = (size, color) =>
     `linear-gradient(to right, ${
