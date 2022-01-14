@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Marker, Circle } from "@react-google-maps/api";
 import {
     Box,
     Heading,
@@ -12,15 +11,18 @@ import {
 import PageLayout from "../src/components/PageLayout";
 import Header from "../src/components/Header";
 import MainHeading from "../src/components/MainHeading";
-import GoogleMap from "../src/components/GoogleMap";
-import brandLogo from "../src/svg/instalater-logo-house-path";
 import AutoComplete from "../src/components/AutoComplete";
-
+import Map from "../src/components/MapBox/Map";
+import Marker from "../src/components/MapBox/Marker";
+import Circle from "../src/components/MapBox/Circle";
 import kontakty from "../src/content/kontakty";
 
-function KdePusobime({ locations, mapsApiKey }) {
+
+function KdePusobime({ locations, MAPS_API_KEY }) {
     const [cities, setCities] = useState([]);
     const options = locations.map((loc) => loc.name);
+    const homeLngLat = [kontakty.address.geo.lng, kontakty.address.geo.lat]
+
 
     const addMarker = (cityName) => {
         // this function adds another marker
@@ -32,22 +34,18 @@ function KdePusobime({ locations, mapsApiKey }) {
         const city = {
             id: id,
             name: name,
-            lat: Number(lat),
-            lng: Number(lng),
+            coordinates: [Number(lng), Number(lat)],
         };
         setCities((curr) => curr.concat(city));
     };
 
     const showUserMarkers = () => {
         if (!cities.length) return <></>;
-
-        return cities.map((m) => (
+        
+        return cities.map((city) => (
             <Marker
-                key={m.lat + m.lng}
-                position={{
-                    lat: m.lat,
-                    lng: m.lng,
-                }}
+                key={city.id}
+                coordinates={city.coordinates}
             />
         ));
     };
@@ -67,45 +65,30 @@ function KdePusobime({ locations, mapsApiKey }) {
                 </Heading>
                 <AutoComplete options={options} placeholder="Název obce" addMarker={addMarker} />
             </Box>
-            {/* Google Map */}
+            {/* Map */}
             <Box w="100%" h={{ base: "500px", lg: "600px" }} >
-                <GoogleMap
-                    center={kontakty.address.geo}
-                    styles={{ width: "100%", height: "100%" }}
-                    zoom={10}
-                    options={{ disableDefaultUI: true }}
-                    apiKey={mapsApiKey}
+                <Map
+                    API_KEY={MAPS_API_KEY}
+                    id="MapBox_Kde_pusobime"
+                    styles={{
+                        width: '100%',
+                        height: '100%'
+                    }}
+                    center={homeLngLat}
+                    zoom={9}
                 >
+                    <Circle />
+                    {/* Home marker */}
                     <Marker
-                        icon={{
-                            path: brandLogo,
-                            fillColor: "#fff",
-                            fillOpacity: 0.9,
-                            scale: 0.3,
-                            strokeColor: "#1A182B",
-                            strokeWeight: 2,
-                        }}
-                        position={kontakty.address.geo}
-                    />
-                    <Circle
-                        center={kontakty.address.geo}
-                        radius={25 * 1000}
-                        options={{
-                            strokeColor: "#1A182B",
-                            strokeOpacity: 0.8,
-                            strokeWeight: 2,
-                            fillColor: "#1A182B",
-                            fillOpacity: 0.35,
-                            clickable: false,
-                            draggable: false,
-                            editable: false,
-                            visible: true,
-                            radius: 25 * 1000,
-                            zIndex: 1,
+                        coordinates={homeLngLat}
+                        style={{
+                            backgroundImage: "url(/img/logo.svg)",
+                            width: "48px",
+                            height: "48px",
                         }}
                     />
                     {showUserMarkers()}
-                </GoogleMap>
+                </Map>
             </Box>
             <VisuallyHidden>
                 <Heading as="h3" size="md">
@@ -123,11 +106,22 @@ function KdePusobime({ locations, mapsApiKey }) {
                 px="5%"
                 textAlign="center"
             >
-                Pokud nejste na seznamu naší dostupnosti, tak nám i přesto o
-                sobě dejte vědět. Tento seznam je pouze orientační a zvolili
-                jsme jej na základě vzdálenosti od našeho centra podnikání.
-                Pokud-li najdeme vaši poptávku zajímavou, za kterou má cenu
-                vycestovat do vzdálenějších míst, určitě se domluvíme.
+                Tahle mapa slouží pouze jako vizuální vzdálenost od 
+                centra našeho podnikání.
+                <br />
+                Je založena na rozumné vzdálenosti, která dbá na 
+                časové i finanční dostupnosti jak pro klienta, tak i pro nás.
+            </Text>
+            <Text
+                maxW="container.sm"
+                my={5}
+                mx="auto"
+                px="5%"
+                textAlign="center"
+            >
+                Pokud-li si ovšem myslíte, že náklady na cestu za Vaším 
+                projektem nehrají zásádní roli v rozpočtu,
+                tak se ozvěte a určitě se domluvíme.
                 <br />
                 &#128522;
             </Text>
@@ -137,45 +131,18 @@ function KdePusobime({ locations, mapsApiKey }) {
 
 export async function getStaticProps(ctx) {
     let data = null;
-
-    if (process.env.NODE_ENV === "development") {
-        let response = null;
-        response = await fetch(process.env.HOST + "/api/locations");
-        data = await response.json();
-
-        return {
-            props: {
-                locations: data.locations,
-                mapsApiKey: process.env.GOOGLE_API_KEY,
-            },
-        };
-    }
-    const Geonames = (await import("geonames.js")).default;
-
-    const geonames = Geonames({
-        username: "Dorfieeee",
-        lan: "cz",
-        encoding: "JSON",
-    });
-
-    const spesovGCS = {
-        lat: 49.397133173294606,
-        lng: 16.615978039220384,
-    };
-
-    data = await geonames.findNearby({
-        ...spesovGCS,
-        radius: 25,
-        featureClass: "P",
-        maxRows: 999,
-    });
+    let response = null;
+    response = await fetch(process.env.HOST + "/api/locations");
+    data = await response.json();
 
     return {
         props: {
-            locations: data.geonames,
-            mapsApiKey: process.env.GOOGLE_API_KEY,
+            locations: data.locations,
+            MAPS_API_KEY: process.env.MAPBOX_API_KEY,
         },
     };
 }
 
 export default KdePusobime;
+
+// Locations data obtained from http://www.geonames.org/

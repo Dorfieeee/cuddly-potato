@@ -1,19 +1,19 @@
 import { Flex, Box } from "@chakra-ui/react";
-import { Marker } from "@react-google-maps/api";
 
 import PageLayout from "../src/components/PageLayout";
 import Header from "../src/components/Header";
 import MainHeading from "../src/components/MainHeading";
 import ContactCard from "../src/components/ContactCard";
 import ContactForm from "../src/components/ContactForm";
-import GoogleMap from "../src/components/GoogleMap";
-
-import brandLogo from "../src/svg/instalater-logo-house-path";
+import Map from "../src/components/MapBox/Map";
+import Marker from "../src/components/MapBox/Marker";
 
 import kontakty from "../src/content/kontakty";
 import content from "../src/content/homepage/kontakty";
 
-function Kontakty({ apiKey }) {
+function Kontakty({ MAPS_API_KEY }) {
+    const homeLngLat = [kontakty.address.geo.lng, kontakty.address.geo.lat]
+
     return (
         <PageLayout
             title="Kontakty | Vodoinstalace, topení a plyn Blansko"
@@ -50,25 +50,26 @@ function Kontakty({ apiKey }) {
                 h={{ base: "300px", lg: "400px" }}
                 mb={{ base: "-2rem", lg: "-4rem" }}
             >
-                <GoogleMap
-                    center={kontakty.address.geo}
-                    styles={{ width: "100%", height: "100%" }}
-                    zoom={13}
-                    options={{ disableDefaultUI: true }}
-                    apiKey={apiKey}
+                <Map
+                    API_KEY={MAPS_API_KEY}
+                    id="MapBox_Kontakty"
+                    styles={{
+                        width: '100%',
+                        height: '100%'
+                    }}
+                    center={homeLngLat}
+                    zoom={10}
                 >
+                    {/* Home marker */}
                     <Marker
-                        icon={{
-                            path: brandLogo,
-                            fillColor: "#fff",
-                            fillOpacity: 0.9,
-                            scale: 0.5,
-                            strokeColor: "#1A182B",
-                            strokeWeight: 2,
+                        coordinates={homeLngLat}
+                        style={{
+                            backgroundImage: "url(/img/logo.svg)",
+                            width: "48px",
+                            height: "48px",
                         }}
-                        position={kontakty.address.geo}
                     />
-                </GoogleMap>
+                </Map>
             </Box>
         </PageLayout>
     );
@@ -77,7 +78,7 @@ function Kontakty({ apiKey }) {
 export async function getStaticProps() {
     return {
         props: {
-            apiKey: process.env.GOOGLE_API_KEY,
+            MAPS_API_KEY: process.env.MAPBOX_API_KEY,
         },
     };
 }

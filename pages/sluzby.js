@@ -73,7 +73,7 @@ function Sluzby() {
     return (
         <PageLayout
             title="Služby | Voda, topení, plyn a kanalizace"
-            description="Výpis v čem se instalatéři Rosendorf specializují se seznamem nejvíce provaděných prací a doprovodných služeb"
+            description="Výpis specializací nejvíce provaděných prací a doprovodných služeb instalatérsví - Blansko, Boskovice, Brno, Kuřim, Vyškov"
         >
             <Header>
                 <MainHeading>Specializace</MainHeading>
@@ -125,7 +125,7 @@ function Sluzby() {
                     <StyledWord>Plyn</StyledWord>{" "}
                     <StyledWord>Kanalizace</StyledWord> skrývá, tudíž jsme si
                     pro vás připravili malou prezentaci námi nejčastěji
-                    vykonávaných prací.
+                    vykonávaných prací na okrese Blansko, v okolí Brna a Vyškova.
                     <LineBreak mb={3} />
                     Zároveň i zmiňujeme, které další práce, mimo náš obor a
                     dovednosti, pro vás dokážeme zařídit. Po tolika letech v

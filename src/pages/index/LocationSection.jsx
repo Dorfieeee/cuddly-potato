@@ -1,9 +1,9 @@
-import { Flex, Heading, Box, useBreakpointValue } from "@chakra-ui/react";
+import { Flex, Heading, Box, useBreakpointValue, VisuallyHidden, List, ListItem, Text } from "@chakra-ui/react";
 import ImageCard from "../../components/ImageCard";
 import content from "../../content/homepage/locations"
 
 const imgLoader = (name) => `/img/locations/${name}/md.jpg`;
-const addPrefix = (alt) => "Panoramatic view of " + alt;
+const addPrefix = (alt) => "Instalatérství, topenářství a plynařství" + alt;
 
 const LocationSection = () => {
     const styles = useBreakpointValue({
@@ -24,6 +24,19 @@ const LocationSection = () => {
             <Heading textAlign="center" py="5">
                 {content.title}
             </Heading>
+            <VisuallyHidden as={"p"}>
+                <List>
+                {content.locations.map(({ name }) => {
+                    return (
+                        <ListItem key={name+"ListItem"}>
+                            <Text>{"Instalatér, Vodař, Topenář, Plynař " + name}</Text>
+                            <Text>{"Voda, Topení, Plyn " + name}</Text>
+                            <Text>{"Instalatérství, Topenářství, Plynařství " + name}</Text>
+                        </ListItem>
+                    )
+                })}
+                </List>
+            </VisuallyHidden>
             <Flex
                 flexDirection={{ base: "column", xl: "row" }}
                 justifyContent="center"
@@ -36,7 +49,7 @@ const LocationSection = () => {
                         src = imgLoader(name);
                     return (
                         <ImageCard
-                            key={name}
+                            key={name + "Card"}
                             text={title}
                             src={src}
                             alt={alt}

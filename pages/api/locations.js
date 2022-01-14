@@ -1,8111 +1,2703 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+// Information obtained using geonames.org
+// List of cities within 25km radius from Spesov
 
 export default (req, res) => {
-      // const Geonames = (await import("geonames.js")).default;
-
-    // const geonames = Geonames({
-    //     username: "Dorfieeee",
-    //     lan: "cz",
-    //     encoding: "JSON",
-    // });
-
-    // const spesovGCS = {
-    //     lat: 49.397133173294606,
-    //     lng: 16.615978039220384,
-    // };
-
-    // const response = await geonames.findNearby({
-    //     ...spesovGCS,
-    //     radius: 25,
-    //     featureClass: "P",
-    //     maxRows: 999,
-    // });
     
   res.status(200).json({ locations: [
-    {
-      "adminCode1": "78",
+  {
       "lng": "16.62928",
-      "distance": "1.0003",
-      "geonameId": 3065547,
-      "toponymName": "Spešov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 565,
-      "countryCode": "CZ",
-      "name": "Spešov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.39479",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3065547,
+      "name": "Spešov",
+      "distance": "1.0003"
+  },
+  {
       "lng": "16.61871",
-      "distance": "1.49655",
-      "geonameId": 3074255,
-      "toponymName": "Jestřebí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Jestřebí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
       "lat": "49.41047",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3074255,
+      "name": "Jestřebí",
+      "distance": "1.49655"
+  },
+  {
       "lng": "16.63333",
-      "distance": "1.98573",
-      "geonameId": 3076803,
-      "toponymName": "Dolni Lhota",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Dolni Lhota",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.38333",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3076803,
+      "name": "Dolni Lhota",
+      "distance": "1.98573"
+  },
+  {
       "lng": "16.64497",
-      "distance": "2.13457",
-      "geonameId": 3067079,
-      "toponymName": "Ráječko",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1222,
-      "countryCode": "CZ",
-      "name": "Ráječko",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.39393",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3067079,
+      "name": "Ráječko",
+      "distance": "2.13457"
+  },
+  {
       "lng": "16.63902",
-      "distance": "2.27047",
-      "geonameId": 3067080,
-      "toponymName": "Rájec-Jestřebí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 3619,
-      "countryCode": "CZ",
-      "name": "Rájec-Jestřebí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.41094",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3067080,
+      "name": "Rájec-Jestřebí",
+      "distance": "2.27047"
+  },
+  {
       "lng": "16.64667",
-      "distance": "2.74367",
-      "geonameId": 3070101,
-      "toponymName": "Na Familiích",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Na Familiích",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.38274",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3070101,
+      "name": "Na Familiích",
+      "distance": "2.74367"
+  },
+  {
       "lng": "16.65071",
-      "distance": "2.92494",
-      "geonameId": 3075325,
-      "toponymName": "Horní Lhota",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Horní Lhota",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.38381",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3075325,
+      "name": "Horní Lhota",
+      "distance": "2.92494"
+  },
+  {
       "lng": "16.5814",
-      "distance": "3.10739",
-      "geonameId": 3078085,
-      "toponymName": "Černá Hora",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1903,
-      "countryCode": "CZ",
-      "name": "Černá Hora",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.41361",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3078085,
+      "name": "Černá Hora",
+      "distance": "3.10739"
+  },
+  {
       "lng": "16.59119",
-      "distance": "3.58706",
-      "geonameId": 3078982,
-      "toponymName": "Bořitov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1234,
-      "countryCode": "CZ",
-      "name": "Bořitov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.42504",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3078982,
+      "name": "Bořitov",
+      "distance": "3.58706"
+  },
+  {
       "lng": "16.66918",
-      "distance": "4.01616",
-      "geonameId": 3073794,
-      "toponymName": "Karolín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Karolín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.40706",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3073794,
+      "name": "Karolín",
+      "distance": "4.01616"
+  },
+  {
       "lng": "16.57205",
-      "distance": "4.01743",
-      "geonameId": 3061801,
-      "toponymName": "Závist",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 135,
-      "countryCode": "CZ",
-      "name": "Závist",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.37517",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3061801,
+      "name": "Závist",
+      "distance": "4.01743"
+  },
+  {
       "lng": "16.61667",
-      "distance": "4.02637",
-      "geonameId": 3073645,
-      "toponymName": "Klemov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Klemov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.43333",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3073645,
+      "name": "Klemov",
+      "distance": "4.02637"
+  },
+  {
       "lng": "16.64446",
-      "distance": "4.31948",
-      "geonameId": 3079273,
-      "toponymName": "Blansko",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 20384,
-      "countryCode": "CZ",
-      "name": "Blansko",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.36304",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3079273,
+      "name": "Blansko",
+      "distance": "4.31948"
+  },
+  {
       "lng": "16.62937",
-      "distance": "4.49955",
-      "geonameId": 3076531,
-      "toponymName": "Doubravice nad Svitavou",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1222,
-      "countryCode": "CZ",
-      "name": "Doubravice nad Svitavou",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.43664",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3076531,
+      "name": "Doubravice nad Svitavou",
+      "distance": "4.49955"
+  },
+  {
       "lng": "16.6572",
-      "distance": "4.53509",
-      "geonameId": 3075607,
-      "toponymName": "Holešín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Holešín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.42778",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3075607,
+      "name": "Holešín",
+      "distance": "4.53509"
+  },
+  {
       "lng": "16.62289",
-      "distance": "4.56714",
-      "geonameId": 3075496,
-      "toponymName": "Hořice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Hořice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.35632",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3075496,
+      "name": "Hořice",
+      "distance": "4.56714"
+  },
+  {
       "lng": "16.54953",
-      "distance": "4.85866",
-      "geonameId": 3071237,
-      "toponymName": "Malá Lhota",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 140,
-      "countryCode": "CZ",
-      "name": "Malá Lhota",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.39189",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3071237,
+      "name": "Malá Lhota",
+      "distance": "4.85866"
+  },
+  {
       "lng": "16.56661",
-      "distance": "4.88149",
-      "geonameId": 3070647,
-      "toponymName": "Milonice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 178,
-      "countryCode": "CZ",
-      "name": "Milonice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.36734",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3070647,
+      "name": "Milonice",
+      "distance": "4.88149"
+  },
+  {
       "lng": "16.54547",
-      "distance": "5.23249",
-      "geonameId": 3061523,
-      "toponymName": "Žernovník",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 195,
-      "countryCode": "CZ",
-      "name": "Žernovník",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.40693",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3061523,
+      "name": "Žernovník",
+      "distance": "5.23249"
+  },
+  {
       "lng": "16.69108",
-      "distance": "5.88315",
-      "geonameId": 3064322,
-      "toponymName": "Těchov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Těchov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.37727",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
+      "geonameId": 3064322,
+      "name": "Těchov",
+      "distance": "5.88315"
+  },
+  {
       "lng": "16.60562",
-      "distance": "6.17163",
-      "geonameId": 3069200,
-      "toponymName": "Obora",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 277,
-      "countryCode": "CZ",
-      "name": "Obora",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
       "lat": "49.45221",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.67948",
-      "distance": "6.26807",
-      "geonameId": 3072504,
-      "toponymName": "Kuničky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 264,
-      "countryCode": "CZ",
-      "name": "Kuničky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.43534",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.69974",
-      "distance": "6.29641",
-      "geonameId": 3068370,
-      "toponymName": "Petrovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 432,
-      "countryCode": "CZ",
-      "name": "Petrovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.41186",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.54086",
-      "distance": "6.3119",
-      "geonameId": 3063691,
-      "toponymName": "Újezd",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Újezd",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.36857",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.63691",
-      "distance": "6.42999",
-      "geonameId": 3073681,
-      "toponymName": "Klamovka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Klamovka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.34096",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.65727",
-      "distance": "6.45693",
-      "geonameId": 3073623,
-      "toponymName": "Klepačov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Klepačov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.34572",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.63691",
-      "distance": "6.50923",
-      "geonameId": 3069047,
-      "toponymName": "Olešná",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Olešná",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.34022",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.69778",
-      "distance": "6.52911",
-      "geonameId": 3061718,
-      "toponymName": "Žďár",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 361,
-      "countryCode": "CZ",
-      "name": "Žďár",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.42158",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.52596",
-      "distance": "6.535",
-      "geonameId": 3071469,
-      "toponymName": "Lubě",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 97,
-      "countryCode": "CZ",
-      "name": "Lubě",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.39617",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.53828",
-      "distance": "6.73166",
-      "geonameId": 3078338,
-      "toponymName": "Býkovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 177,
-      "countryCode": "CZ",
-      "name": "Býkovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.4302",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.55065",
-      "distance": "6.77968",
-      "geonameId": 3072293,
-      "toponymName": "Lažany",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 361,
-      "countryCode": "CZ",
-      "name": "Lažany",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.35359",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.71155",
-      "distance": "6.93855",
-      "geonameId": 3063044,
-      "toponymName": "Veselice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Veselice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.39607",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.58382",
-      "distance": "7.39829",
-      "geonameId": 3072731,
-      "toponymName": "Krhov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 147,
-      "countryCode": "CZ",
-      "name": "Krhov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.46026",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.53674",
-      "distance": "7.48681",
-      "geonameId": 3061515,
-      "toponymName": "Žerůtky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 60,
-      "countryCode": "CZ",
-      "name": "Žerůtky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.44025",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.61312",
-      "distance": "7.49358",
-      "geonameId": 3064611,
-      "toponymName": "Svatá Kateřina",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Svatá Kateřina",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.32978",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.5156",
-      "distance": "7.52516",
-      "geonameId": 3078555,
-      "toponymName": "Brťov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Brťov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.41408",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.57589",
-      "distance": "7.55654",
-      "geonameId": 3064466,
-      "toponymName": "Svinošice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 264,
-      "countryCode": "CZ",
-      "name": "Svinošice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.33443",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.71984",
-      "distance": "7.56351",
-      "geonameId": 3063366,
-      "toponymName": "Vavřinec",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 838,
-      "countryCode": "CZ",
-      "name": "Vavřinec",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.4026",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.51346",
-      "distance": "7.58392",
-      "geonameId": 3075728,
-      "toponymName": "Hluboké",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Hluboké",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.38405",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.59763",
-      "distance": "7.60831",
-      "geonameId": 3066348,
-      "toponymName": "Šebrov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Šebrov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.32978",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.60713",
-      "distance": "7.61419",
-      "geonameId": 3074610,
-      "toponymName": "Jabloňany",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 367,
-      "countryCode": "CZ",
-      "name": "Jabloňany",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.46535",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.62485",
-      "distance": "7.6914",
-      "geonameId": 3072064,
-      "toponymName": "Lhota Rapotina",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 358,
-      "countryCode": "CZ",
-      "name": "Lhota Rapotina",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.46605",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.72202",
-      "distance": "7.71986",
-      "geonameId": 3064749,
-      "toponymName": "Suchdol",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Suchdol",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.3919",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.55313",
-      "distance": "7.88433",
-      "geonameId": 3071759,
-      "toponymName": "Lipůvka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1135,
-      "countryCode": "CZ",
-      "name": "Lipůvka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.33933",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.65407",
-      "distance": "7.93901",
-      "geonameId": 3063688,
-      "toponymName": "Újezd",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Újezd",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.46405",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.50857",
-      "distance": "8.00412",
-      "geonameId": 3074323,
-      "toponymName": "Jeneč",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Jeneč",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.41345",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.53716",
-      "distance": "8.33012",
-      "geonameId": 3071302,
-      "toponymName": "Lysice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1831,
-      "countryCode": "CZ",
-      "name": "Lysice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.4516",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.67169",
-      "distance": "8.4074",
-      "geonameId": 3069009,
-      "toponymName": "Olomučany",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 892,
-      "countryCode": "CZ",
-      "name": "Olomučany",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.33087",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.51618",
-      "distance": "8.461",
-      "geonameId": 3066069,
-      "toponymName": "Skalička",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 118,
-      "countryCode": "CZ",
-      "name": "Skalička",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.35787",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.5096",
-      "distance": "8.47853",
-      "geonameId": 3077130,
-      "toponymName": "Dlouhá Lhota",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 112,
-      "countryCode": "CZ",
-      "name": "Dlouhá Lhota",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.42866",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.70908",
-      "distance": "8.50108",
-      "geonameId": 3072295,
-      "toponymName": "Lažánky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 736,
-      "countryCode": "CZ",
-      "name": "Lažánky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.3508",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.5194",
-      "distance": "9.12958",
-      "geonameId": 3069240,
-      "toponymName": "Nuzířov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Nuzířov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.34459",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.73953",
-      "distance": "9.17927",
-      "geonameId": 3065781,
-      "toponymName": "Sloup",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 915,
-      "countryCode": "CZ",
-      "name": "Sloup",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.41479",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.49135",
-      "distance": "9.19948",
-      "geonameId": 3063595,
-      "toponymName": "Unín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 207,
-      "countryCode": "CZ",
-      "name": "Unín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.38218",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.48972",
-      "distance": "9.22592",
-      "geonameId": 3078411,
-      "toponymName": "Bukovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 58,
-      "countryCode": "CZ",
-      "name": "Bukovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.40673",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.71514",
-      "distance": "9.23215",
-      "geonameId": 3069907,
-      "toponymName": "Němčice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 433,
-      "countryCode": "CZ",
-      "name": "Němčice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.44916",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.60358",
-      "distance": "9.38693",
-      "geonameId": 3066070,
-      "toponymName": "Skalice nad Svitavou",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 615,
-      "countryCode": "CZ",
-      "name": "Skalice nad Svitavou",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.48115",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.54223",
-      "distance": "9.64616",
-      "geonameId": 3076402,
-      "toponymName": "Drnovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1129,
-      "countryCode": "CZ",
-      "name": "Drnovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.46931",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.48285",
-      "distance": "9.69417",
-      "geonameId": 3066815,
-      "toponymName": "Rohozec",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 195,
-      "countryCode": "CZ",
-      "name": "Rohozec",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.39032",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.61377",
-      "distance": "9.77456",
-      "geonameId": 3062524,
-      "toponymName": "Vranov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 611,
-      "countryCode": "CZ",
-      "name": "Vranov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.30926",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.49408",
-      "distance": "9.90807",
-      "geonameId": 3062374,
-      "toponymName": "Všechovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 154,
-      "countryCode": "CZ",
-      "name": "Všechovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.35711",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.75188",
-      "distance": "9.97543",
-      "geonameId": 3065590,
-      "toponymName": "Šošůvka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 737,
-      "countryCode": "CZ",
-      "name": "Šošůvka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.41053",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.50378",
-      "distance": "10.04438",
-      "geonameId": 3072355,
-      "toponymName": "Lačnov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Lačnov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.45005",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.50608",
-      "distance": "10.05781",
-      "geonameId": 3065212,
-      "toponymName": "Štěchov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 152,
-      "countryCode": "CZ",
-      "name": "Štěchov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.45226",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.47888",
-      "distance": "10.13923",
-      "geonameId": 3061506,
-      "toponymName": "Zhoř",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 56,
-      "countryCode": "CZ",
-      "name": "Zhoř",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.41468",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.61777",
-      "distance": "10.18497",
-      "geonameId": 3070527,
-      "toponymName": "Mladkov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Mladkov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.4887",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.74673",
-      "distance": "10.1928",
-      "geonameId": 3062895,
-      "toponymName": "Vilémovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 280,
-      "countryCode": "CZ",
-      "name": "Vilémovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.36379",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.55789",
-      "distance": "10.28533",
-      "geonameId": 3062654,
-      "toponymName": "Voděrady",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 492,
-      "countryCode": "CZ",
-      "name": "Voděrady",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.4815",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.72581",
-      "distance": "10.39762",
-      "geonameId": 3066608,
-      "toponymName": "Rudice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 843,
-      "countryCode": "CZ",
-      "name": "Rudice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.33717",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.65997",
-      "distance": "10.54596",
-      "geonameId": 3078910,
-      "toponymName": "Boskovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 11121,
-      "countryCode": "CZ",
-      "name": "Boskovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.48751",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.73178",
-      "distance": "10.60954",
-      "geonameId": 3071428,
-      "toponymName": "Ludíkov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 289,
-      "countryCode": "CZ",
-      "name": "Ludíkov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.45539",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.47453",
-      "distance": "10.62932",
-      "geonameId": 3076019,
-      "toponymName": "Hájek",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Hájek",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.3725",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.76268",
-      "distance": "10.7764",
-      "geonameId": 3068753,
-      "toponymName": "Ostrov u Macochy",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1078,
-      "countryCode": "CZ",
-      "name": "Ostrov u Macochy",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.38236",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.50222",
-      "distance": "10.87236",
-      "geonameId": 3071139,
-      "toponymName": "Malhostovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 834,
-      "countryCode": "CZ",
-      "name": "Malhostovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.3336",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.65253",
-      "distance": "10.94945",
-      "geonameId": 3079841,
-      "toponymName": "Adamov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 4871,
-      "countryCode": "CZ",
-      "name": "Adamov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.30162",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.58841",
-      "distance": "11.04857",
-      "geonameId": 3066350,
-      "toponymName": "Sebranice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 593,
-      "countryCode": "CZ",
-      "name": "Sebranice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.49483",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.6788",
-      "distance": "11.05386",
-      "geonameId": 3074062,
-      "toponymName": "Josefov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Josefov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.30661",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.71987",
-      "distance": "11.08156",
-      "geonameId": 3063441,
-      "toponymName": "Valchov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 457,
-      "countryCode": "CZ",
-      "name": "Valchov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.47018",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.46821",
-      "distance": "11.11003",
-      "geonameId": 3076038,
-      "toponymName": "Hajánky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Hajánky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.37119",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.46262",
-      "distance": "11.30705",
-      "geonameId": 3074548,
-      "toponymName": "Jamné",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Jamné",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.37941",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.7",
-      "distance": "11.35972",
-      "geonameId": 3074902,
-      "toponymName": "Hrádkov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Hrádkov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.48333",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.52839",
-      "distance": "11.55307",
-      "geonameId": 3061751,
-      "toponymName": "Zbraslavec",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 181,
-      "countryCode": "CZ",
-      "name": "Zbraslavec",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.4839",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.47526",
-      "distance": "11.61738",
-      "geonameId": 3072526,
-      "toponymName": "Kunčina Ves",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 49,
-      "countryCode": "CZ",
-      "name": "Kunčina Ves",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.44698",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.59793",
-      "distance": "11.7116",
-      "geonameId": 3064456,
-      "toponymName": "Svitávka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1700,
-      "countryCode": "CZ",
-      "name": "Svitávka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.50178",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.76793",
-      "distance": "11.72863",
-      "geonameId": 3072855,
-      "toponymName": "Krasová",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 254,
-      "countryCode": "CZ",
-      "name": "Krasová",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.36138",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.75595",
-      "distance": "11.72885",
-      "geonameId": 3074360,
-      "toponymName": "Jedovnice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 2578,
-      "countryCode": "CZ",
-      "name": "Jedovnice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.34453",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.77766",
-      "distance": "11.77954",
-      "geonameId": 3075579,
-      "toponymName": "Holštejn",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 156,
-      "countryCode": "CZ",
-      "name": "Holštejn",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.40632",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.62799",
-      "distance": "11.7951",
-      "geonameId": 3077540,
-      "toponymName": "Chrudichromy",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 173,
-      "countryCode": "CZ",
-      "name": "Chrudichromy",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5029",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.49678",
-      "distance": "11.82592",
-      "geonameId": 3072056,
-      "toponymName": "Lhota u Lysic",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 128,
-      "countryCode": "CZ",
-      "name": "Lhota u Lysic",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.46968",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.45373",
-      "distance": "11.95218",
-      "geonameId": 3067017,
-      "toponymName": "Rašov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 216,
-      "countryCode": "CZ",
-      "name": "Rašov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.41555",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.57874",
-      "distance": "12.06255",
-      "geonameId": 3072224,
-      "toponymName": "Lelekovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1476,
-      "countryCode": "CZ",
-      "name": "Lelekovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.29144",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.63073",
-      "distance": "12.28798",
-      "geonameId": 3063530,
-      "toponymName": "Útěchov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Útěchov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.28707",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.47798",
-      "distance": "12.37777",
-      "geonameId": 3076470,
-      "toponymName": "Drásov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1138,
-      "countryCode": "CZ",
-      "name": "Drásov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.33183",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.45866",
-      "distance": "12.54051",
-      "geonameId": 3073048,
-      "toponymName": "Kozárov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 115,
-      "countryCode": "CZ",
-      "name": "Kozárov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.44384",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.53144",
-      "distance": "12.57064",
-      "geonameId": 3072476,
-      "toponymName": "Kuřim",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 9283,
-      "countryCode": "CZ",
-      "name": "Kuřim",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.29852",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.45044",
-      "distance": "12.7239",
-      "geonameId": 3061566,
-      "toponymName": "Železné",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 324,
-      "countryCode": "CZ",
-      "name": "Železné",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.35962",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.49073",
-      "distance": "12.84799",
-      "geonameId": 3072507,
-      "toponymName": "Kunice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 111,
-      "countryCode": "CZ",
-      "name": "Kunice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.47883",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.72351",
-      "distance": "13.01883",
-      "geonameId": 3076054,
-      "toponymName": "Habrůvka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 344,
-      "countryCode": "CZ",
-      "name": "Habrůvka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.3035",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.75851",
-      "distance": "13.04331",
-      "geonameId": 3061697,
-      "toponymName": "Žďárná",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 722,
-      "countryCode": "CZ",
-      "name": "Žďárná",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.46864",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.46532",
-      "distance": "13.04521",
-      "geonameId": 3079594,
-      "toponymName": "Bedřichov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 248,
-      "countryCode": "CZ",
-      "name": "Bedřichov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.46118",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.73276",
-      "distance": "13.08727",
-      "geonameId": 3063312,
-      "toponymName": "Velenov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 187,
-      "countryCode": "CZ",
-      "name": "Velenov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.48684",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.78435",
-      "distance": "13.09021",
-      "geonameId": 3073098,
-      "toponymName": "Kotvrdovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 841,
-      "countryCode": "CZ",
-      "name": "Kotvrdovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.35511",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.58412",
-      "distance": "13.23895",
-      "geonameId": 3066395,
-      "toponymName": "Sasina",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Sasina",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.51434",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.60635",
-      "distance": "13.25594",
-      "geonameId": 3068892,
-      "toponymName": "Ořešín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Ořešín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.27811",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.53949",
-      "distance": "13.4797",
-      "geonameId": 3063687,
-      "toponymName": "Újezd",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Újezd",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5076",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.5654",
-      "distance": "13.52731",
-      "geonameId": 3077941,
-      "toponymName": "Česká",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 690,
-      "countryCode": "CZ",
-      "name": "Česká",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.28008",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.42996",
-      "distance": "13.56545",
-      "geonameId": 3066171,
-      "toponymName": "Šerkovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 202,
-      "countryCode": "CZ",
-      "name": "Šerkovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.38558",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.71667",
-      "distance": "13.57191",
-      "geonameId": 3062498,
-      "toponymName": "Vratíkov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Vratíkov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.49606",
-      "distance": "13.67225",
-      "geonameId": 3064153,
-      "toponymName": "Touboř",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Touboř",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.49199",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.47791",
-      "distance": "13.69918",
-      "geonameId": 3078211,
-      "toponymName": "Čebín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1632,
-      "countryCode": "CZ",
-      "name": "Čebín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.31324",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.4363",
-      "distance": "13.7222",
-      "geonameId": 3064936,
-      "toponymName": "Strhaře",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 125,
-      "countryCode": "CZ",
-      "name": "Strhaře",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.43561",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.79917",
-      "distance": "13.75545",
-      "geonameId": 3075028,
-      "toponymName": "Housko",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Housko",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.42893",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.43125",
-      "distance": "13.82597",
-      "geonameId": 3071605,
-      "toponymName": "Lomnička",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 400,
-      "countryCode": "CZ",
-      "name": "Lomnička",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.36699",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.80583",
-      "distance": "13.8609",
-      "geonameId": 3071771,
-      "toponymName": "Lipovec",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1045,
-      "countryCode": "CZ",
-      "name": "Lipovec",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.38394",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.63274",
-      "distance": "13.91653",
-      "geonameId": 3062908,
-      "toponymName": "Vila",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Vila",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.52178",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.69613",
-      "distance": "13.93561",
-      "geonameId": 3079721,
-      "toponymName": "Babice nad Svitavou",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 861,
-      "countryCode": "CZ",
-      "name": "Babice nad Svitavou",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.2833",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.59528",
-      "distance": "14.02835",
-      "geonameId": 3074351,
-      "toponymName": "Jehnice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Jehnice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.27172",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.51722",
-      "distance": "14.11019",
-      "geonameId": 3072486,
-      "toponymName": "Kunštát",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 2637,
-      "countryCode": "CZ",
-      "name": "Kunštát",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.50645",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.61575",
-      "distance": "14.11356",
-      "geonameId": 3070738,
-      "toponymName": "Míchov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 144,
-      "countryCode": "CZ",
-      "name": "Míchov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.52403",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.50173",
-      "distance": "14.22381",
-      "geonameId": 3070322,
-      "toponymName": "Moravské Knínice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 775,
-      "countryCode": "CZ",
-      "name": "Moravské Knínice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.29328",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.58592",
-      "distance": "14.23242",
-      "geonameId": 3061774,
-      "toponymName": "Zboněk",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Zboněk",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.52359",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.76238",
-      "distance": "14.26541",
-      "geonameId": 3064730,
-      "toponymName": "Suchý",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 375,
-      "countryCode": "CZ",
-      "name": "Suchý",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.4828",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.6648",
-      "distance": "14.27493",
-      "geonameId": 3068532,
-      "toponymName": "Pastvisko",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Pastvisko",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.52148",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.80388",
-      "distance": "14.43937",
-      "geonameId": 3066199,
-      "toponymName": "Senetářov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 506,
-      "countryCode": "CZ",
-      "name": "Senetářov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.35468",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.64231",
-      "distance": "14.47613",
-      "geonameId": 3079696,
-      "toponymName": "Bačov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Bačov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.52616",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.74409",
-      "distance": "14.50989",
-      "geonameId": 3072618,
-      "toponymName": "Křtiny",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 753,
-      "countryCode": "CZ",
-      "name": "Křtiny",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.29706",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.41359",
-      "distance": "14.71337",
-      "geonameId": 3071611,
-      "toponymName": "Lomnice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1300,
-      "countryCode": "CZ",
-      "name": "Lomnice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.40462",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.49688",
-      "distance": "14.77348",
-      "geonameId": 3064407,
-      "toponymName": "Sychotín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Sychotín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.50491",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.44217",
-      "distance": "14.79041",
-      "geonameId": 3074990,
-      "toponymName": "Hradčany",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 492,
-      "countryCode": "CZ",
-      "name": "Hradčany",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.32786",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.81262",
-      "distance": "14.81169",
-      "geonameId": 3070371,
-      "toponymName": "Vysočany",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Vysočany",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.43286",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.61759",
-      "distance": "14.85203",
-      "geonameId": 3068010,
-      "toponymName": "Podolí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Podolí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.53067",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.41167",
-      "distance": "14.87652",
-      "geonameId": 3066916,
-      "toponymName": "Řepka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Řepka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.38678",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.732",
-      "distance": "14.88116",
-      "geonameId": 3069096,
-      "toponymName": "Okrouhlá",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 523,
-      "countryCode": "CZ",
-      "name": "Okrouhlá",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5075",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.47408",
-      "distance": "14.89762",
-      "geonameId": 3075727,
-      "toponymName": "Hluboké",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Hluboké",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.494",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.42438",
-      "distance": "14.92008",
-      "geonameId": 3064211,
-      "toponymName": "Tišnov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 8227,
-      "countryCode": "CZ",
-      "name": "Tišnov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.34872",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.82155",
-      "distance": "14.99535",
-      "geonameId": 3079681,
-      "toponymName": "Baldovec",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Baldovec",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.4106",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.59107",
-      "distance": "15.16463",
-      "geonameId": 3070390,
-      "toponymName": "Mokrá Hora",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 2612,
-      "countryCode": "CZ",
-      "name": "Mokrá Hora",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.26176",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.41387",
-      "distance": "15.19049",
-      "geonameId": 3064392,
-      "toponymName": "Synalov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 101,
-      "countryCode": "CZ",
-      "name": "Synalov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.43273",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.54262",
-      "distance": "15.21396",
-      "geonameId": 3069231,
-      "toponymName": "Nýrov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 209,
-      "countryCode": "CZ",
-      "name": "Nýrov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5253",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.56549",
-      "distance": "15.23073",
-      "geonameId": 3074613,
-      "toponymName": "Ivanovice u Brna",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Ivanovice u Brna",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.26422",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.66852",
-      "distance": "15.24961",
-      "geonameId": 3064718,
-      "toponymName": "Sudice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 390,
-      "countryCode": "CZ",
-      "name": "Sudice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5299",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.58333",
-      "distance": "15.33169",
-      "geonameId": 3073610,
-      "toponymName": "Klevetov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Klevetov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.53333",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.8",
-      "distance": "15.42678",
-      "geonameId": 3066013,
-      "toponymName": "Sklená Hut’",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Sklená Hut’",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.46667",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.42158",
-      "distance": "15.55712",
-      "geonameId": 3068840,
-      "toponymName": "Osiky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 132,
-      "countryCode": "CZ",
-      "name": "Osiky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.45619",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.42575",
-      "distance": "15.59105",
-      "geonameId": 3078549,
-      "toponymName": "Brumov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 236,
-      "countryCode": "CZ",
-      "name": "Brumov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.46238",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.44667",
-      "distance": "15.60678",
-      "geonameId": 3066181,
-      "toponymName": "Sentice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 495,
-      "countryCode": "CZ",
-      "name": "Sentice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.31076",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.5134",
-      "distance": "15.61479",
-      "geonameId": 3066603,
-      "toponymName": "Rudka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Rudka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.52058",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.39984",
-      "distance": "15.69567",
-      "geonameId": 3078542,
-      "toponymName": "Brusná",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Brusná",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.39321",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.52756",
-      "distance": "15.74254",
-      "geonameId": 3074167,
-      "toponymName": "Jinačovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 558,
-      "countryCode": "CZ",
-      "name": "Jinačovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.26792",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.68869",
-      "distance": "15.81399",
-      "geonameId": 3063357,
-      "toponymName": "Vážany",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 193,
-      "countryCode": "CZ",
-      "name": "Vážany",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.53119",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.7732",
-      "distance": "15.92573",
-      "geonameId": 3078404,
-      "toponymName": "Bukovina",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 317,
-      "countryCode": "CZ",
-      "name": "Bukovina",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.29737",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.82987",
-      "distance": "15.94882",
-      "geonameId": 3072908,
-      "toponymName": "Krásensko",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 444,
-      "countryCode": "CZ",
-      "name": "Krásensko",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.36453",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.62086",
-      "distance": "15.96348",
-      "geonameId": 3065647,
-      "toponymName": "Soběšice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Soběšice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.25363",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.75",
-      "distance": "15.97016",
-      "geonameId": 3067446,
-      "toponymName": "Proseč",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Proseč",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.28333",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.83643",
-      "distance": "16.01953",
-      "geonameId": 3071030,
-      "toponymName": "Marianín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Marianín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.39059",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.56146",
-      "distance": "16.02186",
-      "geonameId": 3072057,
-      "toponymName": "Lhota u Letovic",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Lhota u Letovic",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.53674",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.62858",
-      "distance": "16.02992",
-      "geonameId": 3062841,
-      "toponymName": "Vísky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 227,
-      "countryCode": "CZ",
-      "name": "Vísky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.54103",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.74952",
-      "distance": "16.10241",
-      "geonameId": 3078709,
-      "toponymName": "Březina",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 595,
-      "countryCode": "CZ",
-      "name": "Březina",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.2816",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.40241",
-      "distance": "16.28374",
-      "geonameId": 3067631,
-      "toponymName": "Předklášteří",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1446,
-      "countryCode": "CZ",
-      "name": "Předklášteří",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.35253",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.84035",
-      "distance": "16.28678",
-      "geonameId": 3066641,
-      "toponymName": "Rozstání",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 675,
-      "countryCode": "CZ",
-      "name": "Rozstání",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.3977",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.58146",
-      "distance": "16.32182",
-      "geonameId": 3066965,
-      "toponymName": "Řečkovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Řečkovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.25212",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.39423",
-      "distance": "16.39979",
-      "geonameId": 3069161,
-      "toponymName": "Ochoz u Tišnova",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 108,
-      "countryCode": "CZ",
-      "name": "Ochoz u Tišnova",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.42559",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.42142",
-      "distance": "16.46249",
-      "geonameId": 3078707,
-      "toponymName": "Březina",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 236,
-      "countryCode": "CZ",
-      "name": "Březina",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.32124",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.71452",
-      "distance": "16.47749",
-      "geonameId": 3073877,
-      "toponymName": "Kanice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 555,
-      "countryCode": "CZ",
-      "name": "Kanice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.26371",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.69394",
-      "distance": "16.53492",
-      "geonameId": 3066872,
-      "toponymName": "Řícmanice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 656,
-      "countryCode": "CZ",
-      "name": "Řícmanice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.25746",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.38817",
-      "distance": "16.55416",
-      "geonameId": 3063052,
-      "toponymName": "Veselí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Veselí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.40427",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.48369",
-      "distance": "16.61741",
-      "geonameId": 3071265,
-      "toponymName": "Makov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 55,
-      "countryCode": "CZ",
-      "name": "Makov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.51915",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.45872",
-      "distance": "16.63068",
-      "geonameId": 3077531,
-      "toponymName": "Chudčice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 671,
-      "countryCode": "CZ",
-      "name": "Chudčice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.28849",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.5303",
-      "distance": "16.72847",
-      "geonameId": 3074431,
-      "toponymName": "Jasinov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Jasinov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5368",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.54627",
-      "distance": "16.73529",
-      "geonameId": 3062138,
-      "toponymName": "Zábludov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Zábludov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.54058",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.44153",
-      "distance": "16.7571",
-      "geonameId": 3064351,
-      "toponymName": "Tasovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 73,
-      "countryCode": "CZ",
-      "name": "Tasovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.49594",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.77059",
-      "distance": "16.78291",
-      "geonameId": 3079509,
-      "toponymName": "Benešov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 609,
-      "countryCode": "CZ",
-      "name": "Benešov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.50943",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.38758",
-      "distance": "16.79986",
-      "geonameId": 3065176,
-      "toponymName": "Štěpánovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 425,
-      "countryCode": "CZ",
-      "name": "Štěpánovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.37295",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.83321",
-      "distance": "16.81957",
-      "geonameId": 3067994,
-      "toponymName": "Podomí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 416,
-      "countryCode": "CZ",
-      "name": "Podomí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.34472",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.69502",
-      "distance": "16.84794",
-      "geonameId": 3073511,
-      "toponymName": "Knínice u Boskovic",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 784,
-      "countryCode": "CZ",
-      "name": "Knínice u Boskovic",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.53959",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.84681",
-      "distance": "16.87526",
-      "geonameId": 3072545,
-      "toponymName": "Kulířov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 217,
-      "countryCode": "CZ",
-      "name": "Kulířov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.37932",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.57357",
-      "distance": "16.95883",
-      "geonameId": 3072130,
-      "toponymName": "Letovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 6799,
-      "countryCode": "CZ",
-      "name": "Letovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.54709",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.42291",
-      "distance": "16.98199",
-      "geonameId": 3078020,
-      "toponymName": "Černovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 329,
-      "countryCode": "CZ",
-      "name": "Černovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.48353",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.64449",
-      "distance": "17.06758",
-      "geonameId": 3068617,
-      "toponymName": "Pamětice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 204,
-      "countryCode": "CZ",
-      "name": "Pamětice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.54946",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.67247",
-      "distance": "17.18646",
-      "geonameId": 3079332,
-      "toponymName": "Bílovice nad Svitavou",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 2600,
-      "countryCode": "CZ",
-      "name": "Bílovice nad Svitavou",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.24708",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.38313",
-      "distance": "17.38443",
-      "geonameId": 3079547,
-      "toponymName": "Běleč",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 186,
-      "countryCode": "CZ",
-      "name": "Běleč",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.43394",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.55193",
-      "distance": "17.39047",
-      "geonameId": 3073536,
-      "toponymName": "Kněževísko",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Kněževísko",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.54782",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.60712",
-      "distance": "17.53306",
-      "geonameId": 3073696,
-      "toponymName": "Kladoruby",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Kladoruby",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.55467",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.41279",
-      "distance": "17.57596",
-      "geonameId": 3075839,
-      "toponymName": "Heroltice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 164,
-      "countryCode": "CZ",
-      "name": "Heroltice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.31136",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.60822",
-      "distance": "17.57968",
-      "geonameId": 3064133,
-      "toponymName": "Trávník",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Trávník",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.55512",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.50993",
-      "distance": "17.62271",
-      "geonameId": 3066678,
-      "toponymName": "Rozdrojovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 656,
-      "countryCode": "CZ",
-      "name": "Rozdrojovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.25464",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.78643",
-      "distance": "17.66299",
-      "geonameId": 3068512,
-      "toponymName": "Pavlov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Pavlov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5106",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.71881",
-      "distance": "17.71926",
-      "geonameId": 3073858,
-      "toponymName": "Kapouňata",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Kapouňata",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.54167",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.48959",
-      "distance": "17.73526",
-      "geonameId": 3068382,
-      "toponymName": "Petrov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 147,
-      "countryCode": "CZ",
-      "name": "Petrov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.53367",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.57082",
-      "distance": "17.77958",
-      "geonameId": 3070893,
-      "toponymName": "Medlánky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Medlánky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.24002",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.75394",
-      "distance": "17.8727",
-      "geonameId": 3073244,
-      "toponymName": "Kořenec",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 341,
-      "countryCode": "CZ",
-      "name": "Kořenec",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.53032",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.80943",
-      "distance": "17.90782",
-      "geonameId": 3078390,
-      "toponymName": "Bukovinka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 311,
-      "countryCode": "CZ",
-      "name": "Bukovinka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.29737",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.85181",
-      "distance": "17.92613",
-      "geonameId": 3069745,
-      "toponymName": "Niva",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 367,
-      "countryCode": "CZ",
-      "name": "Niva",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.44522",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.46303",
-      "distance": "17.9804",
-      "geonameId": 3066646,
-      "toponymName": "Rozseč nad Kunštátem",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 506,
-      "countryCode": "CZ",
-      "name": "Rozseč nad Kunštátem",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5244",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.37762",
-      "distance": "17.99638",
-      "geonameId": 3072755,
-      "toponymName": "Křeptov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Křeptov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.4419",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.58904",
-      "distance": "18.08772",
-      "geonameId": 3064106,
-      "toponymName": "Třebětín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Třebětín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.55882",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.73733",
-      "distance": "18.15345",
-      "geonameId": 3069167,
-      "toponymName": "Ochoz u Brna",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Ochoz u Brna",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.25447",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.39386",
-      "distance": "18.19205",
-      "geonameId": 3062635,
-      "toponymName": "Vohančice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 131,
-      "countryCode": "CZ",
-      "name": "Vohančice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.32159",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.71162",
-      "distance": "18.21846",
-      "geonameId": 3066355,
-      "toponymName": "Šebetov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 911,
-      "countryCode": "CZ",
-      "name": "Šebetov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.54862",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.36393",
-      "distance": "18.29857",
-      "geonameId": 3068015,
-      "toponymName": "Podolí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Podolí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.40036",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.38333",
-      "distance": "18.3275",
-      "geonameId": 3061521,
-      "toponymName": "Žernůvka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Žernůvka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.33333",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.36845",
-      "distance": "18.38742",
-      "geonameId": 3064953,
-      "toponymName": "Střemchoví",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Střemchoví",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.36227",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.73735",
-      "distance": "18.39758",
-      "geonameId": 3070075,
-      "toponymName": "Na Karlově",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Na Karlově",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.54241",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.64798",
-      "distance": "18.41291",
-      "geonameId": 3069184,
-      "toponymName": "Obřany",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Obřany",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.2329",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.37649",
-      "distance": "18.43728",
-      "geonameId": 3069926,
-      "toponymName": "Nelepeč",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Nelepeč",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.34215",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.36111",
-      "distance": "18.50412",
-      "geonameId": 3079034,
-      "toponymName": "Borač",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 307,
-      "countryCode": "CZ",
-      "name": "Borač",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.40082",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.36298",
-      "distance": "18.50902",
-      "geonameId": 3062007,
-      "toponymName": "Zahrada",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Zahrada",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.37667",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.83594",
-      "distance": "18.62222",
-      "geonameId": 3067398,
-      "toponymName": "Protivanov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1077,
-      "countryCode": "CZ",
-      "name": "Protivanov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.48351",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.57807",
-      "distance": "18.63437",
-      "geonameId": 3075924,
-      "toponymName": "Havírna",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Havírna",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.56285",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.52475",
-      "distance": "18.66157",
-      "geonameId": 3062515,
-      "toponymName": "Vranová",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 333,
-      "countryCode": "CZ",
-      "name": "Vranová",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.55404",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.85139",
-      "distance": "18.71937",
-      "geonameId": 3066574,
-      "toponymName": "Ruprechtov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 559,
-      "countryCode": "CZ",
-      "name": "Ruprechtov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.32865",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.61201",
-      "distance": "18.73097",
-      "geonameId": 3073450,
-      "toponymName": "Kochov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Kochov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.56553",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.43686",
-      "distance": "18.74063",
-      "geonameId": 3062965,
-      "toponymName": "Veverská Bítýška",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 2842,
-      "countryCode": "CZ",
-      "name": "Veverská Bítýška",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.27591",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.87168",
-      "distance": "18.74788",
-      "geonameId": 3068711,
-      "toponymName": "Otinoves",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 294,
-      "countryCode": "CZ",
-      "name": "Otinoves",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.42118",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.65",
-      "distance": "18.87165",
-      "geonameId": 3076378,
-      "toponymName": "Drvalovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Drvalovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.56536",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.41027",
-      "distance": "18.87864",
-      "geonameId": 3075653,
-      "toponymName": "Hodonín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 142,
-      "countryCode": "CZ",
-      "name": "Hodonín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.50118",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.49168",
-      "distance": "18.90749",
-      "geonameId": 3064689,
-      "toponymName": "Sulíkov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 260,
-      "countryCode": "CZ",
-      "name": "Sulíkov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5466",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.36311",
-      "distance": "18.9663",
-      "geonameId": 3072670,
-      "toponymName": "Křížovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Křížovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.44034",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.48333",
-      "distance": "18.99343",
-      "geonameId": 3069202,
-      "toponymName": "Obora",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
+      "geonameId": 3069200,
       "name": "Obora",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.25",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.52739",
-      "distance": "19.03898",
-      "geonameId": 3073510,
-      "toponymName": "Kníničky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Kníničky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.23604",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.62583",
-      "distance": "19.05799",
-      "geonameId": 6639703,
-      "toponymName": "Lesná",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Lesná",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.22589",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.87883",
-      "distance": "19.08374",
-      "geonameId": 3069137,
-      "toponymName": "Odrůvky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Odrůvky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.39407",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.35871",
-      "distance": "19.10921",
-      "geonameId": 3076780,
-      "toponymName": "Dolní Loućky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1111,
-      "countryCode": "CZ",
-      "name": "Dolní Loućky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.36099",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.58987",
-      "distance": "19.21334",
-      "geonameId": 3072934,
-      "toponymName": "Královo Pole",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Královo Pole",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.22522",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.66621",
-      "distance": "19.27033",
-      "geonameId": 3063395,
-      "toponymName": "Vanovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 548,
-      "countryCode": "CZ",
-      "name": "Vanovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.56728",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.55605",
-      "distance": "19.2859",
-      "geonameId": 3070765,
-      "toponymName": "Meziříčko",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Meziříčko",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.56609",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.3516",
-      "distance": "19.29608",
-      "geonameId": 3073967,
-      "toponymName": "Kaly",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 240,
-      "countryCode": "CZ",
-      "name": "Kaly",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.37932",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.35269",
-      "distance": "19.34014",
-      "geonameId": 3076525,
-      "toponymName": "Doubravník",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 819,
-      "countryCode": "CZ",
-      "name": "Doubravník",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.42411",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.88103",
-      "distance": "19.3922",
-      "geonameId": 3064790,
-      "toponymName": "Studnice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 491,
-      "countryCode": "CZ",
-      "name": "Studnice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.37559",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.37794",
-      "distance": "19.55969",
-      "geonameId": 3068472,
-      "toponymName": "Pejškov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Pejškov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.31496",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.65819",
-      "distance": "19.69664",
-      "geonameId": 3071116,
-      "toponymName": "Maloměřice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Maloměřice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.22219",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.36575",
-      "distance": "19.69869",
-      "geonameId": 3077356,
-      "toponymName": "Čížky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Čížky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.32886",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.52339",
-      "distance": "19.71483",
-      "geonameId": 3072275,
-      "toponymName": "Lazinov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 145,
-      "countryCode": "CZ",
-      "name": "Lazinov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.56381",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.35914",
-      "distance": "19.79781",
-      "geonameId": 3065985,
-      "toponymName": "Skorotice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 145,
-      "countryCode": "CZ",
-      "name": "Skorotice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.45732",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.40671",
-      "distance": "19.85141",
-      "geonameId": 3075623,
-      "toponymName": "Holasice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Holasice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.28241",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.43104",
-      "distance": "19.88381",
-      "geonameId": 3071526,
-      "toponymName": "Louka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 71,
-      "countryCode": "CZ",
-      "name": "Louka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.52917",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.82913",
-      "distance": "19.89183",
-      "geonameId": 3078438,
-      "toponymName": "Buková",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 363,
-      "countryCode": "CZ",
-      "name": "Buková",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.50974",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.5303",
-      "distance": "19.97829",
-      "geonameId": 3078308,
-      "toponymName": "Bystrc",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Bystrc",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.22645",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.57202",
-      "distance": "20.10936",
-      "geonameId": 3065869,
-      "toponymName": "Slatinka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Slatinka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.57566",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.35598",
-      "distance": "20.11883",
-      "geonameId": 3063538,
-      "toponymName": "Úsuší",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 111,
-      "countryCode": "CZ",
-      "name": "Úsuší",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.33474",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.36203",
-      "distance": "20.12936",
-      "geonameId": 3077825,
-      "toponymName": "Chlébské",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Chlébské",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.47012",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.5044",
-      "distance": "20.15236",
-      "geonameId": 3072737,
-      "toponymName": "Křetín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 509,
-      "countryCode": "CZ",
-      "name": "Křetín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5631",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.71819",
-      "distance": "20.17441",
-      "geonameId": 3064516,
-      "toponymName": "Světlá",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 214,
-      "countryCode": "CZ",
-      "name": "Světlá",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.56586",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.34139",
-      "distance": "20.22097",
-      "geonameId": 3075304,
-      "toponymName": "Horní Loučky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 282,
-      "countryCode": "CZ",
-      "name": "Horní Loučky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.36681",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.72072",
-      "distance": "20.22757",
-      "geonameId": 3067478,
-      "toponymName": "Přívěsť",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Přívěsť",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.56571",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.55236",
-      "distance": "20.27144",
-      "geonameId": 3073332,
-      "toponymName": "Komín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Komín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.21967",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.34618",
-      "distance": "20.29468",
-      "geonameId": 3078010,
-      "toponymName": "Černvír",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 165,
-      "countryCode": "CZ",
-      "name": "Černvír",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.44531",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.87499",
-      "distance": "20.31763",
-      "geonameId": 3066921,
-      "toponymName": "Repechy",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Repechy",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.46667",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.45",
-      "distance": "20.33114",
-      "geonameId": 3069344,
-      "toponymName": "Nový Dvůr",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Nový Dvůr",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.25",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.46698",
-      "distance": "20.3557",
-      "geonameId": 3066644,
-      "toponymName": "Rozsíčka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 165,
-      "countryCode": "CZ",
-      "name": "Rozsíčka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.55228",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.33476",
-      "distance": "20.41594",
-      "geonameId": 3074682,
-      "toponymName": "Husle",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Husle",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.39441",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.60257",
-      "distance": "20.42074",
-      "geonameId": 6639861,
-      "toponymName": "Ponava",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Ponava",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.21373",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.55931",
-      "distance": "20.49378",
-      "geonameId": 3078965,
-      "toponymName": "Borová",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Borová",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.57766",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.33381",
-      "distance": "20.57716",
-      "geonameId": 3071042,
-      "toponymName": "Maňová",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Maňová",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.41524",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.57253",
-      "distance": "20.61606",
-      "geonameId": 3062119,
-      "toponymName": "Žabovřesky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Žabovřesky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.21395",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.54936",
-      "distance": "20.65776",
-      "geonameId": 3065974,
-      "toponymName": "Skrchov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 94,
-      "countryCode": "CZ",
-      "name": "Skrchov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.57773",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.59639",
-      "distance": "20.67795",
-      "geonameId": 3069409,
-      "toponymName": "Novičí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Novičí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.58262",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.6309",
-      "distance": "20.69406",
-      "geonameId": 3074681,
-      "toponymName": "Husovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Husovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.21132",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.61667",
-      "distance": "20.70906",
-      "geonameId": 3075464,
-      "toponymName": "Horky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Horky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.58333",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.90194",
-      "distance": "20.79552",
-      "geonameId": 3069446,
-      "toponymName": "Nové Sady",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 99,
-      "countryCode": "CZ",
-      "name": "Nové Sady",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.40881",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.89738",
-      "distance": "20.81063",
-      "geonameId": 3076505,
-      "toponymName": "Drahany",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 519,
-      "countryCode": "CZ",
-      "name": "Drahany",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.43326",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.75552",
-      "distance": "20.83913",
-      "geonameId": 3067958,
-      "toponymName": "Pohora",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Pohora",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.56096",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.33726",
-      "distance": "20.85992",
-      "geonameId": 3077448,
-      "toponymName": "Chytálky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Chytálky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.35178",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.67148",
-      "distance": "20.87909",
-      "geonameId": 3078968,
-      "toponymName": "Borotín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 443,
-      "countryCode": "CZ",
-      "name": "Borotín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.58135",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.88974",
-      "distance": "20.88071",
-      "geonameId": 3078888,
-      "toponymName": "Bousín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 131,
-      "countryCode": "CZ",
-      "name": "Bousín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.45511",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.61631",
-      "distance": "20.92129",
-      "geonameId": 6639862,
-      "toponymName": "Černá Pole",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Černá Pole",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.20902",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.43472",
-      "distance": "21.04966",
-      "geonameId": 3077344,
-      "toponymName": "Crhov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 190,
-      "countryCode": "CZ",
-      "name": "Crhov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.54501",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.3256",
-      "distance": "21.10044",
-      "geonameId": 3068418,
-      "toponymName": "Pernštejnské Jestřabí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 174,
-      "countryCode": "CZ",
-      "name": "Pernštejnské Jestřabí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.40632",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.79078",
-      "distance": "21.11422",
-      "geonameId": 3075193,
-      "toponymName": "Horní Štěpánov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1002,
-      "countryCode": "CZ",
-      "name": "Horní Štěpánov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.54901",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.38734",
-      "distance": "21.17107",
-      "geonameId": 3072296,
-      "toponymName": "Lažánky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Lažánky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.27917",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.43181",
-      "distance": "21.24491",
-      "geonameId": 12123379,
-      "toponymName": "Chrov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Chrov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.54574",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.3569",
-      "distance": "21.27057",
-      "geonameId": 3075424,
-      "toponymName": "Horní Čepí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Horní Čepí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.48678",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.49755",
-      "distance": "21.27476",
-      "geonameId": 3067407,
-      "toponymName": "Prostřední Poříčí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 270,
-      "countryCode": "CZ",
-      "name": "Prostřední Poříčí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.57217",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.77655",
-      "distance": "21.33734",
-      "geonameId": 3075081,
-      "toponymName": "Hostěnice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 488,
-      "countryCode": "CZ",
-      "name": "Hostěnice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.23654",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.4931",
-      "distance": "21.34374",
-      "geonameId": 3076727,
-      "toponymName": "Dolní Poříčí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Dolní Poříčí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.57155",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.3219",
-      "distance": "21.34942",
-      "geonameId": 3074183,
-      "toponymName": "Jilmoví",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Jilmoví",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.39429",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.34644",
-      "distance": "21.36149",
-      "geonameId": 3077255,
-      "toponymName": "Deblín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 967,
-      "countryCode": "CZ",
-      "name": "Deblín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.32036",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.32571",
-      "distance": "21.37555",
-      "geonameId": 3063692,
-      "toponymName": "Újezd",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
+      "distance": "6.17163"
+  },
+  {
+      "lng": "16.67948",
+      "lat": "49.43534",
+      "geonameId": 3072504,
+      "name": "Kuničky",
+      "distance": "6.26807"
+  },
+  {
+      "lng": "16.69974",
+      "lat": "49.41186",
+      "geonameId": 3068370,
+      "name": "Petrovice",
+      "distance": "6.29641"
+  },
+  {
+      "lng": "16.54086",
+      "lat": "49.36857",
+      "geonameId": 3063691,
       "name": "Újezd",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.36512",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.74969",
-      "distance": "21.38274",
-      "geonameId": 3075534,
-      "toponymName": "Mokrá Horákov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Mokrá Horákov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.22589",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.34762",
-      "distance": "21.42864",
-      "geonameId": 3076904,
-      "toponymName": "Dolní Čepí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Dolní Čepí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.47773",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.55279",
-      "distance": "21.43828",
-      "geonameId": 3074042,
-      "toponymName": "Jundrov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Jundrov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.20885",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.66317",
-      "distance": "21.47176",
-      "geonameId": 6694695,
-      "toponymName": "Vinohrady",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Vinohrady",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.20655",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.33406",
-      "distance": "21.5087",
-      "geonameId": 3069952,
-      "toponymName": "Nedvědice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1330,
-      "countryCode": "CZ",
-      "name": "Nedvědice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.45702",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.39484",
-      "distance": "21.52572",
-      "geonameId": 3067429,
-      "toponymName": "Prosetín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 415,
-      "countryCode": "CZ",
-      "name": "Prosetín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.5263",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.57991",
-      "distance": "21.54326",
-      "geonameId": 3079707,
-      "toponymName": "Babolky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Babolky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5894",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.72125",
-      "distance": "21.59493",
-      "geonameId": 3077869,
-      "toponymName": "Cetkovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 730,
-      "countryCode": "CZ",
-      "name": "Cetkovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.57879",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.59794",
-      "distance": "21.63464",
-      "geonameId": 6639863,
-      "toponymName": "Veveří",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Veveří",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.20296",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.61682",
-      "distance": "21.65043",
-      "geonameId": 3064634,
-      "toponymName": "Svárov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Svárov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5918",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.46291",
-      "distance": "21.70933",
-      "geonameId": 3063540,
-      "toponymName": "Ústup",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 38,
-      "countryCode": "CZ",
-      "name": "Ústup",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.56493",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.42519",
-      "distance": "21.71487",
-      "geonameId": 3074640,
-      "toponymName": "Hvozdec",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 216,
-      "countryCode": "CZ",
-      "name": "Hvozdec",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.2469",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.87658",
-      "distance": "21.71584",
-      "geonameId": 3071183,
-      "toponymName": "Malé Hradisko",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 403,
-      "countryCode": "CZ",
-      "name": "Malé Hradisko",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.49331",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.41927",
-      "distance": "21.76423",
-      "geonameId": 3072623,
-      "toponymName": "Křtěnov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 211,
-      "countryCode": "CZ",
-      "name": "Křtěnov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.54499",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.52953",
-      "distance": "21.80192",
-      "geonameId": 3062678,
-      "toponymName": "Vlkov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Vlkov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5849",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.38512",
-      "distance": "21.83407",
-      "geonameId": 3077330,
-      "toponymName": "Čtyři Dvory",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Čtyři Dvory",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.52321",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.57991",
-      "distance": "21.89594",
-      "geonameId": 6639903,
-      "toponymName": "Stránice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Stránice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.20167",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.69484",
-      "distance": "21.89779",
-      "geonameId": 3071748,
-      "toponymName": "Líšeň",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Líšeň",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.20711",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.72536",
-      "distance": "21.95131",
-      "geonameId": 3078588,
-      "toponymName": "Brodek",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Brodek",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.58119",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.5564",
-      "distance": "21.9672",
-      "geonameId": 3076682,
-      "toponymName": "Dolní Smržov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Dolní Smržov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5908",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.67678",
-      "distance": "21.98832",
-      "geonameId": 3076261,
-      "toponymName": "Dvořiště",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Dvořiště",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.59083",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.62197",
-      "distance": "22.00455",
-      "geonameId": 6639860,
-      "toponymName": "Zábrdovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Zábrdovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.19932",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.3156",
-      "distance": "22.051",
-      "geonameId": 3067058,
-      "toponymName": "Rakove",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Rakove",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.42711",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.31214",
-      "distance": "22.10366",
-      "geonameId": 3078892,
-      "toponymName": "Boudy",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Boudy",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.3844",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.54381",
-      "distance": "22.14218",
-      "geonameId": 3065971,
-      "toponymName": "Skřib",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Skřib",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.59059",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.31068",
-      "distance": "22.16506",
-      "geonameId": 3065948,
-      "toponymName": "Skryje",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 69,
-      "countryCode": "CZ",
-      "name": "Skryje",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.39356",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.56667",
-      "distance": "22.21569",
-      "geonameId": 3073895,
-      "toponymName": "Kamenný Mlýn",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Kamenný Mlýn",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.2",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.31667",
-      "distance": "22.22843",
-      "geonameId": 3071038,
-      "toponymName": "Mansberk",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Mansberk",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.43976",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.74728",
-      "distance": "22.23426",
-      "geonameId": 6694696,
-      "toponymName": "Horákova Lhota",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Horákova Lhota",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.21659",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.31017",
-      "distance": "22.2423",
-      "geonameId": 3071704,
-      "toponymName": "Litava",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Litava",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.41017",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.6587",
-      "distance": "22.37953",
-      "geonameId": 3063237,
-      "toponymName": "Velká Roudka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Velká Roudka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.59642",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.64738",
-      "distance": "22.42558",
-      "geonameId": 3061473,
-      "toponymName": "Židenice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Židenice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.19654",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.80084",
-      "distance": "22.43679",
-      "geonameId": 3069444,
-      "toponymName": "Nové Sady",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Nové Sady",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.55896",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.56643",
-      "distance": "22.44145",
-      "geonameId": 3079691,
-      "toponymName": "Bahna",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Bahna",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.59631",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.60796",
-      "distance": "22.46315",
-      "geonameId": 3078610,
-      "toponymName": "Brno",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 369559,
-      "countryCode": "CZ",
-      "name": "Brno",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "seat of a first-order administrative division",
-      "adminName1": "South Moravian",
-      "lat": "49.19522",
-      "fcode": "PPLA"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.59346",
-      "distance": "22.48963",
-      "geonameId": 3077779,
-      "toponymName": "Chlum",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Chlum",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.59881",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.35975",
-      "distance": "22.49303",
-      "geonameId": 3070988,
-      "toponymName": "Maršov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 456,
-      "countryCode": "CZ",
-      "name": "Maršov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.28368",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.57511",
-      "distance": "22.55874",
-      "geonameId": 6639902,
-      "toponymName": "Pisárky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Pisárky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.19606",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.33155",
-      "distance": "22.56201",
-      "geonameId": 3073784,
-      "toponymName": "Kasany",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Kasany",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.47929",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.3058",
-      "distance": "22.60718",
-      "geonameId": 3073580,
-      "toponymName": "Klokočí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Klokočí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.41586",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.31393",
-      "distance": "22.64577",
-      "geonameId": 3072473,
-      "toponymName": "Kuřimské Jestřabí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 130,
-      "countryCode": "CZ",
-      "name": "Kuřimské Jestřabí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.34658",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.60712",
-      "distance": "22.66434",
-      "geonameId": 6694367,
-      "toponymName": "Brno střed",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Brno střed",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.19343",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.30926",
-      "distance": "22.67347",
-      "geonameId": 3066248,
-      "toponymName": "Sejřek",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 157,
-      "countryCode": "CZ",
-      "name": "Sejřek",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.4361",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.34566",
-      "distance": "22.72562",
-      "geonameId": 3078832,
-      "toponymName": "Braniškov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 167,
-      "countryCode": "CZ",
-      "name": "Braniškov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.29437",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.42169",
-      "distance": "22.7284",
-      "geonameId": 3069029,
-      "toponymName": "Olešnice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1757,
-      "countryCode": "CZ",
-      "name": "Olešnice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.55755",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.3134",
-      "distance": "22.74978",
-      "geonameId": 3068420,
-      "toponymName": "Pernštejn",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Pernštejn",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.45084",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.3057",
-      "distance": "22.82225",
-      "geonameId": 3066867,
-      "toponymName": "Řikonín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 34,
-      "countryCode": "CZ",
-      "name": "Řikonín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.36439",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.64447",
-      "distance": "22.84314",
-      "geonameId": 3071226,
-      "toponymName": "Malá Roudka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 196,
-      "countryCode": "CZ",
-      "name": "Malá Roudka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.60168",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.86178",
-      "distance": "22.86564",
-      "geonameId": 3071777,
-      "toponymName": "Lipová",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 761,
-      "countryCode": "CZ",
-      "name": "Lipová",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.52597",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.89253",
-      "distance": "22.92175",
-      "geonameId": 3074219,
-      "toponymName": "Ježkovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 361,
-      "countryCode": "CZ",
-      "name": "Ježkovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.29797",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.87174",
-      "distance": "22.93594",
-      "geonameId": 3067276,
-      "toponymName": "Račice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Račice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.27632",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.31361",
-      "distance": "22.99706",
-      "geonameId": 3079290,
-      "toponymName": "Blahoňov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Blahoňov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.3358",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.33108",
-      "distance": "23.01765",
-      "geonameId": 3063699,
-      "toponymName": "Ujčov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 499,
-      "countryCode": "CZ",
-      "name": "Ujčov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.48836",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.91534",
-      "distance": "23.02627",
-      "geonameId": 3066493,
-      "toponymName": "Rychtářov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Rychtářov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.32904",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.83286",
-      "distance": "23.0483",
-      "geonameId": 3078585,
-      "toponymName": "Brodek u Konice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 941,
-      "countryCode": "CZ",
-      "name": "Brodek u Konice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.54869",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.4879",
-      "distance": "23.10069",
-      "geonameId": 3061633,
-      "toponymName": "Žebětín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Žebětín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.20706",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.39072",
-      "distance": "23.15827",
-      "geonameId": 3072055,
-      "toponymName": "Lhota u Olešnice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 36,
-      "countryCode": "CZ",
-      "name": "Lhota u Olešnice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.54481",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.54146",
-      "distance": "23.17927",
-      "geonameId": 3073419,
-      "toponymName": "Kohoutovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Kohoutovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.19449",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.37035",
-      "distance": "23.22327",
-      "geonameId": 3078553,
-      "toponymName": "Brťoví",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Brťoví",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.53119",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.59747",
-      "distance": "23.24009",
-      "geonameId": 6694366,
-      "toponymName": "Staré Brno",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Staré Brno",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.18852",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.83656",
-      "distance": "23.25068",
-      "geonameId": 3077200,
-      "toponymName": "Dešná",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Dešná",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.54893",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "86",
-      "lng": "16.52512",
-      "distance": "23.28594",
-      "geonameId": 3062901,
-      "toponymName": "Vilémov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Vilémov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "53"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Pardubický",
-      "lat": "49.59797",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.31607",
-      "distance": "23.35132",
-      "geonameId": 3073054,
-      "toponymName": "Kovářová",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Kovářová",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.47348",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.33922",
-      "distance": "23.37327",
-      "geonameId": 3065186,
-      "toponymName": "Štěpánov nad Svratkou",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Štěpánov nad Svratkou",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.50489",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "86",
-      "lng": "16.52093",
-      "distance": "23.39063",
-      "geonameId": 3078853,
-      "toponymName": "Bradlné",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Bradlné",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "53"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Pardubický",
-      "lat": "49.59813",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.64969",
-      "distance": "23.39303",
-      "geonameId": 3065999,
-      "toponymName": "Skočova Lhota",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Skočova Lhota",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.60632",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.76667",
-      "distance": "23.41058",
-      "geonameId": 3066012,
-      "toponymName": "Sklená Hut’",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Sklená Hut’",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.58333",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.47733",
-      "distance": "23.44406",
-      "geonameId": 3075248,
-      "toponymName": "Horní Poříčí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 268,
-      "countryCode": "CZ",
-      "name": "Horní Poříčí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.5876",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.45036",
-      "distance": "23.53493",
-      "geonameId": 3063027,
-      "toponymName": "Veselka",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Veselka",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.57917",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.89833",
-      "distance": "23.59679",
-      "geonameId": 3069112,
-      "toponymName": "Okluky",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Okluky",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.50262",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.33193",
-      "distance": "23.62643",
-      "geonameId": 3069017,
-      "toponymName": "Olešnička",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Olešnička",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.5012",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.73501",
-      "distance": "23.64232",
-      "geonameId": 3063710,
-      "toponymName": "Uhřice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 295,
-      "countryCode": "CZ",
-      "name": "Uhřice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.59507",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.40183",
-      "distance": "23.66455",
-      "geonameId": 3062964,
-      "toponymName": "Veverské Knínice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 824,
-      "countryCode": "CZ",
-      "name": "Veverské Knínice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.2369",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.88155",
-      "distance": "23.67857",
-      "geonameId": 3066344,
-      "toponymName": "Seč",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Seč",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.52107",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.3156",
-      "distance": "23.71196",
-      "geonameId": 3071734,
-      "toponymName": "Lískovec",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Lískovec",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.48131",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.30274",
-      "distance": "23.73603",
-      "geonameId": 3065710,
-      "toponymName": "Smrček",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Smrček",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.4588",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.86881",
-      "distance": "23.81069",
-      "geonameId": 3074809,
-      "toponymName": "Hrochov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Hrochov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.53381",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.33833",
-      "distance": "23.82247",
-      "geonameId": 3078954,
-      "toponymName": "Borovec",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Borovec",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.51167",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.76288",
-      "distance": "23.83852",
-      "geonameId": 3063565,
-      "toponymName": "Úsobrno",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 470,
-      "countryCode": "CZ",
-      "name": "Úsobrno",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.58892",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.79592",
-      "distance": "23.88619",
-      "geonameId": 3074230,
-      "toponymName": "Jezera",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Jezera",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.21746",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.63716",
-      "distance": "23.94012",
-      "geonameId": 3078016,
-      "toponymName": "Černovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Černovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.18232",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.35263",
-      "distance": "23.95735",
-      "geonameId": 3065746,
-      "toponymName": "Smelcovna",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Smelcovna",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.26759",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.5612",
-      "distance": "24.12817",
-      "geonameId": 3069294,
-      "toponymName": "Nový Lískovec",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Nový Lískovec",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.18316",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.72084",
-      "distance": "24.2217",
-      "geonameId": 3068020,
-      "toponymName": "Podolí",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 1165,
-      "countryCode": "CZ",
-      "name": "Podolí",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.19042",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.36218",
-      "distance": "24.257",
-      "geonameId": 3074388,
-      "toponymName": "Javůrek",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 245,
-      "countryCode": "CZ",
-      "name": "Javůrek",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.25553",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.56355",
-      "distance": "24.25797",
-      "geonameId": 3077194,
-      "toponymName": "Deštná",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 235,
-      "countryCode": "CZ",
-      "name": "Deštná",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.61255",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.34763",
-      "distance": "24.26027",
-      "geonameId": 3073230,
-      "toponymName": "Koroužné",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 271,
-      "countryCode": "CZ",
-      "name": "Koroužné",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.52747",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.59493",
-      "distance": "24.27572",
-      "geonameId": 6694702,
-      "toponymName": "Štýřice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Štýřice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.17929",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.62532",
-      "distance": "24.28683",
-      "geonameId": 3073337,
-      "toponymName": "Komárov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Komárov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "section of populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.17884",
-      "fcode": "PPLX"
-    },
-    {
-      "adminCode1": "86",
-      "lng": "16.40977",
-      "distance": "24.30795",
-      "geonameId": 3072337,
-      "toponymName": "Lamberk",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Lamberk",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "53"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Pardubický",
-      "lat": "49.56952",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.59406",
-      "distance": "24.32848",
-      "geonameId": 3066738,
-      "toponymName": "Roubanina",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 131,
-      "countryCode": "CZ",
-      "name": "Roubanina",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.61541",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.75358",
-      "distance": "24.36672",
-      "geonameId": 3063330,
-      "toponymName": "Velatice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 586,
-      "countryCode": "CZ",
-      "name": "Velatice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.19737",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.67947",
-      "distance": "24.37638",
-      "geonameId": 3063193,
-      "toponymName": "Velké Opatovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 4169,
-      "countryCode": "CZ",
-      "name": "Velké Opatovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.61237",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "86",
-      "lng": "16.49833",
-      "distance": "24.38362",
-      "geonameId": 3064795,
-      "toponymName": "Študlov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 150,
-      "countryCode": "CZ",
-      "name": "Študlov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "53"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Pardubický",
-      "lat": "49.60255",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.62094",
-      "distance": "24.40601",
-      "geonameId": 3079440,
-      "toponymName": "Bezděčí u Velkých Opatovic",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Bezděčí u Velkých Opatovic",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.61655",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.79074",
-      "distance": "24.40859",
-      "geonameId": 3067723,
-      "toponymName": "Pozořice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 2016,
-      "countryCode": "CZ",
-      "name": "Pozořice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.20976",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
-      "lng": "16.8623",
-      "distance": "24.43587",
-      "geonameId": 3072363,
-      "toponymName": "Labutice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Labutice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
-      "lat": "49.54715",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.89395",
-      "distance": "24.4623",
-      "geonameId": 3068273,
-      "toponymName": "Pístovice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Pístovice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.27311",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "86",
-      "lng": "16.53399",
-      "distance": "24.47887",
-      "geonameId": 3077566,
-      "toponymName": "Chrastová Lhota",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Chrastová Lhota",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "53"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Pardubický",
-      "lat": "49.61065",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.64",
-      "distance": "24.56399",
-      "geonameId": 3078554,
-      "toponymName": "Brťov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
+      "distance": "6.3119"
+  },
+  {
+      "lng": "16.63691",
+      "lat": "49.34096",
+      "geonameId": 3073681,
+      "name": "Klamovka",
+      "distance": "6.42999"
+  },
+  {
+      "lng": "16.65727",
+      "lat": "49.34572",
+      "geonameId": 3073623,
+      "name": "Klepačov",
+      "distance": "6.45693"
+  },
+  {
+      "lng": "16.63691",
+      "lat": "49.34022",
+      "geonameId": 3069047,
+      "name": "Olešná",
+      "distance": "6.50923"
+  },
+  {
+      "lng": "16.69778",
+      "lat": "49.42158",
+      "geonameId": 3061718,
+      "name": "Žďár",
+      "distance": "6.52911"
+  },
+  {
+      "lng": "16.52596",
+      "lat": "49.39617",
+      "geonameId": 3071469,
+      "name": "Lubě",
+      "distance": "6.535"
+  },
+  {
+      "lng": "16.53828",
+      "lat": "49.4302",
+      "geonameId": 3078338,
+      "name": "Býkovice",
+      "distance": "6.73166"
+  },
+  {
+      "lng": "16.55065",
+      "lat": "49.35359",
+      "geonameId": 3072293,
+      "name": "Lažany",
+      "distance": "6.77968"
+  },
+  {
+      "lng": "16.71155",
+      "lat": "49.39607",
+      "geonameId": 3063044,
+      "name": "Veselice",
+      "distance": "6.93855"
+  },
+  {
+      "lng": "16.58382",
+      "lat": "49.46026",
+      "geonameId": 3072731,
+      "name": "Krhov",
+      "distance": "7.39829"
+  },
+  {
+      "lng": "16.53674",
+      "lat": "49.44025",
+      "geonameId": 3061515,
+      "name": "Žerůtky",
+      "distance": "7.48681"
+  },
+  {
+      "lng": "16.61312",
+      "lat": "49.32978",
+      "geonameId": 3064611,
+      "name": "Svatá Kateřina",
+      "distance": "7.49358"
+  },
+  {
+      "lng": "16.5156",
+      "lat": "49.41408",
+      "geonameId": 3078555,
       "name": "Brťov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.61744",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
-      "lng": "16.35984",
-      "distance": "24.56756",
-      "geonameId": 3079070,
-      "toponymName": "Bolešín",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Bolešín",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
-      "lat": "49.54181",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.86605",
-      "distance": "24.60639",
-      "geonameId": 3069002,
-      "toponymName": "Olšany",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 452,
-      "countryCode": "CZ",
-      "name": "Olšany",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.24804",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.78254",
-      "distance": "24.68848",
-      "geonameId": 3066090,
-      "toponymName": "Sivice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 979,
-      "countryCode": "CZ",
-      "name": "Sivice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.20371",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.30879",
-      "distance": "24.71144",
-      "geonameId": 3064581,
-      "toponymName": "Svatoslav",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 445,
-      "countryCode": "CZ",
-      "name": "Svatoslav",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.30177",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "78",
-      "lng": "16.57698",
-      "distance": "24.75514",
-      "geonameId": 3075203,
-      "toponymName": "Horní Smržov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 141,
-      "countryCode": "CZ",
-      "name": "Horní Smržov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "64"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "South Moravian",
-      "lat": "49.61826",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "80",
+      "distance": "7.52516"
+  },
+  {
+      "lng": "16.57589",
+      "lat": "49.33443",
+      "geonameId": 3064466,
+      "name": "Svinošice",
+      "distance": "7.55654"
+  },
+  {
+      "lng": "16.71984",
+      "lat": "49.4026",
+      "geonameId": 3063366,
+      "name": "Vavřinec",
+      "distance": "7.56351"
+  },
+  {
+      "lng": "16.51346",
+      "lat": "49.38405",
+      "geonameId": 3075728,
+      "name": "Hluboké",
+      "distance": "7.58392"
+  },
+  {
+      "lng": "16.59763",
+      "lat": "49.32978",
+      "geonameId": 3066348,
+      "name": "Šebrov",
+      "distance": "7.60831"
+  },
+  {
+      "lng": "16.60713",
+      "lat": "49.46535",
+      "geonameId": 3074610,
+      "name": "Jabloňany",
+      "distance": "7.61419"
+  },
+  {
+      "lng": "16.62485",
+      "lat": "49.46605",
+      "geonameId": 3072064,
+      "name": "Lhota Rapotina",
+      "distance": "7.6914"
+  },
+  {
+      "lng": "16.72202",
+      "lat": "49.3919",
+      "geonameId": 3064749,
+      "name": "Suchdol",
+      "distance": "7.71986"
+  },
+  {
+      "lng": "16.55313",
+      "lat": "49.33933",
+      "geonameId": 3071759,
+      "name": "Lipůvka",
+      "distance": "7.88433"
+  },
+  {
+      "lng": "16.65407",
+      "lat": "49.46405",
+      "geonameId": 3063688,
+      "name": "Újezd",
+      "distance": "7.93901"
+  },
+  {
+      "lng": "16.50857",
+      "lat": "49.41345",
+      "geonameId": 3074323,
+      "name": "Jeneč",
+      "distance": "8.00412"
+  },
+  {
+      "lng": "16.53716",
+      "lat": "49.4516",
+      "geonameId": 3071302,
+      "name": "Lysice",
+      "distance": "8.33012"
+  },
+  {
+      "lng": "16.67169",
+      "lat": "49.33087",
+      "geonameId": 3069009,
+      "name": "Olomučany",
+      "distance": "8.4074"
+  },
+  {
+      "lng": "16.51618",
+      "lat": "49.35787",
+      "geonameId": 3066069,
+      "name": "Skalička",
+      "distance": "8.461"
+  },
+  {
+      "lng": "16.5096",
+      "lat": "49.42866",
+      "geonameId": 3077130,
+      "name": "Dlouhá Lhota",
+      "distance": "8.47853"
+  },
+  {
+      "lng": "16.70908",
+      "lat": "49.3508",
+      "geonameId": 3072295,
+      "name": "Lažánky",
+      "distance": "8.50108"
+  },
+  {
+      "lng": "16.5194",
+      "lat": "49.34459",
+      "geonameId": 3069240,
+      "name": "Nuzířov",
+      "distance": "9.12958"
+  },
+  {
+      "lng": "16.73953",
+      "lat": "49.41479",
+      "geonameId": 3065781,
+      "name": "Sloup",
+      "distance": "9.17927"
+  },
+  {
+      "lng": "16.49135",
+      "lat": "49.38218",
+      "geonameId": 3063595,
+      "name": "Unín",
+      "distance": "9.19948"
+  },
+  {
+      "lng": "16.48972",
+      "lat": "49.40673",
+      "geonameId": 3078411,
+      "name": "Bukovice",
+      "distance": "9.22592"
+  },
+  {
+      "lng": "16.71514",
+      "lat": "49.44916",
+      "geonameId": 3069907,
+      "name": "Němčice",
+      "distance": "9.23215"
+  },
+  {
+      "lng": "16.60358",
+      "lat": "49.48115",
+      "geonameId": 3066070,
+      "name": "Skalice nad Svitavou",
+      "distance": "9.38693"
+  },
+  {
+      "lng": "16.54223",
+      "lat": "49.46931",
+      "geonameId": 3076402,
+      "name": "Drnovice",
+      "distance": "9.64616"
+  },
+  {
+      "lng": "16.48285",
+      "lat": "49.39032",
+      "geonameId": 3066815,
+      "name": "Rohozec",
+      "distance": "9.69417"
+  },
+  {
+      "lng": "16.61377",
+      "lat": "49.30926",
+      "geonameId": 3062524,
+      "name": "Vranov",
+      "distance": "9.77456"
+  },
+  {
+      "lng": "16.49408",
+      "lat": "49.35711",
+      "geonameId": 3062374,
+      "name": "Všechovice",
+      "distance": "9.90807"
+  },
+  {
+      "lng": "16.75188",
+      "lat": "49.41053",
+      "geonameId": 3065590,
+      "name": "Šošůvka",
+      "distance": "9.97543"
+  },
+  {
+      "lng": "16.50378",
+      "lat": "49.45005",
+      "geonameId": 3072355,
+      "name": "Lačnov",
+      "distance": "10.04438"
+  },
+  {
+      "lng": "16.50608",
+      "lat": "49.45226",
+      "geonameId": 3065212,
+      "name": "Štěchov",
+      "distance": "10.05781"
+  },
+  {
+      "lng": "16.47888",
+      "lat": "49.41468",
+      "geonameId": 3061506,
+      "name": "Zhoř",
+      "distance": "10.13923"
+  },
+  {
+      "lng": "16.61777",
+      "lat": "49.4887",
+      "geonameId": 3070527,
+      "name": "Mladkov",
+      "distance": "10.18497"
+  },
+  {
+      "lng": "16.74673",
+      "lat": "49.36379",
+      "geonameId": 3062895,
+      "name": "Vilémovice",
+      "distance": "10.1928"
+  },
+  {
+      "lng": "16.55789",
+      "lat": "49.4815",
+      "geonameId": 3062654,
+      "name": "Voděrady",
+      "distance": "10.28533"
+  },
+  {
+      "lng": "16.72581",
+      "lat": "49.33717",
+      "geonameId": 3066608,
+      "name": "Rudice",
+      "distance": "10.39762"
+  },
+  {
+      "lng": "16.65997",
+      "lat": "49.48751",
+      "geonameId": 3078910,
+      "name": "Boskovice",
+      "distance": "10.54596"
+  },
+  {
+      "lng": "16.73178",
+      "lat": "49.45539",
+      "geonameId": 3071428,
+      "name": "Ludíkov",
+      "distance": "10.60954"
+  },
+  {
+      "lng": "16.47453",
+      "lat": "49.3725",
+      "geonameId": 3076019,
+      "name": "Hájek",
+      "distance": "10.62932"
+  },
+  {
+      "lng": "16.76268",
+      "lat": "49.38236",
+      "geonameId": 3068753,
+      "name": "Ostrov u Macochy",
+      "distance": "10.7764"
+  },
+  {
+      "lng": "16.50222",
+      "lat": "49.3336",
+      "geonameId": 3071139,
+      "name": "Malhostovice",
+      "distance": "10.87236"
+  },
+  {
+      "lng": "16.65253",
+      "lat": "49.30162",
+      "geonameId": 3079841,
+      "name": "Adamov",
+      "distance": "10.94945"
+  },
+  {
+      "lng": "16.58841",
+      "lat": "49.49483",
+      "geonameId": 3066350,
+      "name": "Sebranice",
+      "distance": "11.04857"
+  },
+  {
+      "lng": "16.6788",
+      "lat": "49.30661",
+      "geonameId": 3074062,
+      "name": "Josefov",
+      "distance": "11.05386"
+  },
+  {
+      "lng": "16.71987",
+      "lat": "49.47018",
+      "geonameId": 3063441,
+      "name": "Valchov",
+      "distance": "11.08156"
+  },
+  {
+      "lng": "16.46821",
+      "lat": "49.37119",
+      "geonameId": 3076038,
+      "name": "Hajánky",
+      "distance": "11.11003"
+  },
+  {
+      "lng": "16.46262",
+      "lat": "49.37941",
+      "geonameId": 3074548,
+      "name": "Jamné",
+      "distance": "11.30705"
+  },
+  {
+      "lng": "16.7",
+      "lat": "49.48333",
+      "geonameId": 3074902,
+      "name": "Hrádkov",
+      "distance": "11.35972"
+  },
+  {
+      "lng": "16.52839",
+      "lat": "49.4839",
+      "geonameId": 3061751,
+      "name": "Zbraslavec",
+      "distance": "11.55307"
+  },
+  {
+      "lng": "16.47526",
+      "lat": "49.44698",
+      "geonameId": 3072526,
+      "name": "Kunčina Ves",
+      "distance": "11.61738"
+  },
+  {
+      "lng": "16.59793",
+      "lat": "49.50178",
+      "geonameId": 3064456,
+      "name": "Svitávka",
+      "distance": "11.7116"
+  },
+  {
+      "lng": "16.76793",
+      "lat": "49.36138",
+      "geonameId": 3072855,
+      "name": "Krasová",
+      "distance": "11.72863"
+  },
+  {
+      "lng": "16.75595",
+      "lat": "49.34453",
+      "geonameId": 3074360,
+      "name": "Jedovnice",
+      "distance": "11.72885"
+  },
+  {
+      "lng": "16.77766",
+      "lat": "49.40632",
+      "geonameId": 3075579,
+      "name": "Holštejn",
+      "distance": "11.77954"
+  },
+  {
+      "lng": "16.62799",
+      "lat": "49.5029",
+      "geonameId": 3077540,
+      "name": "Chrudichromy",
+      "distance": "11.7951"
+  },
+  {
+      "lng": "16.49678",
+      "lat": "49.46968",
+      "geonameId": 3072056,
+      "name": "Lhota u Lysic",
+      "distance": "11.82592"
+  },
+  {
+      "lng": "16.45373",
+      "lat": "49.41555",
+      "geonameId": 3067017,
+      "name": "Rašov",
+      "distance": "11.95218"
+  },
+  {
+      "lng": "16.57874",
+      "lat": "49.29144",
+      "geonameId": 3072224,
+      "name": "Lelekovice",
+      "distance": "12.06255"
+  },
+  {
+      "lng": "16.63073",
+      "lat": "49.28707",
+      "geonameId": 3063530,
+      "name": "Útěchov",
+      "distance": "12.28798"
+  },
+  {
+      "lng": "16.47798",
+      "lat": "49.33183",
+      "geonameId": 3076470,
+      "name": "Drásov",
+      "distance": "12.37777"
+  },
+  {
+      "lng": "16.45866",
+      "lat": "49.44384",
+      "geonameId": 3073048,
+      "name": "Kozárov",
+      "distance": "12.54051"
+  },
+  {
+      "lng": "16.53144",
+      "lat": "49.29852",
+      "geonameId": 3072476,
+      "name": "Kuřim",
+      "distance": "12.57064"
+  },
+  {
+      "lng": "16.45044",
+      "lat": "49.35962",
+      "geonameId": 3061566,
+      "name": "Železné",
+      "distance": "12.7239"
+  },
+  {
+      "lng": "16.49073",
+      "lat": "49.47883",
+      "geonameId": 3072507,
+      "name": "Kunice",
+      "distance": "12.84799"
+  },
+  {
+      "lng": "16.72351",
+      "lat": "49.3035",
+      "geonameId": 3076054,
+      "name": "Habrůvka",
+      "distance": "13.01883"
+  },
+  {
+      "lng": "16.75851",
+      "lat": "49.46864",
+      "geonameId": 3061697,
+      "name": "Žďárná",
+      "distance": "13.04331"
+  },
+  {
+      "lng": "16.46532",
+      "lat": "49.46118",
+      "geonameId": 3079594,
+      "name": "Bedřichov",
+      "distance": "13.04521"
+  },
+  {
+      "lng": "16.73276",
+      "lat": "49.48684",
+      "geonameId": 3063312,
+      "name": "Velenov",
+      "distance": "13.08727"
+  },
+  {
+      "lng": "16.78435",
+      "lat": "49.35511",
+      "geonameId": 3073098,
+      "name": "Kotvrdovice",
+      "distance": "13.09021"
+  },
+  {
+      "lng": "16.58412",
+      "lat": "49.51434",
+      "geonameId": 3066395,
+      "name": "Sasina",
+      "distance": "13.23895"
+  },
+  {
+      "lng": "16.60635",
+      "lat": "49.27811",
+      "geonameId": 3068892,
+      "name": "Ořešín",
+      "distance": "13.25594"
+  },
+  {
+      "lng": "16.53949",
+      "lat": "49.5076",
+      "geonameId": 3063687,
+      "name": "Újezd",
+      "distance": "13.4797"
+  },
+  {
+      "lng": "16.5654",
+      "lat": "49.28008",
+      "geonameId": 3077941,
+      "name": "Česká",
+      "distance": "13.52731"
+  },
+  {
+      "lng": "16.42996",
+      "lat": "49.38558",
+      "geonameId": 3066171,
+      "name": "Šerkovice",
+      "distance": "13.56545"
+  },
+  {
+      "lng": "16.71667",
+      "lat": "49.5",
+      "geonameId": 3062498,
+      "name": "Vratíkov",
+      "distance": "13.57191"
+  },
+  {
+      "lng": "16.49606",
+      "lat": "49.49199",
+      "geonameId": 3064153,
+      "name": "Touboř",
+      "distance": "13.67225"
+  },
+  {
+      "lng": "16.47791",
+      "lat": "49.31324",
+      "geonameId": 3078211,
+      "name": "Čebín",
+      "distance": "13.69918"
+  },
+  {
+      "lng": "16.4363",
+      "lat": "49.43561",
+      "geonameId": 3064936,
+      "name": "Strhaře",
+      "distance": "13.7222"
+  },
+  {
+      "lng": "16.79917",
+      "lat": "49.42893",
+      "geonameId": 3075028,
+      "name": "Housko",
+      "distance": "13.75545"
+  },
+  {
+      "lng": "16.43125",
+      "lat": "49.36699",
+      "geonameId": 3071605,
+      "name": "Lomnička",
+      "distance": "13.82597"
+  },
+  {
+      "lng": "16.80583",
+      "lat": "49.38394",
+      "geonameId": 3071771,
+      "name": "Lipovec",
+      "distance": "13.8609"
+  },
+  {
+      "lng": "16.63274",
+      "lat": "49.52178",
+      "geonameId": 3062908,
+      "name": "Vila",
+      "distance": "13.91653"
+  },
+  {
+      "lng": "16.69613",
+      "lat": "49.2833",
+      "geonameId": 3079721,
+      "name": "Babice nad Svitavou",
+      "distance": "13.93561"
+  },
+  {
+      "lng": "16.59528",
+      "lat": "49.27172",
+      "geonameId": 3074351,
+      "name": "Jehnice",
+      "distance": "14.02835"
+  },
+  {
+      "lng": "16.51722",
+      "lat": "49.50645",
+      "geonameId": 3072486,
+      "name": "Kunštát",
+      "distance": "14.11019"
+  },
+  {
+      "lng": "16.61575",
+      "lat": "49.52403",
+      "geonameId": 3070738,
+      "name": "Míchov",
+      "distance": "14.11356"
+  },
+  {
+      "lng": "16.50173",
+      "lat": "49.29328",
+      "geonameId": 3070322,
+      "name": "Moravské Knínice",
+      "distance": "14.22381"
+  },
+  {
+      "lng": "16.58592",
+      "lat": "49.52359",
+      "geonameId": 3061774,
+      "name": "Zboněk",
+      "distance": "14.23242"
+  },
+  {
+      "lng": "16.76238",
+      "lat": "49.4828",
+      "geonameId": 3064730,
+      "name": "Suchý",
+      "distance": "14.26541"
+  },
+  {
+      "lng": "16.6648",
+      "lat": "49.52148",
+      "geonameId": 3068532,
+      "name": "Pastvisko",
+      "distance": "14.27493"
+  },
+  {
+      "lng": "16.80388",
+      "lat": "49.35468",
+      "geonameId": 3066199,
+      "name": "Senetářov",
+      "distance": "14.43937"
+  },
+  {
+      "lng": "16.64231",
+      "lat": "49.52616",
+      "geonameId": 3079696,
+      "name": "Bačov",
+      "distance": "14.47613"
+  },
+  {
+      "lng": "16.74409",
+      "lat": "49.29706",
+      "geonameId": 3072618,
+      "name": "Křtiny",
+      "distance": "14.50989"
+  },
+  {
+      "lng": "16.41359",
+      "lat": "49.40462",
+      "geonameId": 3071611,
+      "name": "Lomnice",
+      "distance": "14.71337"
+  },
+  {
+      "lng": "16.49688",
+      "lat": "49.50491",
+      "geonameId": 3064407,
+      "name": "Sychotín",
+      "distance": "14.77348"
+  },
+  {
+      "lng": "16.44217",
+      "lat": "49.32786",
+      "geonameId": 3074990,
+      "name": "Hradčany",
+      "distance": "14.79041"
+  },
+  {
+      "lng": "16.81262",
+      "lat": "49.43286",
+      "geonameId": 3070371,
+      "name": "Vysočany",
+      "distance": "14.81169"
+  },
+  {
+      "lng": "16.61759",
+      "lat": "49.53067",
+      "geonameId": 3068010,
+      "name": "Podolí",
+      "distance": "14.85203"
+  },
+  {
+      "lng": "16.41167",
+      "lat": "49.38678",
+      "geonameId": 3066916,
+      "name": "Řepka",
+      "distance": "14.87652"
+  },
+  {
+      "lng": "16.732",
+      "lat": "49.5075",
+      "geonameId": 3069096,
+      "name": "Okrouhlá",
+      "distance": "14.88116"
+  },
+  {
+      "lng": "16.47408",
+      "lat": "49.494",
+      "geonameId": 3075727,
+      "name": "Hluboké",
+      "distance": "14.89762"
+  },
+  {
+      "lng": "16.42438",
+      "lat": "49.34872",
+      "geonameId": 3064211,
+      "name": "Tišnov",
+      "distance": "14.92008"
+  },
+  {
+      "lng": "16.82155",
+      "lat": "49.4106",
+      "geonameId": 3079681,
+      "name": "Baldovec",
+      "distance": "14.99535"
+  },
+  {
+      "lng": "16.59107",
+      "lat": "49.26176",
+      "geonameId": 3070390,
+      "name": "Mokrá Hora",
+      "distance": "15.16463"
+  },
+  {
+      "lng": "16.41387",
+      "lat": "49.43273",
+      "geonameId": 3064392,
+      "name": "Synalov",
+      "distance": "15.19049"
+  },
+  {
+      "lng": "16.54262",
+      "lat": "49.5253",
+      "geonameId": 3069231,
+      "name": "Nýrov",
+      "distance": "15.21396"
+  },
+  {
+      "lng": "16.56549",
+      "lat": "49.26422",
+      "geonameId": 3074613,
+      "name": "Ivanovice u Brna",
+      "distance": "15.23073"
+  },
+  {
+      "lng": "16.66852",
+      "lat": "49.5299",
+      "geonameId": 3064718,
+      "name": "Sudice",
+      "distance": "15.24961"
+  },
+  {
+      "lng": "16.58333",
+      "lat": "49.53333",
+      "geonameId": 3073610,
+      "name": "Klevetov",
+      "distance": "15.33169"
+  },
+  {
+      "lng": "16.8",
+      "lat": "49.46667",
+      "geonameId": 3066013,
+      "name": "Sklená Huť",
+      "distance": "15.42678"
+  },
+  {
+      "lng": "16.42158",
+      "lat": "49.45619",
+      "geonameId": 3068840,
+      "name": "Osiky",
+      "distance": "15.55712"
+  },
+  {
+      "lng": "16.42575",
+      "lat": "49.46238",
+      "geonameId": 3078549,
+      "name": "Brumov",
+      "distance": "15.59105"
+  },
+  {
+      "lng": "16.44667",
+      "lat": "49.31076",
+      "geonameId": 3066181,
+      "name": "Sentice",
+      "distance": "15.60678"
+  },
+  {
+      "lng": "16.5134",
+      "lat": "49.52058",
+      "geonameId": 3066603,
+      "name": "Rudka",
+      "distance": "15.61479"
+  },
+  {
+      "lng": "16.39984",
+      "lat": "49.39321",
+      "geonameId": 3078542,
+      "name": "Brusná",
+      "distance": "15.69567"
+  },
+  {
+      "lng": "16.52756",
+      "lat": "49.26792",
+      "geonameId": 3074167,
+      "name": "Jinačovice",
+      "distance": "15.74254"
+  },
+  {
+      "lng": "16.68869",
+      "lat": "49.53119",
+      "geonameId": 3063357,
+      "name": "Vážany",
+      "distance": "15.81399"
+  },
+  {
+      "lng": "16.7732",
+      "lat": "49.29737",
+      "geonameId": 3078404,
+      "name": "Bukovina",
+      "distance": "15.92573"
+  },
+  {
+      "lng": "16.82987",
+      "lat": "49.36453",
+      "geonameId": 3072908,
+      "name": "Krásensko",
+      "distance": "15.94882"
+  },
+  {
+      "lng": "16.62086",
+      "lat": "49.25363",
+      "geonameId": 3065647,
+      "name": "Soběšice",
+      "distance": "15.96348"
+  },
+  {
+      "lng": "16.75",
+      "lat": "49.28333",
+      "geonameId": 3067446,
+      "name": "Proseč",
+      "distance": "15.97016"
+  },
+  {
+      "lng": "16.83643",
+      "lat": "49.39059",
+      "geonameId": 3071030,
+      "name": "Marianín",
+      "distance": "16.01953"
+  },
+  {
+      "lng": "16.56146",
+      "lat": "49.53674",
+      "geonameId": 3072057,
+      "name": "Lhota u Letovic",
+      "distance": "16.02186"
+  },
+  {
+      "lng": "16.62858",
+      "lat": "49.54103",
+      "geonameId": 3062841,
+      "name": "Vísky",
+      "distance": "16.02992"
+  },
+  {
+      "lng": "16.74952",
+      "lat": "49.2816",
+      "geonameId": 3078709,
+      "name": "Březina",
+      "distance": "16.10241"
+  },
+  {
+      "lng": "16.40241",
+      "lat": "49.35253",
+      "geonameId": 3067631,
+      "name": "Předklášteří",
+      "distance": "16.28374"
+  },
+  {
+      "lng": "16.84035",
+      "lat": "49.3977",
+      "geonameId": 3066641,
+      "name": "Rozstání",
+      "distance": "16.28678"
+  },
+  {
+      "lng": "16.58146",
+      "lat": "49.25212",
+      "geonameId": 3066965,
+      "name": "Řečkovice",
+      "distance": "16.32182"
+  },
+  {
+      "lng": "16.39423",
+      "lat": "49.42559",
+      "geonameId": 3069161,
+      "name": "Ochoz u Tišnova",
+      "distance": "16.39979"
+  },
+  {
+      "lng": "16.42142",
+      "lat": "49.32124",
+      "geonameId": 3078707,
+      "name": "Březina",
+      "distance": "16.46249"
+  },
+  {
+      "lng": "16.71452",
+      "lat": "49.26371",
+      "geonameId": 3073877,
+      "name": "Kanice",
+      "distance": "16.47749"
+  },
+  {
+      "lng": "16.69394",
+      "lat": "49.25746",
+      "geonameId": 3066872,
+      "name": "Řícmanice",
+      "distance": "16.53492"
+  },
+  {
+      "lng": "16.38817",
+      "lat": "49.40427",
+      "geonameId": 3063052,
+      "name": "Veselí",
+      "distance": "16.55416"
+  },
+  {
+      "lng": "16.48369",
+      "lat": "49.51915",
+      "geonameId": 3071265,
+      "name": "Makov",
+      "distance": "16.61741"
+  },
+  {
+      "lng": "16.45872",
+      "lat": "49.28849",
+      "geonameId": 3077531,
+      "name": "Chudčice",
+      "distance": "16.63068"
+  },
+  {
+      "lng": "16.5303",
+      "lat": "49.5368",
+      "geonameId": 3074431,
+      "name": "Jasinov",
+      "distance": "16.72847"
+  },
+  {
+      "lng": "16.54627",
+      "lat": "49.54058",
+      "geonameId": 3062138,
+      "name": "Zábludov",
+      "distance": "16.73529"
+  },
+  {
+      "lng": "16.44153",
+      "lat": "49.49594",
+      "geonameId": 3064351,
+      "name": "Tasovice",
+      "distance": "16.7571"
+  },
+  {
+      "lng": "16.77059",
+      "lat": "49.50943",
+      "geonameId": 3079509,
+      "name": "Benešov",
+      "distance": "16.78291"
+  },
+  {
+      "lng": "16.38758",
+      "lat": "49.37295",
+      "geonameId": 3065176,
+      "name": "Štěpánovice",
+      "distance": "16.79986"
+  },
+  {
+      "lng": "16.83321",
+      "lat": "49.34472",
+      "geonameId": 3067994,
+      "name": "Podomí",
+      "distance": "16.81957"
+  },
+  {
+      "lng": "16.69502",
+      "lat": "49.53959",
+      "geonameId": 3073511,
+      "name": "Knínice u Boskovic",
+      "distance": "16.84794"
+  },
+  {
+      "lng": "16.84681",
+      "lat": "49.37932",
+      "geonameId": 3072545,
+      "name": "Kulířov",
+      "distance": "16.87526"
+  },
+  {
+      "lng": "16.57357",
+      "lat": "49.54709",
+      "geonameId": 3072130,
+      "name": "Letovice",
+      "distance": "16.95883"
+  },
+  {
+      "lng": "16.42291",
+      "lat": "49.48353",
+      "geonameId": 3078020,
+      "name": "Černovice",
+      "distance": "16.98199"
+  },
+  {
+      "lng": "16.64449",
+      "lat": "49.54946",
+      "geonameId": 3068617,
+      "name": "Pamětice",
+      "distance": "17.06758"
+  },
+  {
+      "lng": "16.67247",
+      "lat": "49.24708",
+      "geonameId": 3079332,
+      "name": "Bílovice nad Svitavou",
+      "distance": "17.18646"
+  },
+  {
+      "lng": "16.38313",
+      "lat": "49.43394",
+      "geonameId": 3079547,
+      "name": "Běleč",
+      "distance": "17.38443"
+  },
+  {
+      "lng": "16.55193",
+      "lat": "49.54782",
+      "geonameId": 3073536,
+      "name": "Kněževísko",
+      "distance": "17.39047"
+  },
+  {
+      "lng": "16.60712",
+      "lat": "49.55467",
+      "geonameId": 3073696,
+      "name": "Kladoruby",
+      "distance": "17.53306"
+  },
+  {
+      "lng": "16.41279",
+      "lat": "49.31136",
+      "geonameId": 3075839,
+      "name": "Heroltice",
+      "distance": "17.57596"
+  },
+  {
+      "lng": "16.60822",
+      "lat": "49.55512",
+      "geonameId": 3064133,
+      "name": "Trávník",
+      "distance": "17.57968"
+  },
+  {
+      "lng": "16.50993",
+      "lat": "49.25464",
+      "geonameId": 3066678,
+      "name": "Rozdrojovice",
+      "distance": "17.62271"
+  },
+  {
+      "lng": "16.78643",
+      "lat": "49.5106",
+      "geonameId": 3068512,
+      "name": "Pavlov",
+      "distance": "17.66299"
+  },
+  {
+      "lng": "16.71881",
+      "lat": "49.54167",
+      "geonameId": 3073858,
+      "name": "Kapouňata",
+      "distance": "17.71926"
+  },
+  {
+      "lng": "16.48959",
+      "lat": "49.53367",
+      "geonameId": 3068382,
+      "name": "Petrov",
+      "distance": "17.73526"
+  },
+  {
+      "lng": "16.57082",
+      "lat": "49.24002",
+      "geonameId": 3070893,
+      "name": "Medlánky",
+      "distance": "17.77958"
+  },
+  {
+      "lng": "16.75394",
+      "lat": "49.53032",
+      "geonameId": 3073244,
+      "name": "Kořenec",
+      "distance": "17.8727"
+  },
+  {
+      "lng": "16.80943",
+      "lat": "49.29737",
+      "geonameId": 3078390,
+      "name": "Bukovinka",
+      "distance": "17.90782"
+  },
+  {
+      "lng": "16.85181",
+      "lat": "49.44522",
+      "geonameId": 3069745,
+      "name": "Niva",
+      "distance": "17.92613"
+  },
+  {
+      "lng": "16.46303",
+      "lat": "49.5244",
+      "geonameId": 3066646,
+      "name": "Rozseč nad Kunštátem",
+      "distance": "17.9804"
+  },
+  {
+      "lng": "16.37762",
+      "lat": "49.4419",
+      "geonameId": 3072755,
+      "name": "Křeptov",
+      "distance": "17.99638"
+  },
+  {
+      "lng": "16.58904",
+      "lat": "49.55882",
+      "geonameId": 3064106,
+      "name": "Třebětín",
+      "distance": "18.08772"
+  },
+  {
+      "lng": "16.73733",
+      "lat": "49.25447",
+      "geonameId": 3069167,
+      "name": "Ochoz u Brna",
+      "distance": "18.15345"
+  },
+  {
+      "lng": "16.39386",
+      "lat": "49.32159",
+      "geonameId": 3062635,
+      "name": "Vohančice",
+      "distance": "18.19205"
+  },
+  {
+      "lng": "16.71162",
+      "lat": "49.54862",
+      "geonameId": 3066355,
+      "name": "Šebetov",
+      "distance": "18.21846"
+  },
+  {
+      "lng": "16.36393",
+      "lat": "49.40036",
+      "geonameId": 3068015,
+      "name": "Podolí",
+      "distance": "18.29857"
+  },
+  {
+      "lng": "16.38333",
+      "lat": "49.33333",
+      "geonameId": 3061521,
+      "name": "Žernůvka",
+      "distance": "18.3275"
+  },
+  {
+      "lng": "16.36845",
+      "lat": "49.36227",
+      "geonameId": 3064953,
+      "name": "Střemchoví",
+      "distance": "18.38742"
+  },
+  {
+      "lng": "16.73735",
+      "lat": "49.54241",
+      "geonameId": 3070075,
+      "name": "Na Karlově",
+      "distance": "18.39758"
+  },
+  {
+      "lng": "16.64798",
+      "lat": "49.2329",
+      "geonameId": 3069184,
+      "name": "Obřany",
+      "distance": "18.41291"
+  },
+  {
+      "lng": "16.37649",
+      "lat": "49.34215",
+      "geonameId": 3069926,
+      "name": "Nelepeč",
+      "distance": "18.43728"
+  },
+  {
+      "lng": "16.36111",
+      "lat": "49.40082",
+      "geonameId": 3079034,
+      "name": "Borač",
+      "distance": "18.50412"
+  },
+  {
+      "lng": "16.36298",
+      "lat": "49.37667",
+      "geonameId": 3062007,
+      "name": "Zahrada",
+      "distance": "18.50902"
+  },
+  {
+      "lng": "16.83594",
+      "lat": "49.48351",
+      "geonameId": 3067398,
+      "name": "Protivanov",
+      "distance": "18.62222"
+  },
+  {
+      "lng": "16.57807",
+      "lat": "49.56285",
+      "geonameId": 3075924,
+      "name": "Havírna",
+      "distance": "18.63437"
+  },
+  {
+      "lng": "16.52475",
+      "lat": "49.55404",
+      "geonameId": 3062515,
+      "name": "Vranová",
+      "distance": "18.66157"
+  },
+  {
+      "lng": "16.85139",
+      "lat": "49.32865",
+      "geonameId": 3066574,
+      "name": "Ruprechtov",
+      "distance": "18.71937"
+  },
+  {
+      "lng": "16.61201",
+      "lat": "49.56553",
+      "geonameId": 3073450,
+      "name": "Kochov",
+      "distance": "18.73097"
+  },
+  {
+      "lng": "16.43686",
+      "lat": "49.27591",
+      "geonameId": 3062965,
+      "name": "Veverská Bítýška",
+      "distance": "18.74063"
+  },
+  {
+      "lng": "16.87168",
+      "lat": "49.42118",
+      "geonameId": 3068711,
+      "name": "Otinoves",
+      "distance": "18.74788"
+  },
+  {
+      "lng": "16.65",
+      "lat": "49.56536",
+      "geonameId": 3076378,
+      "name": "Drvalovice",
+      "distance": "18.87165"
+  },
+  {
+      "lng": "16.41027",
+      "lat": "49.50118",
+      "geonameId": 3075653,
+      "name": "Hodonín",
+      "distance": "18.87864"
+  },
+  {
+      "lng": "16.49168",
+      "lat": "49.5466",
+      "geonameId": 3064689,
+      "name": "Sulíkov",
+      "distance": "18.90749"
+  },
+  {
+      "lng": "16.36311",
+      "lat": "49.44034",
+      "geonameId": 3072670,
+      "name": "Křížovice",
+      "distance": "18.9663"
+  },
+  {
+      "lng": "16.48333",
+      "lat": "49.25",
+      "geonameId": 3069202,
+      "name": "Obora",
+      "distance": "18.99343"
+  },
+  {
+      "lng": "16.52739",
+      "lat": "49.23604",
+      "geonameId": 3073510,
+      "name": "Kníničky",
+      "distance": "19.03898"
+  },
+  {
+      "lng": "16.62583",
+      "lat": "49.22589",
+      "geonameId": 6639703,
+      "name": "Lesná",
+      "distance": "19.05799"
+  },
+  {
+      "lng": "16.87883",
+      "lat": "49.39407",
+      "geonameId": 3069137,
+      "name": "Odrůvky",
+      "distance": "19.08374"
+  },
+  {
+      "lng": "16.35871",
+      "lat": "49.36099",
+      "geonameId": 3076780,
+      "name": "Dolní Loućky",
+      "distance": "19.10921"
+  },
+  {
+      "lng": "16.58987",
+      "lat": "49.22522",
+      "geonameId": 3072934,
+      "name": "Královo Pole",
+      "distance": "19.21334"
+  },
+  {
+      "lng": "16.66621",
+      "lat": "49.56728",
+      "geonameId": 3063395,
+      "name": "Vanovice",
+      "distance": "19.27033"
+  },
+  {
+      "lng": "16.55605",
+      "lat": "49.56609",
+      "geonameId": 3070765,
+      "name": "Meziříčko",
+      "distance": "19.2859"
+  },
+  {
+      "lng": "16.3516",
+      "lat": "49.37932",
+      "geonameId": 3073967,
+      "name": "Kaly",
+      "distance": "19.29608"
+  },
+  {
+      "lng": "16.35269",
+      "lat": "49.42411",
+      "geonameId": 3076525,
+      "name": "Doubravník",
+      "distance": "19.34014"
+  },
+  {
+      "lng": "16.88103",
+      "lat": "49.37559",
+      "geonameId": 3064790,
+      "name": "Studnice",
+      "distance": "19.3922"
+  },
+  {
+      "lng": "16.37794",
+      "lat": "49.31496",
+      "geonameId": 3068472,
+      "name": "Pejškov",
+      "distance": "19.55969"
+  },
+  {
+      "lng": "16.65819",
+      "lat": "49.22219",
+      "geonameId": 3071116,
+      "name": "Maloměřice",
+      "distance": "19.69664"
+  },
+  {
+      "lng": "16.36575",
+      "lat": "49.32886",
+      "geonameId": 3077356,
+      "name": "Čížky",
+      "distance": "19.69869"
+  },
+  {
+      "lng": "16.52339",
+      "lat": "49.56381",
+      "geonameId": 3072275,
+      "name": "Lazinov",
+      "distance": "19.71483"
+  },
+  {
+      "lng": "16.35914",
+      "lat": "49.45732",
+      "geonameId": 3065985,
+      "name": "Skorotice",
+      "distance": "19.79781"
+  },
+  {
+      "lng": "16.40671",
+      "lat": "49.28241",
+      "geonameId": 3075623,
+      "name": "Holasice",
+      "distance": "19.85141"
+  },
+  {
+      "lng": "16.43104",
+      "lat": "49.52917",
+      "geonameId": 3071526,
+      "name": "Louka",
+      "distance": "19.88381"
+  },
+  {
+      "lng": "16.82913",
+      "lat": "49.50974",
+      "geonameId": 3078438,
+      "name": "Buková",
+      "distance": "19.89183"
+  },
+  {
+      "lng": "16.5303",
+      "lat": "49.22645",
+      "geonameId": 3078308,
+      "name": "Bystrc",
+      "distance": "19.97829"
+  },
+  {
+      "lng": "16.57202",
+      "lat": "49.57566",
+      "geonameId": 3065869,
+      "name": "Slatinka",
+      "distance": "20.10936"
+  },
+  {
+      "lng": "16.35598",
+      "lat": "49.33474",
+      "geonameId": 3063538,
+      "name": "Úsuší",
+      "distance": "20.11883"
+  },
+  {
+      "lng": "16.36203",
+      "lat": "49.47012",
+      "geonameId": 3077825,
+      "name": "Chlébské",
+      "distance": "20.12936"
+  },
+  {
+      "lng": "16.5044",
+      "lat": "49.5631",
+      "geonameId": 3072737,
+      "name": "Křetín",
+      "distance": "20.15236"
+  },
+  {
+      "lng": "16.71819",
+      "lat": "49.56586",
+      "geonameId": 3064516,
+      "name": "Světlá",
+      "distance": "20.17441"
+  },
+  {
+      "lng": "16.34139",
+      "lat": "49.36681",
+      "geonameId": 3075304,
+      "name": "Horní Loučky",
+      "distance": "20.22097"
+  },
+  {
+      "lng": "16.72072",
+      "lat": "49.56571",
+      "geonameId": 3067478,
+      "name": "Přívěsť",
+      "distance": "20.22757"
+  },
+  {
+      "lng": "16.55236",
+      "lat": "49.21967",
+      "geonameId": 3073332,
+      "name": "Komín",
+      "distance": "20.27144"
+  },
+  {
+      "lng": "16.34618",
+      "lat": "49.44531",
+      "geonameId": 3078010,
+      "name": "Černvír",
+      "distance": "20.29468"
+  },
+  {
+      "lng": "16.87499",
+      "lat": "49.46667",
+      "geonameId": 3066921,
+      "name": "Repechy",
+      "distance": "20.31763"
+  },
+  {
+      "lng": "16.45",
+      "lat": "49.25",
+      "geonameId": 3069344,
+      "name": "Nový Dvůr",
+      "distance": "20.33114"
+  },
+  {
+      "lng": "16.46698",
+      "lat": "49.55228",
+      "geonameId": 3066644,
+      "name": "Rozsíčka",
+      "distance": "20.3557"
+  },
+  {
+      "lng": "16.33476",
+      "lat": "49.39441",
+      "geonameId": 3074682,
+      "name": "Husle",
+      "distance": "20.41594"
+  },
+  {
+      "lng": "16.60257",
+      "lat": "49.21373",
+      "geonameId": 6639861,
+      "name": "Ponava",
+      "distance": "20.42074"
+  },
+  {
+      "lng": "16.55931",
+      "lat": "49.57766",
+      "geonameId": 3078965,
+      "name": "Borová",
+      "distance": "20.49378"
+  },
+  {
+      "lng": "16.33381",
+      "lat": "49.41524",
+      "geonameId": 3071042,
+      "name": "Maňová",
+      "distance": "20.57716"
+  },
+  {
+      "lng": "16.57253",
+      "lat": "49.21395",
+      "geonameId": 3062119,
+      "name": "Žabovřesky",
+      "distance": "20.61606"
+  },
+  {
+      "lng": "16.54936",
+      "lat": "49.57773",
+      "geonameId": 3065974,
+      "name": "Skrchov",
+      "distance": "20.65776"
+  },
+  {
+      "lng": "16.59639",
+      "lat": "49.58262",
+      "geonameId": 3069409,
+      "name": "Novičí",
+      "distance": "20.67795"
+  },
+  {
+      "lng": "16.6309",
+      "lat": "49.21132",
+      "geonameId": 3074681,
+      "name": "Husovice",
+      "distance": "20.69406"
+  },
+  {
+      "lng": "16.61667",
+      "lat": "49.58333",
+      "geonameId": 3075464,
+      "name": "Horky",
+      "distance": "20.70906"
+  },
+  {
+      "lng": "16.90194",
+      "lat": "49.40881",
+      "geonameId": 3069446,
+      "name": "Nové Sady",
+      "distance": "20.79552"
+  },
+  {
+      "lng": "16.89738",
+      "lat": "49.43326",
+      "geonameId": 3076505,
+      "name": "Drahany",
+      "distance": "20.81063"
+  },
+  {
+      "lng": "16.75552",
+      "lat": "49.56096",
+      "geonameId": 3067958,
+      "name": "Pohora",
+      "distance": "20.83913"
+  },
+  {
+      "lng": "16.33726",
+      "lat": "49.35178",
+      "geonameId": 3077448,
+      "name": "Chytálky",
+      "distance": "20.85992"
+  },
+  {
+      "lng": "16.67148",
+      "lat": "49.58135",
+      "geonameId": 3078968,
+      "name": "Borotín",
+      "distance": "20.87909"
+  },
+  {
+      "lng": "16.88974",
+      "lat": "49.45511",
+      "geonameId": 3078888,
+      "name": "Bousín",
+      "distance": "20.88071"
+  },
+  {
+      "lng": "16.61631",
+      "lat": "49.20902",
+      "geonameId": 6639862,
+      "name": "Černá Pole",
+      "distance": "20.92129"
+  },
+  {
+      "lng": "16.43472",
+      "lat": "49.54501",
+      "geonameId": 3077344,
+      "name": "Crhov",
+      "distance": "21.04966"
+  },
+  {
+      "lng": "16.3256",
+      "lat": "49.40632",
+      "geonameId": 3068418,
+      "name": "Pernštejnské Jestřabí",
+      "distance": "21.10044"
+  },
+  {
+      "lng": "16.79078",
+      "lat": "49.54901",
+      "geonameId": 3075193,
+      "name": "Horní Štěpánov",
+      "distance": "21.11422"
+  },
+  {
+      "lng": "16.38734",
+      "lat": "49.27917",
+      "geonameId": 3072296,
+      "name": "Lažánky",
+      "distance": "21.17107"
+  },
+  {
+      "lng": "16.43181",
+      "lat": "49.54574",
+      "geonameId": 12123379,
+      "name": "Chrov",
+      "distance": "21.24491"
+  },
+  {
+      "lng": "16.3569",
+      "lat": "49.48678",
+      "geonameId": 3075424,
+      "name": "Horní Čepí",
+      "distance": "21.27057"
+  },
+  {
+      "lng": "16.49755",
+      "lat": "49.57217",
+      "geonameId": 3067407,
+      "name": "Prostřední Poříčí",
+      "distance": "21.27476"
+  },
+  {
+      "lng": "16.77655",
+      "lat": "49.23654",
+      "geonameId": 3075081,
+      "name": "Hostěnice",
+      "distance": "21.33734"
+  },
+  {
+      "lng": "16.4931",
+      "lat": "49.57155",
+      "geonameId": 3076727,
+      "name": "Dolní Poříčí",
+      "distance": "21.34374"
+  },
+  {
+      "lng": "16.3219",
+      "lat": "49.39429",
+      "geonameId": 3074183,
+      "name": "Jilmoví",
+      "distance": "21.34942"
+  },
+  {
+      "lng": "16.34644",
+      "lat": "49.32036",
+      "geonameId": 3077255,
+      "name": "Deblín",
+      "distance": "21.36149"
+  },
+  {
+      "lng": "16.32571",
+      "lat": "49.36512",
+      "geonameId": 3063692,
+      "name": "Újezd",
+      "distance": "21.37555"
+  },
+  {
+      "lng": "16.74969",
+      "lat": "49.22589",
+      "geonameId": 3075534,
+      "name": "Mokrá Horákov",
+      "distance": "21.38274"
+  },
+  {
+      "lng": "16.34762",
+      "lat": "49.47773",
+      "geonameId": 3076904,
+      "name": "Dolní Čepí",
+      "distance": "21.42864"
+  },
+  {
+      "lng": "16.55279",
+      "lat": "49.20885",
+      "geonameId": 3074042,
+      "name": "Jundrov",
+      "distance": "21.43828"
+  },
+  {
+      "lng": "16.66317",
+      "lat": "49.20655",
+      "geonameId": 6694695,
+      "name": "Vinohrady",
+      "distance": "21.47176"
+  },
+  {
+      "lng": "16.33406",
+      "lat": "49.45702",
+      "geonameId": 3069952,
+      "name": "Nedvědice",
+      "distance": "21.5087"
+  },
+  {
+      "lng": "16.39484",
+      "lat": "49.5263",
+      "geonameId": 3067429,
+      "name": "Prosetín",
+      "distance": "21.52572"
+  },
+  {
+      "lng": "16.57991",
+      "lat": "49.5894",
+      "geonameId": 3079707,
+      "name": "Babolky",
+      "distance": "21.54326"
+  },
+  {
+      "lng": "16.72125",
+      "lat": "49.57879",
+      "geonameId": 3077869,
+      "name": "Cetkovice",
+      "distance": "21.59493"
+  },
+  {
+      "lng": "16.59794",
+      "lat": "49.20296",
+      "geonameId": 6639863,
+      "name": "Veveří",
+      "distance": "21.63464"
+  },
+  {
+      "lng": "16.61682",
+      "lat": "49.5918",
+      "geonameId": 3064634,
+      "name": "Svárov",
+      "distance": "21.65043"
+  },
+  {
+      "lng": "16.46291",
+      "lat": "49.56493",
+      "geonameId": 3063540,
+      "name": "Ústup",
+      "distance": "21.70933"
+  },
+  {
+      "lng": "16.42519",
+      "lat": "49.2469",
+      "geonameId": 3074640,
+      "name": "Hvozdec",
+      "distance": "21.71487"
+  },
+  {
+      "lng": "16.87658",
+      "lat": "49.49331",
+      "geonameId": 3071183,
+      "name": "Malé Hradisko",
+      "distance": "21.71584"
+  },
+  {
+      "lng": "16.41927",
+      "lat": "49.54499",
+      "geonameId": 3072623,
+      "name": "Křtěnov",
+      "distance": "21.76423"
+  },
+  {
+      "lng": "16.52953",
+      "lat": "49.5849",
+      "geonameId": 3062678,
+      "name": "Vlkov",
+      "distance": "21.80192"
+  },
+  {
+      "lng": "16.38512",
+      "lat": "49.52321",
+      "geonameId": 3077330,
+      "name": "Čtyři Dvory",
+      "distance": "21.83407"
+  },
+  {
+      "lng": "16.57991",
+      "lat": "49.20167",
+      "geonameId": 6639903,
+      "name": "Stránice",
+      "distance": "21.89594"
+  },
+  {
+      "lng": "16.69484",
+      "lat": "49.20711",
+      "geonameId": 3071748,
+      "name": "Líšeň",
+      "distance": "21.89779"
+  },
+  {
+      "lng": "16.72536",
+      "lat": "49.58119",
+      "geonameId": 3078588,
+      "name": "Brodek",
+      "distance": "21.95131"
+  },
+  {
+      "lng": "16.5564",
+      "lat": "49.5908",
+      "geonameId": 3076682,
+      "name": "Dolní Smržov",
+      "distance": "21.9672"
+  },
+  {
+      "lng": "16.67678",
+      "lat": "49.59083",
+      "geonameId": 3076261,
+      "name": "Dvořiště",
+      "distance": "21.98832"
+  },
+  {
+      "lng": "16.62197",
+      "lat": "49.19932",
+      "geonameId": 6639860,
+      "name": "Zábrdovice",
+      "distance": "22.00455"
+  },
+  {
       "lng": "16.3156",
-      "distance": "24.86556",
-      "geonameId": 3073016,
-      "toponymName": "Kozlov",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Kozlov",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "63"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Vysočina",
+      "lat": "49.42711",
+      "geonameId": 3067058,
+      "name": "Rakove",
+      "distance": "22.051"
+  },
+  {
+      "lng": "16.31214",
+      "lat": "49.3844",
+      "geonameId": 3078892,
+      "name": "Boudy",
+      "distance": "22.10366"
+  },
+  {
+      "lng": "16.54381",
+      "lat": "49.59059",
+      "geonameId": 3065971,
+      "name": "Skřib",
+      "distance": "22.14218"
+  },
+  {
+      "lng": "16.31068",
+      "lat": "49.39356",
+      "geonameId": 3065948,
+      "name": "Skryje",
+      "distance": "22.16506"
+  },
+  {
+      "lng": "16.56667",
+      "lat": "49.2",
+      "geonameId": 3073895,
+      "name": "Kamenný Mlýn",
+      "distance": "22.21569"
+  },
+  {
+      "lng": "16.31667",
+      "lat": "49.43976",
+      "geonameId": 3071038,
+      "name": "Mansberk",
+      "distance": "22.22843"
+  },
+  {
+      "lng": "16.74728",
+      "lat": "49.21659",
+      "geonameId": 6694696,
+      "name": "Horákova Lhota",
+      "distance": "22.23426"
+  },
+  {
+      "lng": "16.31017",
+      "lat": "49.41017",
+      "geonameId": 3071704,
+      "name": "Litava",
+      "distance": "22.2423"
+  },
+  {
+      "lng": "16.6587",
+      "lat": "49.59642",
+      "geonameId": 3063237,
+      "name": "Velká Roudka",
+      "distance": "22.37953"
+  },
+  {
+      "lng": "16.64738",
+      "lat": "49.19654",
+      "geonameId": 3061473,
+      "name": "Židenice",
+      "distance": "22.42558"
+  },
+  {
+      "lng": "16.80084",
+      "lat": "49.55896",
+      "geonameId": 3069444,
+      "name": "Nové Sady",
+      "distance": "22.43679"
+  },
+  {
+      "lng": "16.56643",
+      "lat": "49.59631",
+      "geonameId": 3079691,
+      "name": "Bahna",
+      "distance": "22.44145"
+  },
+  {
+      "lng": "16.60796",
+      "lat": "49.19522",
+      "geonameId": 3078610,
+      "name": "Brno",
+      "distance": "22.46315"
+  },
+  {
+      "lng": "16.59346",
+      "lat": "49.59881",
+      "geonameId": 3077779,
+      "name": "Chlum",
+      "distance": "22.48963"
+  },
+  {
+      "lng": "16.35975",
+      "lat": "49.28368",
+      "geonameId": 3070988,
+      "name": "Maršov",
+      "distance": "22.49303"
+  },
+  {
+      "lng": "16.57511",
+      "lat": "49.19606",
+      "geonameId": 6639902,
+      "name": "Pisárky",
+      "distance": "22.55874"
+  },
+  {
+      "lng": "16.33155",
+      "lat": "49.47929",
+      "geonameId": 3073784,
+      "name": "Kasany",
+      "distance": "22.56201"
+  },
+  {
+      "lng": "16.3058",
+      "lat": "49.41586",
+      "geonameId": 3073580,
+      "name": "Klokočí",
+      "distance": "22.60718"
+  },
+  {
+      "lng": "16.31393",
+      "lat": "49.34658",
+      "geonameId": 3072473,
+      "name": "Kuřimské Jestřabí",
+      "distance": "22.64577"
+  },
+  {
+      "lng": "16.60712",
+      "lat": "49.19343",
+      "geonameId": 6694367,
+      "name": "Brno střed",
+      "distance": "22.66434"
+  },
+  {
+      "lng": "16.30926",
+      "lat": "49.4361",
+      "geonameId": 3066248,
+      "name": "Sejřek",
+      "distance": "22.67347"
+  },
+  {
+      "lng": "16.34566",
+      "lat": "49.29437",
+      "geonameId": 3078832,
+      "name": "Braniškov",
+      "distance": "22.72562"
+  },
+  {
+      "lng": "16.42169",
+      "lat": "49.55755",
+      "geonameId": 3069029,
+      "name": "Olešnice",
+      "distance": "22.7284"
+  },
+  {
+      "lng": "16.3134",
+      "lat": "49.45084",
+      "geonameId": 3068420,
+      "name": "Pernštejn",
+      "distance": "22.74978"
+  },
+  {
+      "lng": "16.3057",
+      "lat": "49.36439",
+      "geonameId": 3066867,
+      "name": "Řikonín",
+      "distance": "22.82225"
+  },
+  {
+      "lng": "16.64447",
+      "lat": "49.60168",
+      "geonameId": 3071226,
+      "name": "Malá Roudka",
+      "distance": "22.84314"
+  },
+  {
+      "lng": "16.86178",
+      "lat": "49.52597",
+      "geonameId": 3071777,
+      "name": "Lipová",
+      "distance": "22.86564"
+  },
+  {
+      "lng": "16.89253",
+      "lat": "49.29797",
+      "geonameId": 3074219,
+      "name": "Ježkovice",
+      "distance": "22.92175"
+  },
+  {
+      "lng": "16.87174",
+      "lat": "49.27632",
+      "geonameId": 3067276,
+      "name": "Račice",
+      "distance": "22.93594"
+  },
+  {
+      "lng": "16.31361",
+      "lat": "49.3358",
+      "geonameId": 3079290,
+      "name": "Blahoňov",
+      "distance": "22.99706"
+  },
+  {
+      "lng": "16.33108",
+      "lat": "49.48836",
+      "geonameId": 3063699,
+      "name": "Ujčov",
+      "distance": "23.01765"
+  },
+  {
+      "lng": "16.91534",
+      "lat": "49.32904",
+      "geonameId": 3066493,
+      "name": "Rychtářov",
+      "distance": "23.02627"
+  },
+  {
+      "lng": "16.83286",
+      "lat": "49.54869",
+      "geonameId": 3078585,
+      "name": "Brodek u Konice",
+      "distance": "23.0483"
+  },
+  {
+      "lng": "16.4879",
+      "lat": "49.20706",
+      "geonameId": 3061633,
+      "name": "Žebětín",
+      "distance": "23.10069"
+  },
+  {
+      "lng": "16.39072",
+      "lat": "49.54481",
+      "geonameId": 3072055,
+      "name": "Lhota u Olešnice",
+      "distance": "23.15827"
+  },
+  {
+      "lng": "16.54146",
+      "lat": "49.19449",
+      "geonameId": 3073419,
+      "name": "Kohoutovice",
+      "distance": "23.17927"
+  },
+  {
+      "lng": "16.37035",
+      "lat": "49.53119",
+      "geonameId": 3078553,
+      "name": "Brťoví",
+      "distance": "23.22327"
+  },
+  {
+      "lng": "16.59747",
+      "lat": "49.18852",
+      "geonameId": 6694366,
+      "name": "Staré Brno",
+      "distance": "23.24009"
+  },
+  {
+      "lng": "16.83656",
+      "lat": "49.54893",
+      "geonameId": 3077200,
+      "name": "Dešná",
+      "distance": "23.25068"
+  },
+  {
+      "lng": "16.52512",
+      "lat": "49.59797",
+      "geonameId": 3062901,
+      "name": "Vilémov",
+      "distance": "23.28594"
+  },
+  {
+      "lng": "16.31607",
+      "lat": "49.47348",
+      "geonameId": 3073054,
+      "name": "Kovářová",
+      "distance": "23.35132"
+  },
+  {
+      "lng": "16.33922",
+      "lat": "49.50489",
+      "geonameId": 3065186,
+      "name": "Štěpánov nad Svratkou",
+      "distance": "23.37327"
+  },
+  {
+      "lng": "16.52093",
+      "lat": "49.59813",
+      "geonameId": 3078853,
+      "name": "Bradlné",
+      "distance": "23.39063"
+  },
+  {
+      "lng": "16.64969",
+      "lat": "49.60632",
+      "geonameId": 3065999,
+      "name": "Skočova Lhota",
+      "distance": "23.39303"
+  },
+  {
+      "lng": "16.76667",
+      "lat": "49.58333",
+      "geonameId": 3066012,
+      "name": "Sklená Huť",
+      "distance": "23.41058"
+  },
+  {
+      "lng": "16.47733",
+      "lat": "49.5876",
+      "geonameId": 3075248,
+      "name": "Horní Poříčí",
+      "distance": "23.44406"
+  },
+  {
+      "lng": "16.45036",
+      "lat": "49.57917",
+      "geonameId": 3063027,
+      "name": "Veselka",
+      "distance": "23.53493"
+  },
+  {
+      "lng": "16.89833",
+      "lat": "49.50262",
+      "geonameId": 3069112,
+      "name": "Okluky",
+      "distance": "23.59679"
+  },
+  {
+      "lng": "16.33193",
+      "lat": "49.5012",
+      "geonameId": 3069017,
+      "name": "Olešnička",
+      "distance": "23.62643"
+  },
+  {
+      "lng": "16.73501",
+      "lat": "49.59507",
+      "geonameId": 3063710,
+      "name": "Uhřice",
+      "distance": "23.64232"
+  },
+  {
+      "lng": "16.40183",
+      "lat": "49.2369",
+      "geonameId": 3062964,
+      "name": "Veverské Knínice",
+      "distance": "23.66455"
+  },
+  {
+      "lng": "16.88155",
+      "lat": "49.52107",
+      "geonameId": 3066344,
+      "name": "Seč",
+      "distance": "23.67857"
+  },
+  {
+      "lng": "16.3156",
+      "lat": "49.48131",
+      "geonameId": 3071734,
+      "name": "Lískovec",
+      "distance": "23.71196"
+  },
+  {
+      "lng": "16.30274",
+      "lat": "49.4588",
+      "geonameId": 3065710,
+      "name": "Smrček",
+      "distance": "23.73603"
+  },
+  {
+      "lng": "16.86881",
+      "lat": "49.53381",
+      "geonameId": 3074809,
+      "name": "Hrochov",
+      "distance": "23.81069"
+  },
+  {
+      "lng": "16.33833",
+      "lat": "49.51167",
+      "geonameId": 3078954,
+      "name": "Borovec",
+      "distance": "23.82247"
+  },
+  {
+      "lng": "16.76288",
+      "lat": "49.58892",
+      "geonameId": 3063565,
+      "name": "Úsobrno",
+      "distance": "23.83852"
+  },
+  {
+      "lng": "16.79592",
+      "lat": "49.21746",
+      "geonameId": 3074230,
+      "name": "Jezera",
+      "distance": "23.88619"
+  },
+  {
+      "lng": "16.63716",
+      "lat": "49.18232",
+      "geonameId": 3078016,
+      "name": "Černovice",
+      "distance": "23.94012"
+  },
+  {
+      "lng": "16.35263",
+      "lat": "49.26759",
+      "geonameId": 3065746,
+      "name": "Smelcovna",
+      "distance": "23.95735"
+  },
+  {
+      "lng": "16.5612",
+      "lat": "49.18316",
+      "geonameId": 3069294,
+      "name": "Nový Lískovec",
+      "distance": "24.12817"
+  },
+  {
+      "lng": "16.72084",
+      "lat": "49.19042",
+      "geonameId": 3068020,
+      "name": "Podolí",
+      "distance": "24.2217"
+  },
+  {
+      "lng": "16.36218",
+      "lat": "49.25553",
+      "geonameId": 3074388,
+      "name": "Javůrek",
+      "distance": "24.257"
+  },
+  {
+      "lng": "16.56355",
+      "lat": "49.61255",
+      "geonameId": 3077194,
+      "name": "Deštná",
+      "distance": "24.25797"
+  },
+  {
+      "lng": "16.34763",
+      "lat": "49.52747",
+      "geonameId": 3073230,
+      "name": "Koroužné",
+      "distance": "24.26027"
+  },
+  {
+      "lng": "16.59493",
+      "lat": "49.17929",
+      "geonameId": 6694702,
+      "name": "Štýřice",
+      "distance": "24.27572"
+  },
+  {
+      "lng": "16.62532",
+      "lat": "49.17884",
+      "geonameId": 3073337,
+      "name": "Komárov",
+      "distance": "24.28683"
+  },
+  {
+      "lng": "16.40977",
+      "lat": "49.56952",
+      "geonameId": 3072337,
+      "name": "Lamberk",
+      "distance": "24.30795"
+  },
+  {
+      "lng": "16.59406",
+      "lat": "49.61541",
+      "geonameId": 3066738,
+      "name": "Roubanina",
+      "distance": "24.32848"
+  },
+  {
+      "lng": "16.75358",
+      "lat": "49.19737",
+      "geonameId": 3063330,
+      "name": "Velatice",
+      "distance": "24.36672"
+  },
+  {
+      "lng": "16.67947",
+      "lat": "49.61237",
+      "geonameId": 3063193,
+      "name": "Velké Opatovice",
+      "distance": "24.37638"
+  },
+  {
+      "lng": "16.49833",
+      "lat": "49.60255",
+      "geonameId": 3064795,
+      "name": "Študlov",
+      "distance": "24.38362"
+  },
+  {
+      "lng": "16.62094",
+      "lat": "49.61655",
+      "geonameId": 3079440,
+      "name": "Bezděčí u Velkých Opatovic",
+      "distance": "24.40601"
+  },
+  {
+      "lng": "16.79074",
+      "lat": "49.20976",
+      "geonameId": 3067723,
+      "name": "Pozořice",
+      "distance": "24.40859"
+  },
+  {
+      "lng": "16.8623",
+      "lat": "49.54715",
+      "geonameId": 3072363,
+      "name": "Labutice",
+      "distance": "24.43587"
+  },
+  {
+      "lng": "16.89395",
+      "lat": "49.27311",
+      "geonameId": 3068273,
+      "name": "Pístovice",
+      "distance": "24.4623"
+  },
+  {
+      "lng": "16.53399",
+      "lat": "49.61065",
+      "geonameId": 3077566,
+      "name": "Chrastová Lhota",
+      "distance": "24.47887"
+  },
+  {
+      "lng": "16.64",
+      "lat": "49.61744",
+      "geonameId": 3078554,
+      "name": "Brťov",
+      "distance": "24.56399"
+  },
+  {
+      "lng": "16.35984",
+      "lat": "49.54181",
+      "geonameId": 3079070,
+      "name": "Bolešín",
+      "distance": "24.56756"
+  },
+  {
+      "lng": "16.86605",
+      "lat": "49.24804",
+      "geonameId": 3069002,
+      "name": "Olšany",
+      "distance": "24.60639"
+  },
+  {
+      "lng": "16.78254",
+      "lat": "49.20371",
+      "geonameId": 3066090,
+      "name": "Sivice",
+      "distance": "24.68848"
+  },
+  {
+      "lng": "16.30879",
+      "lat": "49.30177",
+      "geonameId": 3064581,
+      "name": "Svatoslav",
+      "distance": "24.71144"
+  },
+  {
+      "lng": "16.57698",
+      "lat": "49.61826",
+      "geonameId": 3075203,
+      "name": "Horní Smržov",
+      "distance": "24.75514"
+  },
+  {
+      "lng": "16.3156",
       "lat": "49.505",
-      "fcode": "PPL"
-    },
-    {
-      "adminCode1": "84",
+      "geonameId": 3073016,
+      "name": "Kozlov",
+      "distance": "24.86556"
+  },
+  {
       "lng": "16.85629",
-      "distance": "24.92902",
-      "geonameId": 3072058,
-      "toponymName": "Lhota u Konice",
-      "countryId": "3077311",
-      "fcl": "P",
-      "population": 0,
-      "countryCode": "CZ",
-      "name": "Lhota u Konice",
-      "fclName": "city, village,...",
-      "adminCodes1": {
-        "ISO3166_2": "71"
-      },
-      "countryName": "Czechia",
-      "fcodeName": "populated place",
-      "adminName1": "Olomoucký",
       "lat": "49.55751",
-      "fcode": "PPL"
-    }
-  ] })
-}
+      "geonameId": 3072058,
+      "name": "Lhota u Konice",
+      "distance": "24.92902"
+  }]
+})}

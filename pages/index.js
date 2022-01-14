@@ -37,7 +37,7 @@ export default function Home() {
     return (
         <>
             <PageLayout
-                title="Instalatér v okolí Blanska | Voda•Topení•Plyn"
+                title="Instalatér Blansko a okolí  | Voda•Topení•Plyn"
                 description={`Hledáte spolehlivého instalatéra v okolí Blanska? Naše firma provádí kompletní práce v oboru instalatérství a topenářství. 30+ let zkušeností a 1000+ provedených projektů.`}
             >
                 <Header
@@ -83,12 +83,11 @@ export default function Home() {
                         borderColor={primaryOpposite}
                         color={primaryOpposite}
                     >
-                        <Heading
-                            as={"h1"}
+                        <Box
                             textAlign="center"
-                            py="3rem"
+                            pt="3rem"
+                            pb="2rem"
                             pos="relative"
-                            fontSize={["4xl", "5xl"]}
                             _before={{
                                 base: {
                                     content: "''",
@@ -110,14 +109,28 @@ export default function Home() {
                                 },
                             }}
                         >
-                            {content.title}
-                        </Heading>
-
+                            <Heading
+                                as={"h1"}
+                                fontSize={["4xl", "5xl"]}
+                                mb={"0.5rem"}
+                            >
+                                {content.title}
+                            </Heading> 
+                            <Heading
+                                as={"h2"}
+                                fontSize={["2xl", "3xl"]}
+                            >
+                                {content.subtitle}
+                            </Heading>   
+                        </Box>
+                        
+                            
                         <Box
                             bg={{ base: secondaryOpposite, lg: "none" }}
                             fontWeight="600"
                             textAlign="center"
                             paddingX="15%"
+                            pt={"1rem"}
                             flexGrow={1}
                             fontSize={["md", "lg", "xl"]}
                         >

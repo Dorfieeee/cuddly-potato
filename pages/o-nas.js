@@ -29,7 +29,7 @@ function About({ children, ...rest }) {
     return (
         <PageLayout
             title="O nás | Vodoinstalace, topení a plyn Blansko"
-            description="O našem instalaterském podnikání, zaměřené na vodoinstalace, topenářské a plynářské práce, které má za sebou 100+ spokojených zákazníků."
+            description="O našem instalaterském podnikání, zaměřené na vodoinstalace, topenářské a plynářské práce v okrese Blansko, Kuřim, Tišnov a Brno."
             {...rest}
         >
             <Header px={"5%"} mb={10}>
@@ -106,7 +106,8 @@ function About({ children, ...rest }) {
                             specializuje se na montáže vody, kanalizace, plynu,
                             topení, podlahového topení, montáže a rekonstrukce
                             kotelen, montáže a dodání tepelných čerpadel a
-                            solárních systémů.
+                            solárních systémů zejména v okrese Blansko, Boskovice, 
+                            Tišnov, Kuřim, Vyškov a Brno. 
                         </Paragraph>
                     </VStack>
 
