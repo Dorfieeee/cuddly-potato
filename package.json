@@ -17,6 +17,7 @@
     "@fontsource/roboto": "^4.4.5",
     "@googlemaps/google-maps-services-js": "^3.1.16",
     "@turf/turf": "^6.5.0",
+    "@vercel/analytics": "^0.1.5",
     "formik": "^2.2.9",
     "framer-motion": "^4.1.17",
     "mapbox-gl": "^2.6.1",
